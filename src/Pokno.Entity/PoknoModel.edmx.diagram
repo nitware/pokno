@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d1413ba856e4afc89cd9a22ab3a94de" Name="Diagram1">
+        <EntityTypeShape EntityType="PoknoModel.APPLICATION_MODE" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="PoknoModel.BANK" Width="1.5" PointX="8.25" PointY="45.375" />
+        <EntityTypeShape EntityType="PoknoModel.CASH" Width="1.5" PointX="8.25" PointY="16.375" />
+        <EntityTypeShape EntityType="PoknoModel.CHEQUE" Width="1.5" PointX="10.5" PointY="47.25" />
+        <EntityTypeShape EntityType="PoknoModel.COMPANY" Width="1.5" PointX="3" PointY="21.75" />
+        <EntityTypeShape EntityType="PoknoModel.CURRENT_ESNECIL" Width="1.5" PointX="3" PointY="5.5" />
+        <EntityTypeShape EntityType="PoknoModel.CURRENT_STOCK_PACKAGE" Width="1.5" PointX="10.5" PointY="20.875" />
+        <EntityTypeShape EntityType="PoknoModel.CURRENT_STOCK_PACKAGE_RELATIONSHIP" Width="1.5" PointX="10.5" PointY="50.875" />
+        <EntityTypeShape EntityType="PoknoModel.CURRENT_STOCK_PRICE" Width="1.5" PointX="15.75" PointY="23.125" />
+        <EntityTypeShape EntityType="PoknoModel.DELETED_SHELF_STOCK" Width="1.5" PointX="10.5" PointY="28.75" />
+        <EntityTypeShape EntityType="PoknoModel.DELETED_SOLD_STOCK" Width="1.5" PointX="7.5" PointY="41.875" />
+        <EntityTypeShape EntityType="PoknoModel.DELETED_SOLD_STOCK_BATCH" Width="1.5" PointX="5.25" PointY="37.25" />
+        <EntityTypeShape EntityType="PoknoModel.ESNECIL" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="PoknoModel.EXPENSES" Width="1.5" PointX="5.25" PointY="67.375" />
+        <EntityTypeShape EntityType="PoknoModel.EXPENSES_CATEGORY" Width="1.5" PointX="5.25" PointY="74.125" />
+        <EntityTypeShape EntityType="PoknoModel.EXPENSES_DETAIL" Width="1.5" PointX="7.5" PointY="67.375" />
+        <EntityTypeShape EntityType="PoknoModel.LOCATION" Width="1.5" PointX="0.75" PointY="33.125" />
+        <EntityTypeShape EntityType="PoknoModel.PACKAGE" Width="1.5" PointX="6" PointY="20.375" />
+        <EntityTypeShape EntityType="PoknoModel.PACKAGE_RELATIONSHIP" Width="1.5" PointX="10.5" PointY="37.75" />
+        <EntityTypeShape EntityType="PoknoModel.PART" Width="1.5" PointX="8.25" PointY="13.5" />
+        <EntityTypeShape EntityType="PoknoModel.PAYMENT" Width="1.5" PointX="6" PointY="25.25" />
+        <EntityTypeShape EntityType="PoknoModel.PAYMENT_DETAIL" Width="1.5" PointX="8.25" PointY="48" />
+        <EntityTypeShape EntityType="PoknoModel.PAYMENT_TYPE" Width="1.5" PointX="5.25" PointY="71.625" />
+        <EntityTypeShape EntityType="PoknoModel.PERSON" Width="1.5" PointX="3" PointY="30.75" />
+        <EntityTypeShape EntityType="PoknoModel.PERSON_COMPANY" Width="1.5" PointX="5.25" PointY="30" />
+        <EntityTypeShape EntityType="PoknoModel.PERSON_LOGIN" Width="1.5" PointX="5.25" PointY="64.25" />
+        <EntityTypeShape EntityType="PoknoModel.PERSON_TYPE" Width="1.5" PointX="0.75" PointY="29.875" />
+        <EntityTypeShape EntityType="PoknoModel.REPLACED_STOCK_ACTION" Width="1.5" PointX="11.25" PointY="44.375" />
+        <EntityTypeShape EntityType="PoknoModel.RETURNED_STOCK" Width="1.5" PointX="5.25" PointY="33.75" />
+        <EntityTypeShape EntityType="PoknoModel.RETURNED_STOCK_DETAIL" Width="1.5" PointX="10.5" PointY="33" />
+        <EntityTypeShape EntityType="PoknoModel.RETURNED_STOCK_REPLACEMENT" Width="1.5" PointX="19" PointY="32.375" />
+        <EntityTypeShape EntityType="PoknoModel.RIGHT" Width="1.5" PointX="0.75" PointY="39.5" />
+        <EntityTypeShape EntityType="PoknoModel.ROLE" Width="1.5" PointX="0.75" PointY="36.375" />
+        <EntityTypeShape EntityType="PoknoModel.ROLE_RIGHT" Width="1.5" PointX="3" PointY="38.375" />
+        <EntityTypeShape EntityType="PoknoModel.SETTING" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="PoknoModel.SHELF" Width="1.5" PointX="13.5" PointY="32.25" />
+        <EntityTypeShape EntityType="PoknoModel.SHELF_STOCK_REPLACEMENT" Width="1.5" PointX="10.5" PointY="18.125" />
+        <EntityTypeShape EntityType="PoknoModel.SOLD_STOCK" Width="1.5" PointX="15.75" PointY="30.25" />
+        <EntityTypeShape EntityType="PoknoModel.SOLD_STOCK_BATCH" Width="1.5" PointX="8.25" PointY="27.625" />
+        <EntityTypeShape EntityType="PoknoModel.SOLD_STOCK_RETURN" Width="1.5" PointX="16.5" PointY="25.625" />
+        <EntityTypeShape EntityType="PoknoModel.SOLD_STOCK_RETURN_REFUND" Width="1.5" PointX="18.75" PointY="26.125" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK" Width="1.5" PointX="6" PointY="45.625" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_BARCODE" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_CATEGORY" Width="1.5" PointX="1.5" PointY="46.25" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PACKAGE" Width="1.5" PointX="8.25" PointY="19" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Width="1.5" PointX="8.25" PointY="32.25" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PRICE" Width="1.5" PointX="13.5" PointY="28.5" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PURCHASE_BATCH" Width="1.5" PointX="8.25" PointY="37.25" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PURCHASE_BATCH_TYPE" Width="1.5" PointX="6" PointY="50.375" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PURCHASED" Width="1.5" PointX="16.5" PointY="34.875" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PURCHASED_POOL" Width="1.5" PointX="16.5" PointY="39.875" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PURCHASED_POOL_DETAIL" Width="1.5" PointX="18.75" PointY="38.125" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_PURCHASED_RETURN" Width="1.5" PointX="13.5" PointY="37.625" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_REPLACEMENT" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_RETURN_ACTION" Width="1.5" PointX="8.25" PointY="25" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_RETURN_TYPE" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_REVIEW" Width="1.5" PointX="5.25" PointY="59.5" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_REVIEW_DETAIL" Width="1.5" PointX="7.5" PointY="57.875" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_STATE" Width="1.5" PointX="11.25" PointY="41.5" />
+        <EntityTypeShape EntityType="PoknoModel.STOCK_TYPE" Width="1.5" PointX="3.75" PointY="46" />
+        <EntityTypeShape EntityType="PoknoModel.STORE" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PoknoModel.TRANSACTION_TYPE" Width="1.5" PointX="3.75" PointY="26.25" />
+        <AssociationConnector Association="PoknoModel.FK_SETTING_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_CHEQUE_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_CASH_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_CHEQUE_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_PERSON_COMPANY_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_CURRENT_ESNECIL_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_CURRENT_STOCK_PACKAGE_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_CURRENT_STOCK_PRICE_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SHELF_STOCK_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SHELF_STOCK_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SHELF_STOCK_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SOLD_STOCK_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SOLD_STOCK_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_EXPENSES_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_EXPENSES_DETAIL_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_EXPENSES_DETAIL_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_EXPENSES_DETAIL_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_PERSON_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_SHELF_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PACKAGE_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_PACKAGE_RELATIONSHIP_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_PACKAGE_RELATIONSHIP_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_PACKAGE_RELATIONSHIP_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_PART_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_PAYMENT_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_PAYMENT_DETAIL_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_BATCH_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_PAYMENT_DETAIL_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_PERSON_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_PERSON_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_PERSON_COMPANY_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_PERSON_LOGIN_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_SHELF_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_BATCH_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_BATCH_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_REVIEW_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_4_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_ROLE_RIGHT_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_ROLE_RIGHT_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_SHELF_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_SHELF_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_SHELF_STOCK_REPLACEMENT_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_RETURN_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_RETURN_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PACKAGE_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_POOL_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_TYPE_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PRICE_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_POOL_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_POOL_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_POOL_4_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_4_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_POOL_3_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_5_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_1_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_0_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_2_0" />
+        <AssociationConnector Association="PoknoModel.FK_STOCK_REVIEW_DETAIL_0_0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

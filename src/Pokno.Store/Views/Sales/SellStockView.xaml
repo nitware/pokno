@@ -1,0 +1,622 @@
+﻿<UserControl x:Class="Pokno.Store.Views.SellStockView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:converter="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit" 
+    xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+    mc:Ignorable="d"
+    d:DesignHeight="750"
+    d:DesignWidth="900">
+
+    <UserControl.Resources>
+        <converter:EnabilityConverter x:Key="EnabilityConverter" />
+        <converter:ReorderLevelConverter x:Key="ReorderLevelConverter" />
+        <converter:CheckToolTipConverter x:Key="CheckToolTipConverter" />
+        <converter:MoneyConverter x:Key="MoneyConverter" />
+        <converter:ReorderLevelFontWeightConverter x:Key="ReorderLevelFontWeightConverter" />
+
+        <DataTemplate x:Key="AutoCompleteBoxItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5,2" Content="{Binding Name}" MinWidth="100" FontWeight="Bold" Foreground="Gray" />
+            </StackPanel>
+        </DataTemplate>
+
+        <SolidColorBrush x:Key="GotFocusColor" Color="Green" />
+        <SolidColorBrush x:Key="LostFocusColor" Color="Transparent" />
+
+        <DataTemplate x:Key="UnsoldStockPackagesAtHandTemplate">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Margin="0,0,5,0" 
+                           Text="{Binding Quantity, Mode=TwoWay}" 
+                           Foreground="{Binding ReorderLevel, Converter={StaticResource ReorderLevelConverter}}" 
+                           FontWeight="{Binding ReorderLevel, Converter={StaticResource ReorderLevelFontWeightConverter}}" 
+                           VerticalAlignment="Center" />
+
+                <TextBlock Margin="0,0,0,0" 
+                           Text="{Binding StockPackage.Package.Name}" 
+                           Foreground="{Binding ReorderLevel, Converter={StaticResource ReorderLevelConverter}}" 
+                           FontWeight="{Binding ReorderLevel, Converter={StaticResource ReorderLevelFontWeightConverter}}"  
+                           VerticalAlignment="Center" >
+        			<ToolTipService.ToolTip>
+        				<StackPanel Orientation="Horizontal">
+        					<TextBlock Margin="0,0,4,0"><Run Text="Re-Order Level:"/></TextBlock>
+        					<TextBlock Text="{Binding StockPackage.ReOrderLevel}"/>
+        				</StackPanel>
+        			</ToolTipService.ToolTip>
+        		</TextBlock>
+
+                <TextBlock Margin="0,0,5,0" 
+                           Text="," 
+                           FontWeight="{Binding ReorderLevel, Converter={StaticResource ReorderLevelFontWeightConverter}}"  
+                           Foreground="{Binding ReorderLevel, Converter={StaticResource ReorderLevelConverter}}" 
+                           VerticalAlignment="Center" />
+                <TextBlock Margin="0,0,5,0" 
+                           Text="ROL:" 
+                           Foreground="{Binding ReorderLevel, Converter={StaticResource ReorderLevelConverter}}" 
+                           FontWeight="{Binding ReorderLevel, Converter={StaticResource ReorderLevelFontWeightConverter}}"  
+                           VerticalAlignment="Center" />
+                <TextBlock Margin="0,0,5,0" 
+                           Text="{Binding StockPackage.ReOrderLevel}" 
+                           Foreground="{Binding ReorderLevel, Converter={StaticResource ReorderLevelConverter}}" 
+                           FontWeight="{Binding ReorderLevel, Converter={StaticResource ReorderLevelFontWeightConverter}}"  
+                           VerticalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+
+        <HierarchicalDataTemplate x:Key="UnsoldStockPackagesTemplate"
+                                      ItemTemplate="{StaticResource UnsoldStockPackagesAtHandTemplate}" 
+                                      ItemsSource="{Binding Shelfs, Mode=TwoWay}">
+            <StackPanel Orientation="Horizontal" >
+                <!--Foreground="#FF9A3F3F"-->
+                <TextBlock Text="{Binding Stock.Name}" Margin="0,0,5,0" FontSize="13" FontWeight="Bold" Foreground="Silver"  />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="StockPurchasedTreeViewItemTemplate"
+                                      ItemTemplate="{StaticResource UnsoldStockPackagesTemplate}" 
+                                      ItemsSource="{Binding UnsoldStockPackages}">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Margin="0,0,5,0" FontWeight="Bold" FontSize="12" Text="{Binding StockType.Name}"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+
+       
+    </UserControl.Resources>
+
+    <ContentControl IsEnabled="{Binding IsLoggedInUserHasRight, Mode=TwoWay}" HorizontalContentAlignment="Stretch">
+
+        <!--<Grid x:Name="LayoutRoot" Background="#8DE4D8D8" Margin="5,0">-->
+
+        <Grid x:Name="LayoutRoot" Margin="3">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFf2fafd" Offset="0.85"/>
+                    <GradientStop Color="#FFe4f6fa" Offset="1"/>
+                    <GradientStop Color="#FFe7f4fc" Offset="0.3"/>
+                    <GradientStop Color="#FFa9cde7" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--<Grid x:Name="LayoutRoot" Margin="5,0">-->
+            <Grid Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <!--<RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />-->
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Border VerticalAlignment="Top" CornerRadius="2" Margin="5,5,7,10" Background="White" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" >
+                        <Border.Effect>
+                            <DropShadowEffect Color="DimGray"/>
+                        </Border.Effect>
+
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+
+                            <Border Margin="5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="10"  >
+                                <GroupBox Header="Cart Summary" FontSize="13">
+                                <StackPanel>
+                                    <!--<Border BorderBrush="Gray" BorderThickness="0,0,0,0.5" Margin="5,2,5,0"  HorizontalAlignment="Stretch">
+                                        <TextBlock FontSize="11" ><Run Text="CART SUMMARY"/></TextBlock>
+                                    </Border>-->
+
+                                        <Grid Margin="5,2,5,5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Margin="0,3,4,0" Grid.Column="0" Grid.Row="0" FontSize="10" HorizontalAlignment="Right" >Total Item:</TextBlock>
+                                            <TextBlock Margin="0,3,10,0" Grid.Column="1" Grid.Row="0" Text="{Binding CartItemCount}" FontWeight="Bold" FontSize="10" />
+
+                                            <TextBlock Margin="0,3,4,0" Grid.Column="0" Grid.Row="1" FontSize="10" HorizontalAlignment="Right" ><Run Text="Sub Total:"/></TextBlock>
+                                            <TextBlock Margin="0,3,10,0" Grid.Column="1" Grid.Row="1" Text="{Binding SubTotal, Converter={StaticResource MoneyConverter}}" IsEnabled="False" FontWeight="Bold" FontSize="10"  />
+
+                                            <!--<TextBlock Margin="0,5,0,0" Grid.Column="0" Grid.Row="1"  FontSize="9" ><Run Text="Discount:"/></TextBlock>
+                                        <xctk:DecimalUpDown Margin="0,3,10,0" Grid.Column="1" Grid.Row="1" FontSize="9" Value="{Binding Discount, Mode=TwoWay}" IsEnabled="{Binding IsItemInCart, Converter={StaticResource EnabilityConverter}}" FontWeight="Bold" Height="20" Maximum="99999999999999" Minimum="0" />-->
+
+                                            <TextBlock Margin="0,3,4,0" Grid.Column="2" Grid.Row="0" FontSize="10" HorizontalAlignment="Right" >Amount Payable:</TextBlock>
+                                            <TextBlock Margin="0,3,10,0" Text="{Binding NetTotal, Mode=TwoWay, Converter={StaticResource MoneyConverter}}" FontSize="10" FontWeight="Bold" Grid.Column="3" Grid.Row="0" IsEnabled="False" />
+
+
+
+                                            <TextBlock Margin="10,3,4,0" FontSize="10" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right">Discount:</TextBlock>
+                                            <TextBlock Text="{Binding Discount, Converter={StaticResource MoneyConverter}}" Margin="0,3,0,0" FontWeight="Bold" FontSize="10" Grid.Column="5" Grid.Row="0" />
+
+                                            <TextBlock Margin="10,3,4,0" FontSize="10"  Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right">Amount Paid:</TextBlock>
+                                            <TextBlock Margin="0,3,10,0" Text="{Binding PaymentDetail.AmountPaid, Converter={StaticResource MoneyConverter}}" Grid.Column="3" Grid.Row="1" IsEnabled="False" FontWeight="Bold" FontSize="10" />
+
+                                            <TextBlock Margin="10,3,4,0" FontSize="10" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right">Balance:</TextBlock>
+                                            <TextBlock Margin="0,3,10,0" Text="{Binding Balance, Converter={StaticResource MoneyConverter}}" FontWeight="Bold" FontSize="10" Grid.Column="5" Grid.Row="1" IsEnabled="False" />
+
+                                        </Grid>
+                                    </StackPanel>
+                                </GroupBox>
+                            </Border>
+
+                        </Grid>
+
+                    </Border>
+
+                    <!--<TextBlock Margin="5,5,0,0" FontWeight="Bold" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="0"/>-->
+                    <Border Grid.Row="1" Grid.Column="1" Margin="5,0,7,5"  >
+                        <Border CornerRadius="2,2,7,7" Background="Gray" >
+                            <StackPanel >
+                                <Grid Margin="0,2,0,0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Margin="7,3,0,3" Orientation="Horizontal" >
+                                        <TextBlock Margin="0,0,3,0" FontWeight="Bold" FontSize="11" Foreground="White" VerticalAlignment="Center" >Discount:</TextBlock>
+                                        <xctk:DecimalUpDown Value="{Binding Discount, Mode=TwoWay}" IsEnabled="{Binding IsItemInCart, Converter={StaticResource EnabilityConverter}}" Maximum="99999999999999" Minimum="0" MinWidth="50" VerticalAlignment="Center" />
+                                    </StackPanel>
+
+                                    <StackPanel Margin="5,3,2,3" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" >
+                                        <Button  Margin="2,0,2,0" Command="{Binding ChangePriceCommand}" FontSize="9" Padding="15,0" ToolTip="Change Stock Price" Height="20" Content="Change Stock Price" />
+
+                                        <Button Command="{Binding RemoveCartItemCommand}" Margin="0,0,1,0" Padding="15,0" FontSize="9" Content="Remove Cart Item" Height="20"  />
+                                        <Button Margin="0,0,2,0" Command="{Binding ClearCartCommand}" Padding="15,0" FontSize="9" Content="Clear Cart" Height="20" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <DataGrid x:Name="cartDataGrid"
+									AlternatingRowBackground="#1BFF0000"
+                                                                  
+									ItemsSource="{Binding StocksForSale}" 
+									AreRowDetailsFrozen="True" 
+									AutoGenerateColumns="False" 
+									Margin="0,0,0,0"
+									GridLinesVisibility="None" 
+                               
+									HeadersVisibility="Column" 
+									Background="White" 
+									SelectedItem="{Binding StockForSale}" 
+									SelectedIndex="{Binding CartDataGridSelectedIndex, Mode=TwoWay}"
+									Height="250" >
+
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding SelectedItem, ElementName=cartDataGrid, Mode=OneWay}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+
+                                    <DataGrid.Columns>
+
+                                        <DataGridTemplateColumn Header="Item" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="3,0" Text="{Binding StockPackage.Stock.Name}" FontSize="11.5" VerticalAlignment="Center" Foreground="Black" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Package">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="3,0" Text="{Binding StockPackage.Package.Name}" FontSize="11.5" VerticalAlignment="Center" Foreground="Black" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Price">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="3,0" FontSize="11.5" Text="{Binding StockPrice.SellingPrice, Mode=TwoWay, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Black" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <!--<DataGridTemplateColumn Header="Selling Price">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <xctk:DecimalUpDown Value="{Binding ActualSellingPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontSize="11" Foreground="Black" Grid.Column="1" Grid.Row="3" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>-->
+
+                                        <DataGridTemplateColumn Header="Quantity">
+                                            <DataGridTemplateColumn.CellTemplate >
+                                                <DataTemplate>
+                                                    <xctk:IntegerUpDown Value="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Foreground="Black" Grid.Column="1" Grid.Row="3" Minimum="1" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <!--<DataGridTemplateColumn Header="Discount">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <xctk:DecimalUpDown Value="{Binding Discount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontSize="11" Foreground="Black" Grid.Column="1" Grid.Row="3" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>-->
+
+                                        <DataGridTemplateColumn Header="Total Price">
+                                            <DataGridTemplateColumn.CellTemplate >
+                                                <DataTemplate>
+                                                    <TextBlock Margin="3,0" FontSize="11.5" Text="{Binding TotalSellingPrice, Mode=TwoWay, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Black" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </Border>
+                    </Border>
+
+                    <Border Margin="5,3,7,9" CornerRadius="2" Background="White" Grid.Column="1" Grid.Row="2" >
+                        <Border.Effect>
+                            <DropShadowEffect Color="DimGray"/>
+                        </Border.Effect>
+
+                        <StackPanel >
+                            <Border Margin="10,10,10,0" Background="Gray" >
+                            <Grid Margin="10,7,10,10" Grid.Row="0" Grid.ColumnSpan="2" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="25" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Margin="0,0,2,0" FontSize="11" FontWeight="Bold" Foreground="White" Grid.Row="0" Grid.Column="0" >Transaction Date</TextBlock>
+                                <DatePicker Margin="0,0,2,0" Height="22" Padding="0" Grid.Row="1" SelectedDate="{Binding DateSold, Mode=TwoWay}" IsEnabled="{Binding IsDateSoldEnabled, Converter={StaticResource EnabilityConverter}}" />
+
+                                    <TextBlock FontSize="11" Foreground="White" FontWeight="Bold" Grid.Column="1"  Grid.Row="0">Customer</TextBlock>
+                                    <ComboBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" ItemsSource="{Binding Customers, Mode=TwoWay}" IsEnabled="{Binding IsItemInCart, Converter={StaticResource EnabilityConverter}}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Customer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Foreground="#FF413E3E" Text="{Binding FullName}" />
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+
+                                </Grid>
+                            </Border>
+                            
+                            
+                            
+                            <!--<Grid Margin="10,10,10,0" Background="Gray" Grid.Row="0" Grid.ColumnSpan="2" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Margin="10,10,5,2" FontSize="11" Foreground="White" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"><Run Text="Date Sold:"/></TextBlock>
+                                <DatePicker Margin="0,10,0,0" SelectedDate="{Binding DateSold, Mode=TwoWay}" IsEnabled="{Binding IsDateSoldEnabled, Converter={StaticResource EnabilityConverter}}" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+
+                                <TextBlock Margin="10,2,5,5" FontSize="11" Grid.Row="1" Foreground="White" Grid.Column="0" VerticalAlignment="Center"><Run Text="Customer:"/></TextBlock>
+                                <ComboBox Margin="0,3,10,10" Grid.Row="1" ItemsSource="{Binding Customers, Mode=TwoWay}" IsEnabled="{Binding IsItemInCart, Converter={StaticResource EnabilityConverter}}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Customer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Grid.Column="1" Height="23" VerticalAlignment="Center" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontFamily="Verdana" Foreground="#FF413E3E" Text="{Binding FullName}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+                            </Grid>-->
+
+                            <Grid Margin="10,5,10,10" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Border Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" CornerRadius="0,0,8,8" Background="Silver" BorderThickness="1" BorderBrush="LightGray">
+                                    <Grid Margin="0,0,0,0" >
+
+                                        <StackPanel Margin="0" Grid.Row="2" Background="White" >
+                                            <Border BorderBrush="Gray" BorderThickness="0,0,0,1.5" Margin="10,5,10,0"  HorizontalAlignment="Stretch">
+                                                <TextBlock >PAYMENT</TextBlock>
+                                            </Border>
+                                            <Grid Margin="10,2,10,5" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                </Grid.RowDefinitions>
+
+                                                <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,3,0,0" FontSize="11"><Run Text="Payment Mode:"/></TextBlock>
+                                                <ComboBox ItemsSource="{Binding PaymentTypes, Mode=TwoWay}" IsEnabled="{Binding IsItemInCart, Converter={StaticResource EnabilityConverter}}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding PaymentType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontSize="10" Grid.Column="1" Grid.Row="1" Margin="0,3,0,0" Height="23" >
+                                                    <ComboBox.ItemTemplate>
+                                                        <DataTemplate>
+                                                                <TextBlock Foreground="#FF413E3E" Text="{Binding Name}"/>
+                                                        </DataTemplate>
+                                                    </ComboBox.ItemTemplate>
+                                                </ComboBox>
+
+                                                <TextBlock Grid.Column="0" Grid.Row="2" Margin="0,3,0,0" FontSize="11"><Run Text="Amount:"/></TextBlock>
+                                                <xctk:DecimalUpDown Value="{Binding AmountPaid, Mode=TwoWay}" IsEnabled="{Binding IsItemInCart, Converter={StaticResource EnabilityConverter}}" Margin="0,3,0,0" Grid.Column="1" Grid.Row="2" Height="22" Maximum="99999999999999" />
+                                                <Button Command="{Binding AddPaymentCommand}"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0,3,0,0" FontSize="9" Content="Add Payment" Height="22"  />
+                                            </Grid>
+                                        </StackPanel>
+
+                                    </Grid>
+                                </Border>
+
+                                <!--<Border Margin="0,0,0,0" Grid.Row="1" Grid.Column="1" Background="#e0eaf6" >-->
+
+                                <Border CornerRadius="0,0,7,7" Grid.Row="1" Grid.Column="1" Background="Gainsboro" >
+                                    <StackPanel  >
+                                        <Border Padding="2" HorizontalAlignment="Stretch">
+                                            <Grid >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                                                    <TextBlock VerticalAlignment="Bottom" ><Run Text="PAYMENT TRAY"/></TextBlock>
+                                                </StackPanel>
+
+                                                <StackPanel Margin="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <Button Command="{Binding ClearCommand}" Margin="10,0,2,0" FontSize="9" Content="Clear" HorizontalAlignment="Right" Height="20" />
+                                                    <Button Command="{Binding RemoveCommand}" FontSize="9" Content="Remove" HorizontalAlignment="Right" Height="20"  />
+                                                </StackPanel>
+                                            </Grid>
+
+                                        </Border>
+                                        <DataGrid ItemsSource="{Binding PaymentDetails}" 
+											AreRowDetailsFrozen="True" 
+											AutoGenerateColumns="False" 
+											Background="White"
+                                                                  
+											GridLinesVisibility="None" 
+											HeadersVisibility="Column" 
+											Height="80" >
+                                            <DataGrid.Columns>
+
+                                                <DataGridTemplateColumn Header="Amount Paid">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock FontSize="12" Margin="5,0,0,0" Text="{Binding AmountPaid, Converter={StaticResource MoneyConverter}}" TextWrapping="Wrap">
+																<ToolTipService.ToolTip>
+																	<StackPanel Margin="5,10" Visibility="{Binding Check, Converter={StaticResource CheckToolTipConverter}}" Background="White">
+																		<Grid Margin="5,10">
+																			<Grid.ColumnDefinitions>
+																				<ColumnDefinition />
+																				<ColumnDefinition />
+																			</Grid.ColumnDefinitions>
+																			<Grid.RowDefinitions>
+																				<RowDefinition />
+																				<RowDefinition />
+																				<RowDefinition />
+																				<RowDefinition />
+																			</Grid.RowDefinitions>
+                                                                                            
+																			<Border Margin="0,0,0,5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Black"  BorderThickness="0,0,0,1">
+																				<TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontStretch="Expanded" ><Run Text="CHEQUE DETAIL"/></TextBlock>
+																			</Border>
+                                                                                            
+																			<TextBlock Margin="0,0,5,0" Grid.Column="0" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Right" Foreground="Gray"><Run Text="Bank:"/></TextBlock> 
+																			<TextBlock Grid.Column="1" FontSize="11" Grid.Row="1" Foreground="Red" Text="{Binding Cheque.Bank.Name}"/>
+                                                                                            
+																			<TextBlock Margin="0,0,5,0" Grid.Column="0" Grid.Row="2" FontWeight="Bold" HorizontalAlignment="Right" Foreground="Gray"><Run Text="Cheque No:"/></TextBlock>
+																			<TextBlock Grid.Column="1" FontSize="11" Grid.Row="2" Foreground="Red" Text="{Binding Cheque.ChequeNumber}"/>
+                                                                                            
+																			<TextBlock Margin="0,0,5,0" Grid.Column="0" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Right" Foreground="Gray"><Run Text="Account No:"/></TextBlock>
+																			<TextBlock Grid.Column="1" FontSize="11" Grid.Row="3" Foreground="Red" Text="{Binding Cheque.AccountNumber}"/>
+																		</Grid>
+                                                                                     
+																	</StackPanel>
+																</ToolTipService.ToolTip>
+															</TextBlock>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+
+                                                <DataGridTemplateColumn Header="Mode">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock FontSize="12" Text="{Binding PaymentType.Name}" TextWrapping="Wrap" />
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+
+
+                                    </StackPanel>
+                                </Border>
+
+
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <StackPanel Grid.Row="3" Grid.Column="1" Margin="5,0,5,10" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Button Command="{Binding SaveCommand}" Margin="0,0,0,0" Content="Sell" HorizontalAlignment="Right" FontSize="18"   />
+                        <mui:ModernProgressRing Margin="15,0,0,0" IsActive="{Binding IsBusy}" Width="40" Height="40" Style="{Binding SelectedItem.Tag, ElementName=CmbRingStyle}" />
+                    </StackPanel>
+
+                </Grid>
+
+                <Border Margin="5,5,10,10" Background="White" CornerRadius="2" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" >
+                    <Border.Effect>
+                        <DropShadowEffect Color="DimGray" />
+                    </Border.Effect>
+
+                    <StackPanel  >
+                        <Border Grid.Column="0" Margin="8,8,8,3" Padding="2" CornerRadius="2" Background="WhiteSmoke" BorderThickness="1" BorderBrush="Gainsboro" >
+                            <Grid Margin="0,0,0,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="1" Height="25" Width="25" Stretch="UniformToFill" Source="{Binding SearchIcon}"  />
+                                <Controls:AutoCompleteBox Grid.Column="1" ItemsSource="{Binding Stocks}" 
+                                                        BorderBrush="silver" 
+                                                        BorderThickness="1" 
+                                                        SelectedItem="{Binding Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                        ValueMemberPath="Name" 
+                                                        ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}" 
+                                                        IsTextCompletionEnabled="True"  >
+                                </Controls:AutoCompleteBox>
+
+
+                                <!--<Grid Grid.Column="1"  >
+                                    <TextBlock Margin="5,2" Text="This dissappears as the control gets focus..." Background="White" Foreground="Yellow" >
+                                        <TextBlock.Visibility>
+                                            <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                                                <Binding ElementName="txtUserEntry2" Path="Text.IsEmpty" />
+                                                <Binding ElementName="txtUserEntry2" Path="IsFocused" />
+                                            </MultiBinding>
+                                        </TextBlock.Visibility>
+                                    </TextBlock>
+
+                                    <TextBox Name="txtUserEntry2" Background="Transparent"  />
+                                </Grid>-->
+
+
+                                <Button Margin="1,0,0,0" Grid.Column="2" Command="{Binding ReloadCommand}" FontSize="9" Content="..." ToolTip="Re-load stocks on shelf" HorizontalAlignment="Right"  />
+
+                            </Grid>
+                        </Border>
+
+
+                        <!--<Grid Margin="8,8,8,3" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Controls:AutoCompleteBox Grid.Column="0" ItemsSource="{Binding Stocks}" 
+                                                      BorderBrush="Gray" 
+                                                      BorderThickness="1" 
+                                                      ValueMemberPath="Name" 
+                                                      SelectedItem="{Binding Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                      ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}" 
+                                                      IsTextCompletionEnabled="True"  >
+                              
+                            </Controls:AutoCompleteBox>
+                            <Button Margin="1,0,0,0" Grid.Column="1" Command="{Binding ReloadCommand}" FontSize="9" Content="..." ToolTip="Re-load stocks at hand" HorizontalAlignment="Right"  />
+                        </Grid>-->
+
+
+                        <Border Margin="8,0" HorizontalAlignment="Stretch" Background="Gray">
+                            <TextBlock Margin="10,5,0,5" HorizontalAlignment="Left" FontWeight="Bold" Foreground="WhiteSmoke" FontSize="15" >STOCK ON SHELF</TextBlock>
+                        </Border>
+
+                        <!--<Border Margin="8,0" Background="#FFF8ACB4">-->
+                        <Border Margin="8,0" >
+                        <TreeView x:Name="treeView" Height="530"
+							BorderBrush="Gray"
+							Background="#FFF8ACB4"
+                                  
+							BorderThickness="0" 
+							VerticalAlignment="Stretch"
+							ScrollViewer.VerticalScrollBarVisibility="Auto"
+							ItemTemplate="{StaticResource StockPurchasedTreeViewItemTemplate}" 
+							ItemsSource="{Binding StocksOnShelfAtHand, Mode=TwoWay}" MouseLeftButtonUp="treeView_MouseLeftButtonUp">
+
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectedItemChanged">
+                                    <i:InvokeCommandAction Command="{Binding TreeViewSelectedItemChangedCommand}" CommandParameter="{Binding SelectedItem, ElementName=treeView, Mode=OneWay}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+
+                        </TreeView>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+
+
+            <!--<Controls:AutoCompleteBox HorizontalAlignment="Left" Margin="401,600,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="298"/>-->
+
+
+
+        </Grid>
+    </ContentControl>
+</UserControl>

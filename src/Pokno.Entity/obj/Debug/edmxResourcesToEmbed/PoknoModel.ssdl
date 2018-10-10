@@ -1,0 +1,2154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PoknoModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=&quot;C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Shell\bin\Debug\db\Pokno.db&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="APPLICATION_MODE">
+    <Key>
+      <PropertyRef Name="Application_Mode_Id" />
+    </Key>
+    <Property Name="Application_Mode_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Application_Mode_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Application_Mode_Description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="BANK">
+    <Key>
+      <PropertyRef Name="Bank_Id" />
+    </Key>
+    <Property Name="Bank_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bank_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bank_Description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="CASH">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHEQUE">
+    <Key>
+      <PropertyRef Name="Payment_Detail_Id" />
+    </Key>
+    <Property Name="Payment_Detail_Id" Type="integer" Nullable="false" />
+    <Property Name="Bank_Id" Type="integer" Nullable="false" />
+    <Property Name="Cheque_Number" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Account_Number" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="Company_Id" />
+    </Key>
+    <Property Name="Company_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="1000" />
+    <Property Name="Website" Type="varchar" MaxLength="150" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Disclaimer" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="CURRENT_ESNECIL">
+    <Key>
+      <PropertyRef Name="Esnecil_Id" />
+    </Key>
+    <Property Name="Esnecil_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CURRENT_STOCK_PACKAGE">
+    <Key>
+      <PropertyRef Name="Stock_Package_Id" />
+    </Key>
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CURRENT_STOCK_PACKAGE_RELATIONSHIP">
+    <Key>
+      <PropertyRef Name="Stock_Package_Relationship_Id" />
+    </Key>
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CURRENT_STOCK_PRICE">
+    <Key>
+      <PropertyRef Name="Stock_Price_Id" />
+    </Key>
+    <Property Name="Stock_Price_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DELETED_SHELF_STOCK">
+    <Key>
+      <PropertyRef Name="Shelf_Id" />
+    </Key>
+    <Property Name="Shelf_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity" Type="integer" Nullable="false" />
+    <Property Name="Deleted_By" Type="integer" Nullable="false" />
+    <Property Name="Date_Deleted" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DELETED_SOLD_STOCK">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Shelf_Id" Type="integer" Nullable="false" />
+    <Property Name="Sold_Stock_Batch_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Price_Id" Type="integer" Nullable="false" />
+    <Property Name="Returned" Type="bit" Nullable="false" />
+    <Property Name="Quantity" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DELETED_SOLD_STOCK_BATCH">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Batch_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Batch_Id" Type="integer" Nullable="false" />
+    <Property Name="Customer_Id" Type="integer" Nullable="false" />
+    <Property Name="Payment_Id" Type="integer" Nullable="false" />
+    <Property Name="Seller_Id" Type="integer" Nullable="false" />
+    <Property Name="Total_Discount" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Date_Sold" Type="datetime" Nullable="false" />
+    <Property Name="Date_Deleted" Type="datetime" Nullable="false" />
+    <Property Name="Deleted_Reason" Type="varchar" MaxLength="600" Nullable="false" />
+    <Property Name="Deleted_By_Person_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESNECIL">
+    <Key>
+      <PropertyRef Name="Esnecil_Id" />
+    </Key>
+    <Property Name="Esnecil_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Validation_Key" Type="varchar" MaxLength="2500" />
+    <Property Name="Machine_Code" Type="varchar" MaxLength="2147483647" />
+    <Property Name="Esnecil_Code" Type="varchar" MaxLength="2147483647" />
+    <Property Name="Serial_Code" Type="varchar" MaxLength="2147483647" />
+    <Property Name="Activation_Date" Type="datetime" />
+    <Property Name="Is_Evaluation" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EXPENSES">
+    <Key>
+      <PropertyRef Name="Expenses_Id" />
+    </Key>
+    <Property Name="Expenses_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Opening_Balance" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Additional_Cash" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Cash_At_Hand" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Closing_Balance" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Expenses_Date" Type="datetime" Nullable="false" />
+    <Property Name="Created_By_Person_Id" Type="integer" Nullable="false" />
+    <Property Name="Date_Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EXPENSES_CATEGORY">
+    <Key>
+      <PropertyRef Name="Expenses_Category_Id" />
+    </Key>
+    <Property Name="Expenses_Category_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Expenses_Category_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expenses_Category_Description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="EXPENSES_DETAIL">
+    <Key>
+      <PropertyRef Name="Expenses_Detail_Id" />
+    </Key>
+    <Property Name="Expenses_Detail_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Expenses_Id" Type="integer" Nullable="false" />
+    <Property Name="Expenses_Category_Id" Type="integer" Nullable="false" />
+    <Property Name="Collected_By" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Payment_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Purpose" Type="varchar" MaxLength="850" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOCATION">
+    <Key>
+      <PropertyRef Name="Location_Id" />
+    </Key>
+    <Property Name="Location_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location_Address" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PACKAGE">
+    <Key>
+      <PropertyRef Name="Package_Id" />
+    </Key>
+    <Property Name="Package_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Package_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Package_Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PACKAGE_RELATIONSHIP">
+    <Key>
+      <PropertyRef Name="Package_Relationship_Id" />
+    </Key>
+    <Property Name="Package_Relationship_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Sub_Stock_Package_Id" Type="integer" />
+    <Property Name="Quantity_In_Package" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Rank" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PART">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAYMENT">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transaction_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Amount_Payable" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Serial_Number" Type="integer" />
+    <Property Name="Invoice_Number" Type="varchar" MaxLength="25" />
+    <Property Name="Date_Paid" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAYMENT_DETAIL">
+    <Key>
+      <PropertyRef Name="Payment_Detail_Id" />
+    </Key>
+    <Property Name="Payment_Detail_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payment_Id" Type="integer" Nullable="false" />
+    <Property Name="Payment_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Payment_Date" Type="datetime" Nullable="false" />
+    <Property Name="Amount_Paid" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAYMENT_TYPE">
+    <Key>
+      <PropertyRef Name="Payment_Type_Id" />
+    </Key>
+    <Property Name="Payment_Type_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payment_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PERSON">
+    <Key>
+      <PropertyRef Name="Person_Id" />
+    </Key>
+    <Property Name="Person_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Person_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Other_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Mobile_Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Contact_Address" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Role_Id" Type="integer" Nullable="false" />
+    <Property Name="Location_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERSON_COMPANY">
+    <Key>
+      <PropertyRef Name="Person_Company_Id" />
+    </Key>
+    <Property Name="Person_Company_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Person_Id" Type="integer" Nullable="false" />
+    <Property Name="Company_Id" Type="integer" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="PERSON_LOGIN">
+    <Key>
+      <PropertyRef Name="Person_Id" />
+    </Key>
+    <Property Name="Person_Id" Type="integer" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="blob" Nullable="false" />
+    <Property Name="Is_Locked" Type="bit" Nullable="false" />
+    <Property Name="Is_Activated" Type="bit" Nullable="false" />
+    <Property Name="Is_First_Logon" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERSON_TYPE">
+    <Key>
+      <PropertyRef Name="Person_Type_Id" />
+    </Key>
+    <Property Name="Person_Type_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Person_Type_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Person_Type_Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="REPLACED_STOCK_ACTION">
+    <Key>
+      <PropertyRef Name="Replaced_Stock_Action_Id" />
+    </Key>
+    <Property Name="Replaced_Stock_Action_Id" Type="integer" Nullable="false" />
+    <Property Name="Replaced_Stock_Action_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Replaced_Stock_Action_Description" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RETURNED_STOCK">
+    <Key>
+      <PropertyRef Name="Returned_Stock_Id" />
+    </Key>
+    <Property Name="Returned_Stock_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Return_Date" Type="datetime" Nullable="false" />
+    <Property Name="Return_Reason" Type="varchar" MaxLength="550" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="550" />
+    <Property Name="Entered_By" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RETURNED_STOCK_DETAIL">
+    <Key>
+      <PropertyRef Name="Returned_Stock_Detail_Id" />
+    </Key>
+    <Property Name="Returned_Stock_Detail_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sold_Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Returned_Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Returned_Quantity" Type="integer" Nullable="false" />
+    <Property Name="Stock_State_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Return_Action_Id" Type="integer" Nullable="false" />
+    <Property Name="Refunded" Type="bit" Nullable="false" />
+    <Property Name="Payment_Id" Type="integer" />
+    <Property Name="Returned_To_Shelf" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RETURNED_STOCK_REPLACEMENT">
+    <Key>
+      <PropertyRef Name="Returned_Stock_Replacement_Id" />
+    </Key>
+    <Property Name="Returned_Stock_Replacement_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Returned_Stock_Detail_Id" Type="integer" Nullable="false" />
+    <Property Name="Sold_Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Replaced_Stock_Action_Id" Type="integer" />
+    <Property Name="Action_Reason" Type="varchar" MaxLength="650" />
+    <Property Name="Action_Date" Type="datetime" />
+    <Property Name="Action_Executor_Id" Type="integer" />
+  </EntityType>
+  <EntityType Name="RIGHT">
+    <Key>
+      <PropertyRef Name="Right_Id" />
+    </Key>
+    <Property Name="Right_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Right_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Right_Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role_Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ROLE_RIGHT">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+      <PropertyRef Name="Right_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="integer" Nullable="false" />
+    <Property Name="Right_Id" Type="integer" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="SETTING">
+    <Key>
+      <PropertyRef Name="Setting_Id" />
+    </Key>
+    <Property Name="Setting_Id" Type="integer" Nullable="false" />
+    <Property Name="Application_Date" Type="datetime" />
+    <Property Name="Application_Mode_Id" Type="integer" Nullable="false" />
+    <Property Name="Is_Customer_Loyalty_Enabled" Type="bit" Nullable="false" />
+    <Property Name="Show_Package_Relationship_In_Stock_Summary_Review_Report" Type="bit" Nullable="false" />
+    <Property Name="Is_Activated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHELF">
+    <Key>
+      <PropertyRef Name="Shelf_Id" />
+    </Key>
+    <Property Name="Shelf_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+    <Property Name="Entered_By" Type="integer" Nullable="false" />
+    <Property Name="Location_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity" Type="integer" Nullable="false" />
+    <Property Name="Total_Unit_Quantity" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Date_Entered" Type="datetime" Nullable="false" />
+    <Property Name="Expiry_Date" Type="datetime" />
+    <Property Name="Sold" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHELF_STOCK_REPLACEMENT">
+    <Key>
+      <PropertyRef Name="Shelf_Id" />
+    </Key>
+    <Property Name="Shelf_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity_Replaced" Type="integer" Nullable="false" />
+    <Property Name="Date_Replaced" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Shelf_Id" Type="integer" Nullable="false" />
+    <Property Name="Sold_Stock_Batch_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Price_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity" Type="integer" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Returned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK_BATCH">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Batch_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Batch_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Seller_Id" Type="integer" Nullable="false" />
+    <Property Name="Customer_Id" Type="integer" />
+    <Property Name="Payment_Id" Type="integer" Nullable="false" />
+    <Property Name="Date_Sold" Type="datetime" Nullable="false" />
+    <Property Name="Total_Discount" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK_RETURN">
+    <Key>
+      <PropertyRef Name="Stock_On_Shelf_Id" />
+    </Key>
+    <Property Name="Stock_On_Shelf_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_State_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity_Returned" Type="integer" Nullable="false" />
+    <Property Name="Date_Returned" Type="datetime" Nullable="false" />
+    <Property Name="Return_Reason" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Replaced" Type="bit" Nullable="false" />
+    <Property Name="Refunded" Type="bit" Nullable="false" />
+    <Property Name="Back_To_Stock_Purchased" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK_RETURN_REFUND">
+    <Key>
+      <PropertyRef Name="Stock_On_Shelf_Id" />
+    </Key>
+    <Property Name="Stock_On_Shelf_Id" Type="integer" Nullable="false" />
+    <Property Name="Payment_Id" Type="integer" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="STOCK">
+    <Key>
+      <PropertyRef Name="Stock_Id" />
+    </Key>
+    <Property Name="Stock_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stock_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Descrption" Type="varchar" MaxLength="150" />
+    <Property Name="Image_Path" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="STOCK_BARCODE">
+    <Key>
+      <PropertyRef Name="Stock_Barcode_Id" />
+    </Key>
+    <Property Name="Stock_Barcode_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Barcode" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_CATEGORY">
+    <Key>
+      <PropertyRef Name="Stock_Category_Id" />
+    </Key>
+    <Property Name="Stock_Category_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Category_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stock_Category_Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="STOCK_PACKAGE">
+    <Key>
+      <PropertyRef Name="Stock_Package_Id" />
+    </Key>
+    <Property Name="Stock_Package_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Description" Type="varchar" MaxLength="250" />
+    <Property Name="Re_Order_Level" Type="integer" Nullable="false" />
+    <Property Name="Expiry_Date_No_Of_Days_Alert" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_PACKAGE_RELATIONSHIP">
+    <Key>
+      <PropertyRef Name="Stock_Package_Relationship_Id" />
+    </Key>
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Date_Set" Type="datetime" Nullable="false" />
+    <Property Name="Set_By_Person_Id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_PRICE">
+    <Key>
+      <PropertyRef Name="Stock_Price_Id" />
+    </Key>
+    <Property Name="Stock_Price_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Cost_Price" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Selling_Price" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Date_Entered" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASE_BATCH">
+    <Key>
+      <PropertyRef Name="Stock_Purchase_Batch_Id" />
+    </Key>
+    <Property Name="Stock_Purchase_Batch_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Purchase_Batch_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Supplier_Id" Type="integer" Nullable="false" />
+    <Property Name="Buyer_Id" Type="integer" Nullable="false" />
+    <Property Name="Payment_Id" Type="integer" Nullable="false" />
+    <Property Name="Date_Puchased" Type="datetime" Nullable="false" />
+    <Property Name="Supplier_Expenses" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Invoice_Number" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASE_BATCH_TYPE">
+    <Key>
+      <PropertyRef Name="Stock_Purchase_Batch_Type_Id" />
+    </Key>
+    <Property Name="Stock_Purchase_Batch_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Purchase_Batch_Type_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Purchase_Batch_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity" Type="integer" Nullable="false" />
+    <Property Name="Unit_Cost" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Expiry_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED_POOL">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Pool_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Pool_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Purchase_Batch_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+    <Property Name="Unit_Item_Package_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED_POOL_DETAIL">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Purchased_Pool_Id" Type="integer" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED_RETURN">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Return_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Return_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Purchase_Batch_Id" Type="integer" Nullable="false" />
+    <Property Name="Quantity" Type="integer" Nullable="false" />
+    <Property Name="Unit_Cost" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="integer" />
+    <Property Name="Stock_State_Id" Type="integer" Nullable="false" />
+    <Property Name="Replaced_Stock_Action_Id" Type="integer" />
+    <Property Name="Return_Reason" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Date_Returned" Type="datetime" Nullable="false" />
+    <Property Name="Returned_By_Person_Id" Type="integer" />
+  </EntityType>
+  <EntityType Name="STOCK_REPLACEMENT">
+    <Key>
+      <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      <PropertyRef Name="Stock_Id" />
+      <PropertyRef Name="Stock_Quantity_Id" />
+    </Key>
+    <Property Name="Stock_Purchase_Batch_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Quantity_Id" Type="integer" Nullable="false" />
+    <Property Name="Replaced_Quantity" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Date_Replaced" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_RETURN_ACTION">
+    <Key>
+      <PropertyRef Name="Stock_Return_Action_Id" />
+    </Key>
+    <Property Name="Stock_Return_Action_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Return_Action_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stock_Return_Action_Description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="STOCK_RETURN_TYPE">
+    <Key>
+      <PropertyRef Name="Stock_Return_Type_Id" />
+    </Key>
+    <Property Name="Stock_Return_Type_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Return_Type_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_REVIEW">
+    <Key>
+      <PropertyRef Name="Stock_Review_Summary_Id" />
+    </Key>
+    <Property Name="Stock_Review_Summary_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reviewed_By_Person_Id" Type="integer" Nullable="false" />
+    <Property Name="Review_Year" Type="integer" Nullable="false" />
+    <Property Name="Review_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_REVIEW_DETAIL">
+    <Key>
+      <PropertyRef Name="Stock_Review_Detail_Id" />
+    </Key>
+    <Property Name="Stock_Review_Detail_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Review_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Name" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="integer" Nullable="false" />
+    <Property Name="Initial_Stock_Balance" Type="varchar" MaxLength="250" />
+    <Property Name="Initial_Stock_Balance_Value" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Stock_Balance" Type="varchar" MaxLength="250" />
+    <Property Name="Stock_Balance_Value" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Stock_Balance_Unit_Item" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Quantity_Purchased" Type="varchar" MaxLength="250" />
+    <Property Name="Cost" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Quantity_Sold" Type="varchar" MaxLength="250" />
+    <Property Name="Cost_Price" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Selling_Price" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Discount" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Profit" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Profit2" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Package_Relationship" Type="varchar" MaxLength="750" />
+    <Property Name="Transaction_Month" Type="integer" />
+    <Property Name="Transaction_Year" Type="integer" />
+    <Property Name="Monthly_Total_Expenses" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="Monthly_Transaction_Discount" Type="decimal" Precision="53" Scale="0" />
+  </EntityType>
+  <EntityType Name="STOCK_STATE">
+    <Key>
+      <PropertyRef Name="Stock_State_Id" />
+    </Key>
+    <Property Name="Stock_State_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_State_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stock_State_Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="STOCK_TYPE">
+    <Key>
+      <PropertyRef Name="Stock_Type_Id" />
+    </Key>
+    <Property Name="Stock_Type_Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Category_Id" Type="integer" Nullable="false" />
+    <Property Name="Stock_Type_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stock_Type_Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="STORE">
+    <Key>
+      <PropertyRef Name="Store_Id" />
+    </Key>
+    <Property Name="Store_Id" Type="integer" Nullable="false" />
+    <Property Name="Store_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="1000" />
+    <Property Name="Website" Type="varchar" MaxLength="150" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Logo_File_Name" Type="varchar" MaxLength="500" />
+    <Property Name="Disclaimer" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TRANSACTION_TYPE">
+    <Key>
+      <PropertyRef Name="Transaction_Type_Id" />
+    </Key>
+    <Property Name="Transaction_Type_Id" Type="integer" Nullable="false" />
+    <Property Name="Transaction_Type_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Transaction_Type_Description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_CASH_0_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="CASH" Type="Self.CASH" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="CASH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHEQUE_0_0">
+    <End Role="BANK" Type="Self.BANK" Multiplicity="1" />
+    <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANK">
+        <PropertyRef Name="Bank_Id" />
+      </Principal>
+      <Dependent Role="CHEQUE">
+        <PropertyRef Name="Bank_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHEQUE_1_0">
+    <End Role="PAYMENT_DETAIL" Type="Self.PAYMENT_DETAIL" Multiplicity="1" />
+    <End Role="CHEQUE" Type="Self.CHEQUE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT_DETAIL">
+        <PropertyRef Name="Payment_Detail_Id" />
+      </Principal>
+      <Dependent Role="CHEQUE">
+        <PropertyRef Name="Payment_Detail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_ESNECIL_0_0">
+    <End Role="ESNECIL" Type="Self.ESNECIL" Multiplicity="1" />
+    <End Role="CURRENT_ESNECIL" Type="Self.CURRENT_ESNECIL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ESNECIL">
+        <PropertyRef Name="Esnecil_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_ESNECIL">
+        <PropertyRef Name="Esnecil_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_STOCK_PACKAGE_0_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="CURRENT_STOCK_PACKAGE" Type="Self.CURRENT_STOCK_PACKAGE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="CURRENT_STOCK_PACKAGE_RELATIONSHIP" Type="Self.CURRENT_STOCK_PACKAGE_RELATIONSHIP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_STOCK_PRICE_0_0">
+    <End Role="STOCK_PRICE" Type="Self.STOCK_PRICE" Multiplicity="1" />
+    <End Role="CURRENT_STOCK_PRICE" Type="Self.CURRENT_STOCK_PRICE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SHELF_STOCK_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="DELETED_SHELF_STOCK" Type="Self.DELETED_SHELF_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SHELF_STOCK">
+        <PropertyRef Name="Deleted_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SHELF_STOCK_1_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="DELETED_SHELF_STOCK" Type="Self.DELETED_SHELF_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SHELF_STOCK">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SHELF_STOCK_2_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="DELETED_SHELF_STOCK" Type="Self.DELETED_SHELF_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SHELF_STOCK">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_0_0">
+    <End Role="STOCK_PRICE" Type="Self.STOCK_PRICE" Multiplicity="1" />
+    <End Role="DELETED_SOLD_STOCK" Type="Self.DELETED_SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_1_0">
+    <End Role="DELETED_SOLD_STOCK_BATCH" Type="Self.DELETED_SOLD_STOCK_BATCH" Multiplicity="1" />
+    <End Role="DELETED_SOLD_STOCK" Type="Self.DELETED_SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="DELETED_SOLD_STOCK_BATCH" Type="Self.DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Deleted_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_1_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="DELETED_SOLD_STOCK_BATCH" Type="Self.DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Seller_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_2_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="DELETED_SOLD_STOCK_BATCH" Type="Self.DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_3_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="DELETED_SOLD_STOCK_BATCH" Type="Self.DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Customer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="EXPENSES" Type="Self.EXPENSES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES">
+        <PropertyRef Name="Created_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_DETAIL_0_0">
+    <End Role="EXPENSES_CATEGORY" Type="Self.EXPENSES_CATEGORY" Multiplicity="1" />
+    <End Role="EXPENSES_DETAIL" Type="Self.EXPENSES_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EXPENSES_CATEGORY">
+        <PropertyRef Name="Expenses_Category_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES_DETAIL">
+        <PropertyRef Name="Expenses_Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_DETAIL_1_0">
+    <End Role="PAYMENT_TYPE" Type="Self.PAYMENT_TYPE" Multiplicity="1" />
+    <End Role="EXPENSES_DETAIL" Type="Self.EXPENSES_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT_TYPE">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES_DETAIL">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_DETAIL_2_0">
+    <End Role="EXPENSES" Type="Self.EXPENSES" Multiplicity="1" />
+    <End Role="EXPENSES_DETAIL" Type="Self.EXPENSES_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EXPENSES">
+        <PropertyRef Name="Expenses_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES_DETAIL">
+        <PropertyRef Name="Expenses_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACKAGE_RELATIONSHIP_0_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="0..1" />
+    <End Role="PACKAGE_RELATIONSHIP" Type="Self.PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Sub_Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACKAGE_RELATIONSHIP_1_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="PACKAGE_RELATIONSHIP" Type="Self.PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACKAGE_RELATIONSHIP_2_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="PACKAGE_RELATIONSHIP" Type="Self.PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PART_0_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="PART" Type="Self.PART" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="PART">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAYMENT_0_0">
+    <End Role="TRANSACTION_TYPE" Type="Self.TRANSACTION_TYPE" Multiplicity="1" />
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANSACTION_TYPE">
+        <PropertyRef Name="Transaction_Type_Id" />
+      </Principal>
+      <Dependent Role="PAYMENT">
+        <PropertyRef Name="Transaction_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAYMENT_DETAIL_0_0">
+    <End Role="PAYMENT_TYPE" Type="Self.PAYMENT_TYPE" Multiplicity="1" />
+    <End Role="PAYMENT_DETAIL" Type="Self.PAYMENT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT_TYPE">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Principal>
+      <Dependent Role="PAYMENT_DETAIL">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAYMENT_DETAIL_1_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="PAYMENT_DETAIL" Type="Self.PAYMENT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="PAYMENT_DETAIL">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_0_0">
+    <End Role="LOCATION" Type="Self.LOCATION" Multiplicity="1" />
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCATION">
+        <PropertyRef Name="Location_Id" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="Location_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_1_0">
+    <End Role="ROLE" Type="Self.ROLE" Multiplicity="1" />
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_2_0">
+    <End Role="PERSON_TYPE" Type="Self.PERSON_TYPE" Multiplicity="1" />
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON_TYPE">
+        <PropertyRef Name="Person_Type_Id" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="Person_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_COMPANY_0_0">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="PERSON_COMPANY" Type="Self.PERSON_COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="Company_Id" />
+      </Principal>
+      <Dependent Role="PERSON_COMPANY">
+        <PropertyRef Name="Company_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_COMPANY_1_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="PERSON_COMPANY" Type="Self.PERSON_COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="PERSON_COMPANY">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_LOGIN_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="PERSON_LOGIN" Type="Self.PERSON_LOGIN" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="PERSON_LOGIN">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="RETURNED_STOCK" Type="Self.RETURNED_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK">
+        <PropertyRef Name="Entered_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_0_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="0..1" />
+    <End Role="RETURNED_STOCK_DETAIL" Type="Self.RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_1_0">
+    <End Role="STOCK_RETURN_ACTION" Type="Self.STOCK_RETURN_ACTION" Multiplicity="1" />
+    <End Role="RETURNED_STOCK_DETAIL" Type="Self.RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_RETURN_ACTION">
+        <PropertyRef Name="Stock_Return_Action_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Stock_Return_Action_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_2_0">
+    <End Role="STOCK_STATE" Type="Self.STOCK_STATE" Multiplicity="1" />
+    <End Role="RETURNED_STOCK_DETAIL" Type="Self.RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_STATE">
+        <PropertyRef Name="Stock_State_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Stock_State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_3_0">
+    <End Role="RETURNED_STOCK" Type="Self.RETURNED_STOCK" Multiplicity="1" />
+    <End Role="RETURNED_STOCK_DETAIL" Type="Self.RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RETURNED_STOCK">
+        <PropertyRef Name="Returned_Stock_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Returned_Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_4_0">
+    <End Role="SOLD_STOCK" Type="Self.SOLD_STOCK" Multiplicity="1" />
+    <End Role="RETURNED_STOCK_DETAIL" Type="Self.RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+    <End Role="RETURNED_STOCK_REPLACEMENT" Type="Self.RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Action_Executor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_1_0">
+    <End Role="REPLACED_STOCK_ACTION" Type="Self.REPLACED_STOCK_ACTION" Multiplicity="0..1" />
+    <End Role="RETURNED_STOCK_REPLACEMENT" Type="Self.RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REPLACED_STOCK_ACTION">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_2_0">
+    <End Role="SOLD_STOCK" Type="Self.SOLD_STOCK" Multiplicity="1" />
+    <End Role="RETURNED_STOCK_REPLACEMENT" Type="Self.RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_3_0">
+    <End Role="RETURNED_STOCK_DETAIL" Type="Self.RETURNED_STOCK_DETAIL" Multiplicity="1" />
+    <End Role="RETURNED_STOCK_REPLACEMENT" Type="Self.RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Returned_Stock_Detail_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Returned_Stock_Detail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROLE_RIGHT_0_0">
+    <End Role="RIGHT" Type="Self.RIGHT" Multiplicity="1" />
+    <End Role="ROLE_RIGHT" Type="Self.ROLE_RIGHT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RIGHT">
+        <PropertyRef Name="Right_Id" />
+      </Principal>
+      <Dependent Role="ROLE_RIGHT">
+        <PropertyRef Name="Right_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROLE_RIGHT_1_0">
+    <End Role="ROLE" Type="Self.ROLE" Multiplicity="1" />
+    <End Role="ROLE_RIGHT" Type="Self.ROLE_RIGHT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="ROLE_RIGHT">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SETTING_0_0">
+    <End Role="APPLICATION_MODE" Type="Self.APPLICATION_MODE" Multiplicity="1" />
+    <End Role="SETTING" Type="Self.SETTING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPLICATION_MODE">
+        <PropertyRef Name="Application_Mode_Id" />
+      </Principal>
+      <Dependent Role="SETTING">
+        <PropertyRef Name="Application_Mode_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_0_0">
+    <End Role="LOCATION" Type="Self.LOCATION" Multiplicity="1" />
+    <End Role="SHELF" Type="Self.SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCATION">
+        <PropertyRef Name="Location_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Location_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_1_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="SHELF" Type="Self.SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Entered_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_2_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="SHELF" Type="Self.SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_3_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="SHELF" Type="Self.SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_STOCK_REPLACEMENT_0_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="SHELF_STOCK_REPLACEMENT" Type="Self.SHELF_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="SHELF_STOCK_REPLACEMENT">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_0_0">
+    <End Role="STOCK_PRICE" Type="Self.STOCK_PRICE" Multiplicity="1" />
+    <End Role="SOLD_STOCK" Type="Self.SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_1_0">
+    <End Role="SOLD_STOCK_BATCH" Type="Self.SOLD_STOCK_BATCH" Multiplicity="1" />
+    <End Role="SOLD_STOCK" Type="Self.SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_2_0">
+    <End Role="SHELF" Type="Self.SHELF" Multiplicity="1" />
+    <End Role="SOLD_STOCK" Type="Self.SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHELF">
+        <PropertyRef Name="Shelf_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK">
+        <PropertyRef Name="Shelf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_BATCH_0_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="SOLD_STOCK_BATCH" Type="Self.SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_BATCH_1_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+    <End Role="SOLD_STOCK_BATCH" Type="Self.SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Customer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_BATCH_2_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="SOLD_STOCK_BATCH" Type="Self.SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Seller_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_0_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="SOLD_STOCK_RETURN" Type="Self.SOLD_STOCK_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_1_0">
+    <End Role="STOCK_STATE" Type="Self.STOCK_STATE" Multiplicity="1" />
+    <End Role="SOLD_STOCK_RETURN" Type="Self.SOLD_STOCK_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_STATE">
+        <PropertyRef Name="Stock_State_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN">
+        <PropertyRef Name="Stock_State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_REFUND_0_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="SOLD_STOCK_RETURN_REFUND" Type="Self.SOLD_STOCK_RETURN_REFUND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN_REFUND">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_REFUND_1_0">
+    <End Role="SOLD_STOCK_RETURN" Type="Self.SOLD_STOCK_RETURN" Multiplicity="1" />
+    <End Role="SOLD_STOCK_RETURN_REFUND" Type="Self.SOLD_STOCK_RETURN_REFUND" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK_RETURN">
+        <PropertyRef Name="Stock_On_Shelf_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN_REFUND">
+        <PropertyRef Name="Stock_On_Shelf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_0_0">
+    <End Role="STOCK_TYPE" Type="Self.STOCK_TYPE" Multiplicity="1" />
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_TYPE">
+        <PropertyRef Name="Stock_Type_Id" />
+      </Principal>
+      <Dependent Role="STOCK">
+        <PropertyRef Name="Stock_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_0_0">
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_1_0">
+    <End Role="PACKAGE" Type="Self.PACKAGE" Multiplicity="1" />
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACKAGE">
+        <PropertyRef Name="Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE">
+        <PropertyRef Name="Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_RELATIONSHIP_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Set_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_RELATIONSHIP_1_0">
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PRICE_0_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="STOCK_PRICE" Type="Self.STOCK_PRICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_0_0">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="STOCK_PURCHASE_BATCH" Type="Self.STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_1_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="STOCK_PURCHASE_BATCH" Type="Self.STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Buyer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_2_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="STOCK_PURCHASE_BATCH" Type="Self.STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Supplier_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_3_0">
+    <End Role="STOCK_PURCHASE_BATCH_TYPE" Type="Self.STOCK_PURCHASE_BATCH_TYPE" Multiplicity="1" />
+    <End Role="STOCK_PURCHASE_BATCH" Type="Self.STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH_TYPE">
+        <PropertyRef Name="Stock_Purchase_Batch_Type_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_0_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED" Type="Self.STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_1_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED" Type="Self.STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_2_0">
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED" Type="Self.STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_3_0">
+    <End Role="STOCK_PURCHASE_BATCH" Type="Self.STOCK_PURCHASE_BATCH" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED" Type="Self.STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_0_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_POOL" Type="Self.STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Unit_Item_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_1_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_POOL" Type="Self.STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_2_0">
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_POOL" Type="Self.STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_3_0">
+    <End Role="STOCK_PURCHASE_BATCH" Type="Self.STOCK_PURCHASE_BATCH" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_POOL" Type="Self.STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_4_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_POOL" Type="Self.STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_DETAIL_0_0">
+    <End Role="STOCK_PURCHASED_POOL" Type="Self.STOCK_PURCHASED_POOL" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_POOL_DETAIL" Type="Self.STOCK_PURCHASED_POOL_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Purchased_Pool_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL_DETAIL">
+        <PropertyRef Name="Stock_Purchased_Pool_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_DETAIL_1_0">
+    <End Role="STOCK_PURCHASED" Type="Self.STOCK_PURCHASED" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_POOL_DETAIL" Type="Self.STOCK_PURCHASED_POOL_DETAIL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Purchased_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL_DETAIL">
+        <PropertyRef Name="Stock_Purchased_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+    <End Role="STOCK_PURCHASED_RETURN" Type="Self.STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Returned_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_1_0">
+    <End Role="REPLACED_STOCK_ACTION" Type="Self.REPLACED_STOCK_ACTION" Multiplicity="0..1" />
+    <End Role="STOCK_PURCHASED_RETURN" Type="Self.STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REPLACED_STOCK_ACTION">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_2_0">
+    <End Role="STOCK_STATE" Type="Self.STOCK_STATE" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_RETURN" Type="Self.STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_STATE">
+        <PropertyRef Name="Stock_State_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_3_0">
+    <End Role="STOCK_PACKAGE" Type="Self.STOCK_PACKAGE" Multiplicity="0..1" />
+    <End Role="STOCK_PURCHASED_RETURN" Type="Self.STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_4_0">
+    <End Role="STOCK_PACKAGE_RELATIONSHIP" Type="Self.STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_RETURN" Type="Self.STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_5_0">
+    <End Role="STOCK_PURCHASE_BATCH" Type="Self.STOCK_PURCHASE_BATCH" Multiplicity="1" />
+    <End Role="STOCK_PURCHASED_RETURN" Type="Self.STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_REVIEW_0_0">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="STOCK_REVIEW" Type="Self.STOCK_REVIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_REVIEW">
+        <PropertyRef Name="Reviewed_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_REVIEW_DETAIL_0_0">
+    <End Role="STOCK_REVIEW" Type="Self.STOCK_REVIEW" Multiplicity="1" />
+    <End Role="STOCK_REVIEW_DETAIL" Type="Self.STOCK_REVIEW_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_REVIEW">
+        <PropertyRef Name="Stock_Review_Summary_Id" />
+      </Principal>
+      <Dependent Role="STOCK_REVIEW_DETAIL">
+        <PropertyRef Name="Stock_Review_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_TYPE_0_0">
+    <End Role="STOCK_CATEGORY" Type="Self.STOCK_CATEGORY" Multiplicity="1" />
+    <End Role="STOCK_TYPE" Type="Self.STOCK_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_CATEGORY">
+        <PropertyRef Name="Stock_Category_Id" />
+      </Principal>
+      <Dependent Role="STOCK_TYPE">
+        <PropertyRef Name="Stock_Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PoknoModelStoreContainer">
+    <EntitySet Name="APPLICATION_MODE" EntityType="Self.APPLICATION_MODE" store:Type="Tables" />
+    <EntitySet Name="BANK" EntityType="Self.BANK" store:Type="Tables" />
+    <EntitySet Name="CASH" EntityType="Self.CASH" store:Type="Tables" />
+    <EntitySet Name="CHEQUE" EntityType="Self.CHEQUE" store:Type="Tables" />
+    <EntitySet Name="COMPANY" EntityType="Self.COMPANY" store:Type="Tables" />
+    <EntitySet Name="CURRENT_ESNECIL" EntityType="Self.CURRENT_ESNECIL" store:Type="Tables" />
+    <EntitySet Name="CURRENT_STOCK_PACKAGE" EntityType="Self.CURRENT_STOCK_PACKAGE" store:Type="Tables" />
+    <EntitySet Name="CURRENT_STOCK_PACKAGE_RELATIONSHIP" EntityType="Self.CURRENT_STOCK_PACKAGE_RELATIONSHIP" store:Type="Tables" />
+    <EntitySet Name="CURRENT_STOCK_PRICE" EntityType="Self.CURRENT_STOCK_PRICE" store:Type="Tables" />
+    <EntitySet Name="DELETED_SHELF_STOCK" EntityType="Self.DELETED_SHELF_STOCK" store:Type="Tables" />
+    <EntitySet Name="DELETED_SOLD_STOCK" EntityType="Self.DELETED_SOLD_STOCK" store:Type="Tables" />
+    <EntitySet Name="DELETED_SOLD_STOCK_BATCH" EntityType="Self.DELETED_SOLD_STOCK_BATCH" store:Type="Tables" />
+    <EntitySet Name="ESNECIL" EntityType="Self.ESNECIL" store:Type="Tables" />
+    <EntitySet Name="EXPENSES" EntityType="Self.EXPENSES" store:Type="Tables" />
+    <EntitySet Name="EXPENSES_CATEGORY" EntityType="Self.EXPENSES_CATEGORY" store:Type="Tables" />
+    <EntitySet Name="EXPENSES_DETAIL" EntityType="Self.EXPENSES_DETAIL" store:Type="Tables" />
+    <EntitySet Name="LOCATION" EntityType="Self.LOCATION" store:Type="Tables" />
+    <EntitySet Name="PACKAGE" EntityType="Self.PACKAGE" store:Type="Tables" />
+    <EntitySet Name="PACKAGE_RELATIONSHIP" EntityType="Self.PACKAGE_RELATIONSHIP" store:Type="Tables" />
+    <EntitySet Name="PART" EntityType="Self.PART" store:Type="Tables" />
+    <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" store:Type="Tables" />
+    <EntitySet Name="PAYMENT_DETAIL" EntityType="Self.PAYMENT_DETAIL" store:Type="Tables" />
+    <EntitySet Name="PAYMENT_TYPE" EntityType="Self.PAYMENT_TYPE" store:Type="Tables" />
+    <EntitySet Name="PERSON" EntityType="Self.PERSON" store:Type="Tables" />
+    <EntitySet Name="PERSON_COMPANY" EntityType="Self.PERSON_COMPANY" store:Type="Tables" />
+    <EntitySet Name="PERSON_LOGIN" EntityType="Self.PERSON_LOGIN" store:Type="Tables" />
+    <EntitySet Name="PERSON_TYPE" EntityType="Self.PERSON_TYPE" store:Type="Tables" />
+    <EntitySet Name="REPLACED_STOCK_ACTION" EntityType="Self.REPLACED_STOCK_ACTION" store:Type="Tables" />
+    <EntitySet Name="RETURNED_STOCK" EntityType="Self.RETURNED_STOCK" store:Type="Tables" />
+    <EntitySet Name="RETURNED_STOCK_DETAIL" EntityType="Self.RETURNED_STOCK_DETAIL" store:Type="Tables" />
+    <EntitySet Name="RETURNED_STOCK_REPLACEMENT" EntityType="Self.RETURNED_STOCK_REPLACEMENT" store:Type="Tables" />
+    <EntitySet Name="RIGHT" EntityType="Self.RIGHT" store:Type="Tables" />
+    <EntitySet Name="ROLE" EntityType="Self.ROLE" store:Type="Tables" />
+    <EntitySet Name="ROLE_RIGHT" EntityType="Self.ROLE_RIGHT" store:Type="Tables" />
+    <EntitySet Name="SETTING" EntityType="Self.SETTING" store:Type="Tables" />
+    <EntitySet Name="SHELF" EntityType="Self.SHELF" store:Type="Tables" />
+    <EntitySet Name="SHELF_STOCK_REPLACEMENT" EntityType="Self.SHELF_STOCK_REPLACEMENT" store:Type="Tables" />
+    <EntitySet Name="SOLD_STOCK" EntityType="Self.SOLD_STOCK" store:Type="Tables" />
+    <EntitySet Name="SOLD_STOCK_BATCH" EntityType="Self.SOLD_STOCK_BATCH" store:Type="Tables" />
+    <EntitySet Name="SOLD_STOCK_RETURN" EntityType="Self.SOLD_STOCK_RETURN" store:Type="Tables" />
+    <EntitySet Name="SOLD_STOCK_RETURN_REFUND" EntityType="Self.SOLD_STOCK_RETURN_REFUND" store:Type="Tables" />
+    <EntitySet Name="STOCK" EntityType="Self.STOCK" store:Type="Tables" />
+    <EntitySet Name="STOCK_BARCODE" EntityType="Self.STOCK_BARCODE" store:Type="Tables" />
+    <EntitySet Name="STOCK_CATEGORY" EntityType="Self.STOCK_CATEGORY" store:Type="Tables" />
+    <EntitySet Name="STOCK_PACKAGE" EntityType="Self.STOCK_PACKAGE" store:Type="Tables" />
+    <EntitySet Name="STOCK_PACKAGE_RELATIONSHIP" EntityType="Self.STOCK_PACKAGE_RELATIONSHIP" store:Type="Tables" />
+    <EntitySet Name="STOCK_PRICE" EntityType="Self.STOCK_PRICE" store:Type="Tables" />
+    <EntitySet Name="STOCK_PURCHASE_BATCH" EntityType="Self.STOCK_PURCHASE_BATCH" store:Type="Tables" />
+    <EntitySet Name="STOCK_PURCHASE_BATCH_TYPE" EntityType="Self.STOCK_PURCHASE_BATCH_TYPE" store:Type="Tables" />
+    <EntitySet Name="STOCK_PURCHASED" EntityType="Self.STOCK_PURCHASED" store:Type="Tables" />
+    <EntitySet Name="STOCK_PURCHASED_POOL" EntityType="Self.STOCK_PURCHASED_POOL" store:Type="Tables" />
+    <EntitySet Name="STOCK_PURCHASED_POOL_DETAIL" EntityType="Self.STOCK_PURCHASED_POOL_DETAIL" store:Type="Tables" />
+    <EntitySet Name="STOCK_PURCHASED_RETURN" EntityType="Self.STOCK_PURCHASED_RETURN" store:Type="Tables" />
+    <EntitySet Name="STOCK_REPLACEMENT" EntityType="Self.STOCK_REPLACEMENT" store:Type="Tables" />
+    <EntitySet Name="STOCK_RETURN_ACTION" EntityType="Self.STOCK_RETURN_ACTION" store:Type="Tables" />
+    <EntitySet Name="STOCK_RETURN_TYPE" EntityType="Self.STOCK_RETURN_TYPE" store:Type="Tables" />
+    <EntitySet Name="STOCK_REVIEW" EntityType="Self.STOCK_REVIEW" store:Type="Tables" />
+    <EntitySet Name="STOCK_REVIEW_DETAIL" EntityType="Self.STOCK_REVIEW_DETAIL" store:Type="Tables" />
+    <EntitySet Name="STOCK_STATE" EntityType="Self.STOCK_STATE" store:Type="Tables" />
+    <EntitySet Name="STOCK_TYPE" EntityType="Self.STOCK_TYPE" store:Type="Tables" />
+    <EntitySet Name="STORE" EntityType="Self.STORE" store:Type="Tables" />
+    <EntitySet Name="TRANSACTION_TYPE" EntityType="Self.TRANSACTION_TYPE" store:Type="Tables" />
+    <AssociationSet Name="FK_CASH_0_0" Association="Self.FK_CASH_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="CASH" EntitySet="CASH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHEQUE_0_0" Association="Self.FK_CHEQUE_0_0">
+      <End Role="BANK" EntitySet="BANK" />
+      <End Role="CHEQUE" EntitySet="CHEQUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHEQUE_1_0" Association="Self.FK_CHEQUE_1_0">
+      <End Role="PAYMENT_DETAIL" EntitySet="PAYMENT_DETAIL" />
+      <End Role="CHEQUE" EntitySet="CHEQUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_ESNECIL_0_0" Association="Self.FK_CURRENT_ESNECIL_0_0">
+      <End Role="ESNECIL" EntitySet="ESNECIL" />
+      <End Role="CURRENT_ESNECIL" EntitySet="CURRENT_ESNECIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_STOCK_PACKAGE_0_0" Association="Self.FK_CURRENT_STOCK_PACKAGE_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="CURRENT_STOCK_PACKAGE" EntitySet="CURRENT_STOCK_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0" Association="Self.FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="CURRENT_STOCK_PACKAGE_RELATIONSHIP" EntitySet="CURRENT_STOCK_PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_STOCK_PRICE_0_0" Association="Self.FK_CURRENT_STOCK_PRICE_0_0">
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+      <End Role="CURRENT_STOCK_PRICE" EntitySet="CURRENT_STOCK_PRICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SHELF_STOCK_0_0" Association="Self.FK_DELETED_SHELF_STOCK_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SHELF_STOCK" EntitySet="DELETED_SHELF_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SHELF_STOCK_1_0" Association="Self.FK_DELETED_SHELF_STOCK_1_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="DELETED_SHELF_STOCK" EntitySet="DELETED_SHELF_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SHELF_STOCK_2_0" Association="Self.FK_DELETED_SHELF_STOCK_2_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="DELETED_SHELF_STOCK" EntitySet="DELETED_SHELF_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_0_0" Association="Self.FK_DELETED_SOLD_STOCK_0_0">
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+      <End Role="DELETED_SOLD_STOCK" EntitySet="DELETED_SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_1_0" Association="Self.FK_DELETED_SOLD_STOCK_1_0">
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+      <End Role="DELETED_SOLD_STOCK" EntitySet="DELETED_SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_0_0" Association="Self.FK_DELETED_SOLD_STOCK_BATCH_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_1_0" Association="Self.FK_DELETED_SOLD_STOCK_BATCH_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_2_0" Association="Self.FK_DELETED_SOLD_STOCK_BATCH_2_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_3_0" Association="Self.FK_DELETED_SOLD_STOCK_BATCH_3_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_0_0" Association="Self.FK_EXPENSES_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="EXPENSES" EntitySet="EXPENSES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_DETAIL_0_0" Association="Self.FK_EXPENSES_DETAIL_0_0">
+      <End Role="EXPENSES_CATEGORY" EntitySet="EXPENSES_CATEGORY" />
+      <End Role="EXPENSES_DETAIL" EntitySet="EXPENSES_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_DETAIL_1_0" Association="Self.FK_EXPENSES_DETAIL_1_0">
+      <End Role="PAYMENT_TYPE" EntitySet="PAYMENT_TYPE" />
+      <End Role="EXPENSES_DETAIL" EntitySet="EXPENSES_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_DETAIL_2_0" Association="Self.FK_EXPENSES_DETAIL_2_0">
+      <End Role="EXPENSES" EntitySet="EXPENSES" />
+      <End Role="EXPENSES_DETAIL" EntitySet="EXPENSES_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACKAGE_RELATIONSHIP_0_0" Association="Self.FK_PACKAGE_RELATIONSHIP_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="PACKAGE_RELATIONSHIP" EntitySet="PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACKAGE_RELATIONSHIP_1_0" Association="Self.FK_PACKAGE_RELATIONSHIP_1_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="PACKAGE_RELATIONSHIP" EntitySet="PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACKAGE_RELATIONSHIP_2_0" Association="Self.FK_PACKAGE_RELATIONSHIP_2_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="PACKAGE_RELATIONSHIP" EntitySet="PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PART_0_0" Association="Self.FK_PART_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="PART" EntitySet="PART" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAYMENT_0_0" Association="Self.FK_PAYMENT_0_0">
+      <End Role="TRANSACTION_TYPE" EntitySet="TRANSACTION_TYPE" />
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAYMENT_DETAIL_0_0" Association="Self.FK_PAYMENT_DETAIL_0_0">
+      <End Role="PAYMENT_TYPE" EntitySet="PAYMENT_TYPE" />
+      <End Role="PAYMENT_DETAIL" EntitySet="PAYMENT_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAYMENT_DETAIL_1_0" Association="Self.FK_PAYMENT_DETAIL_1_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="PAYMENT_DETAIL" EntitySet="PAYMENT_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_0_0" Association="Self.FK_PERSON_0_0">
+      <End Role="LOCATION" EntitySet="LOCATION" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_1_0" Association="Self.FK_PERSON_1_0">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_2_0" Association="Self.FK_PERSON_2_0">
+      <End Role="PERSON_TYPE" EntitySet="PERSON_TYPE" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_COMPANY_0_0" Association="Self.FK_PERSON_COMPANY_0_0">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="PERSON_COMPANY" EntitySet="PERSON_COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_COMPANY_1_0" Association="Self.FK_PERSON_COMPANY_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="PERSON_COMPANY" EntitySet="PERSON_COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_LOGIN_0_0" Association="Self.FK_PERSON_LOGIN_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="PERSON_LOGIN" EntitySet="PERSON_LOGIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_0_0" Association="Self.FK_RETURNED_STOCK_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="RETURNED_STOCK" EntitySet="RETURNED_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_0_0" Association="Self.FK_RETURNED_STOCK_DETAIL_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_1_0" Association="Self.FK_RETURNED_STOCK_DETAIL_1_0">
+      <End Role="STOCK_RETURN_ACTION" EntitySet="STOCK_RETURN_ACTION" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_2_0" Association="Self.FK_RETURNED_STOCK_DETAIL_2_0">
+      <End Role="STOCK_STATE" EntitySet="STOCK_STATE" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_3_0" Association="Self.FK_RETURNED_STOCK_DETAIL_3_0">
+      <End Role="RETURNED_STOCK" EntitySet="RETURNED_STOCK" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_4_0" Association="Self.FK_RETURNED_STOCK_DETAIL_4_0">
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_0_0" Association="Self.FK_RETURNED_STOCK_REPLACEMENT_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_1_0" Association="Self.FK_RETURNED_STOCK_REPLACEMENT_1_0">
+      <End Role="REPLACED_STOCK_ACTION" EntitySet="REPLACED_STOCK_ACTION" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_2_0" Association="Self.FK_RETURNED_STOCK_REPLACEMENT_2_0">
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_3_0" Association="Self.FK_RETURNED_STOCK_REPLACEMENT_3_0">
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROLE_RIGHT_0_0" Association="Self.FK_ROLE_RIGHT_0_0">
+      <End Role="RIGHT" EntitySet="RIGHT" />
+      <End Role="ROLE_RIGHT" EntitySet="ROLE_RIGHT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROLE_RIGHT_1_0" Association="Self.FK_ROLE_RIGHT_1_0">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="ROLE_RIGHT" EntitySet="ROLE_RIGHT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SETTING_0_0" Association="Self.FK_SETTING_0_0">
+      <End Role="APPLICATION_MODE" EntitySet="APPLICATION_MODE" />
+      <End Role="SETTING" EntitySet="SETTING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_0_0" Association="Self.FK_SHELF_0_0">
+      <End Role="LOCATION" EntitySet="LOCATION" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_1_0" Association="Self.FK_SHELF_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_2_0" Association="Self.FK_SHELF_2_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_3_0" Association="Self.FK_SHELF_3_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_STOCK_REPLACEMENT_0_0" Association="Self.FK_SHELF_STOCK_REPLACEMENT_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="SHELF_STOCK_REPLACEMENT" EntitySet="SHELF_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_0_0" Association="Self.FK_SOLD_STOCK_0_0">
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_1_0" Association="Self.FK_SOLD_STOCK_1_0">
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_2_0" Association="Self.FK_SOLD_STOCK_2_0">
+      <End Role="SHELF" EntitySet="SHELF" />
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_BATCH_0_0" Association="Self.FK_SOLD_STOCK_BATCH_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_BATCH_1_0" Association="Self.FK_SOLD_STOCK_BATCH_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_BATCH_2_0" Association="Self.FK_SOLD_STOCK_BATCH_2_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_0_0" Association="Self.FK_SOLD_STOCK_RETURN_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="SOLD_STOCK_RETURN" EntitySet="SOLD_STOCK_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_1_0" Association="Self.FK_SOLD_STOCK_RETURN_1_0">
+      <End Role="STOCK_STATE" EntitySet="STOCK_STATE" />
+      <End Role="SOLD_STOCK_RETURN" EntitySet="SOLD_STOCK_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_REFUND_0_0" Association="Self.FK_SOLD_STOCK_RETURN_REFUND_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="SOLD_STOCK_RETURN_REFUND" EntitySet="SOLD_STOCK_RETURN_REFUND" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_REFUND_1_0" Association="Self.FK_SOLD_STOCK_RETURN_REFUND_1_0">
+      <End Role="SOLD_STOCK_RETURN" EntitySet="SOLD_STOCK_RETURN" />
+      <End Role="SOLD_STOCK_RETURN_REFUND" EntitySet="SOLD_STOCK_RETURN_REFUND" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_0_0" Association="Self.FK_STOCK_0_0">
+      <End Role="STOCK_TYPE" EntitySet="STOCK_TYPE" />
+      <End Role="STOCK" EntitySet="STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_0_0" Association="Self.FK_STOCK_PACKAGE_0_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_1_0" Association="Self.FK_STOCK_PACKAGE_1_0">
+      <End Role="PACKAGE" EntitySet="PACKAGE" />
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_RELATIONSHIP_0_0" Association="Self.FK_STOCK_PACKAGE_RELATIONSHIP_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_RELATIONSHIP_1_0" Association="Self.FK_STOCK_PACKAGE_RELATIONSHIP_1_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PRICE_0_0" Association="Self.FK_STOCK_PRICE_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_0_0" Association="Self.FK_STOCK_PURCHASE_BATCH_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_1_0" Association="Self.FK_STOCK_PURCHASE_BATCH_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_2_0" Association="Self.FK_STOCK_PURCHASE_BATCH_2_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_3_0" Association="Self.FK_STOCK_PURCHASE_BATCH_3_0">
+      <End Role="STOCK_PURCHASE_BATCH_TYPE" EntitySet="STOCK_PURCHASE_BATCH_TYPE" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_0_0" Association="Self.FK_STOCK_PURCHASED_0_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_1_0" Association="Self.FK_STOCK_PURCHASED_1_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_2_0" Association="Self.FK_STOCK_PURCHASED_2_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_3_0" Association="Self.FK_STOCK_PURCHASED_3_0">
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_0_0" Association="Self.FK_STOCK_PURCHASED_POOL_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_1_0" Association="Self.FK_STOCK_PURCHASED_POOL_1_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_2_0" Association="Self.FK_STOCK_PURCHASED_POOL_2_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_3_0" Association="Self.FK_STOCK_PURCHASED_POOL_3_0">
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_4_0" Association="Self.FK_STOCK_PURCHASED_POOL_4_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_DETAIL_0_0" Association="Self.FK_STOCK_PURCHASED_POOL_DETAIL_0_0">
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+      <End Role="STOCK_PURCHASED_POOL_DETAIL" EntitySet="STOCK_PURCHASED_POOL_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_DETAIL_1_0" Association="Self.FK_STOCK_PURCHASED_POOL_DETAIL_1_0">
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+      <End Role="STOCK_PURCHASED_POOL_DETAIL" EntitySet="STOCK_PURCHASED_POOL_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_0_0" Association="Self.FK_STOCK_PURCHASED_RETURN_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_1_0" Association="Self.FK_STOCK_PURCHASED_RETURN_1_0">
+      <End Role="REPLACED_STOCK_ACTION" EntitySet="REPLACED_STOCK_ACTION" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_2_0" Association="Self.FK_STOCK_PURCHASED_RETURN_2_0">
+      <End Role="STOCK_STATE" EntitySet="STOCK_STATE" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_3_0" Association="Self.FK_STOCK_PURCHASED_RETURN_3_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_4_0" Association="Self.FK_STOCK_PURCHASED_RETURN_4_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_5_0" Association="Self.FK_STOCK_PURCHASED_RETURN_5_0">
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_REVIEW_0_0" Association="Self.FK_STOCK_REVIEW_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_REVIEW" EntitySet="STOCK_REVIEW" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_REVIEW_DETAIL_0_0" Association="Self.FK_STOCK_REVIEW_DETAIL_0_0">
+      <End Role="STOCK_REVIEW" EntitySet="STOCK_REVIEW" />
+      <End Role="STOCK_REVIEW_DETAIL" EntitySet="STOCK_REVIEW_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_TYPE_0_0" Association="Self.FK_STOCK_TYPE_0_0">
+      <End Role="STOCK_CATEGORY" EntitySet="STOCK_CATEGORY" />
+      <End Role="STOCK_TYPE" EntitySet="STOCK_TYPE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

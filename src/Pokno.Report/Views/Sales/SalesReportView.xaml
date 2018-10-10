@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="Pokno.Report.Views.Sales.SalesReportView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:regions="http://www.codeplex.com/prism"
+             xmlns:hl="clr-namespace:System.Windows.Documents;assembly=PresentationCore"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="1000" >
+
+    <Grid x:Name="LayoutRoot" Margin="5,0,0,5"  >
+     
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Padding="0,0,0,2" BorderBrush="#FF6F8CB9" BorderThickness="0,0,0,2"  >
+            <WrapPanel Grid.Row="0" >
+               
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <RadioButton Name="rbStockSalesAnalysisReport" Command="{Binding StockSalesAnalysisReportCommand}" GroupName="PaymentReportMenu" IsChecked="True" Style="{StaticResource ReportButtonStyle}" >
+
+                        <!--<Button Command="{Binding StockSalesAnalysisReportCommand}" Style="{StaticResource ReportButtonStyle}"  >-->
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Stock</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Sales analysis</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <!--<Button Command="{Binding StockSalesDetailAnalysisReportCommand}" Style="{StaticResource ReportButtonStyle}" >-->
+
+                    <RadioButton Name="rbStockSalesDetailAnalysisReport" Command="{Binding StockSalesDetailAnalysisReportCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Stock</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Sales detail analysis</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+
+                    </RadioButton>
+
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <!--<Button Command="{Binding StockSalesDetailAnalysisByStockReportCommand}" Style="{StaticResource ReportButtonStyle}" >-->
+
+                    <RadioButton Name="rbStockSalesDetailAnalysisByStockReport" Command="{Binding StockSalesDetailAnalysisByStockReportCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Stock</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Sales detail analysis by stock</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+
+                    </RadioButton>
+
+                </Border>
+
+                
+
+            </WrapPanel>
+        </Border>
+
+        <Border Grid.Row="1" Margin="2,5,0,0" >
+            <ContentControl regions:RegionManager.RegionName="SalesReportRegion" />
+        </Border>
+
+    </Grid>
+
+   
+    
+    
+</UserControl>

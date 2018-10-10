@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C545ED01-663B-4E29-B1F2-191D4C29BAC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokno.Common</RootNamespace>
+    <AssemblyName>Pokno.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IBaseReportFactory.cs" />
+    <Compile Include="Models\BaseReport.cs" />
+    <Compile Include="Models\ReportEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pokno.Infrastructure\Pokno.Infrastructure.csproj">
+      <Project>{594047c0-d6de-4ed7-a2e6-579dfefcb446}</Project>
+      <Name>Pokno.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Model\Pokno.Model.csproj">
+      <Project>{158e6d3c-49c2-4294-8e1a-234d1ff09034}</Project>
+      <Name>Pokno.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Service\Pokno.Service.csproj">
+      <Project>{829e02f7-6c09-4f46-bd8d-df68987661aa}</Project>
+      <Name>Pokno.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Expenses\DailyExpenses.rdlc" />
+    <EmbeddedResource Include="Reports\Expenses\ExpensesDetailByDateRange.rdlc" />
+    <EmbeddedResource Include="Reports\Expenses\ExpensesSummaryByDateRange.rdlc" />
+    <EmbeddedResource Include="Reports\Expenses\MonthlyExpensesDetail.rdlc" />
+    <EmbeddedResource Include="Reports\Expenses\MonthlyExpensesSummary.rdlc" />
+    <EmbeddedResource Include="Reports\Expenses\YearlyExpenses.rdlc" />
+    <EmbeddedResource Include="Reports\Payment\CompanyCreditorsList.rdlc" />
+    <EmbeddedResource Include="Reports\Payment\CompanyDebtorsList.rdlc" />
+    <EmbeddedResource Include="Reports\Miscellaneous\DailyTransaction.rdlc" />
+    <EmbeddedResource Include="Reports\Miscellaneous\MonthlyStockSummary.rdlc" />
+    <EmbeddedResource Include="Reports\Payment\PaymentHistory.rdlc" />
+    <EmbeddedResource Include="Reports\Payment\PaymentHistoryByPerson.rdlc" />
+    <EmbeddedResource Include="Reports\Returns\ReturnedStock.rdlc" />
+    <EmbeddedResource Include="Reports\Statistics\CustomerStatistics.rdlc" />
+    <EmbeddedResource Include="Reports\Statistics\Stock.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\PackageQuantity.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\RemainingStockOnShelf.rdlc" />
+    <EmbeddedResource Include="Reports\Sales\SalesInvoice.rdlc" />
+    <EmbeddedResource Include="Reports\Sales\SoldStockAnalysis.rdlc" />
+    <EmbeddedResource Include="Reports\Sales\SoldStockDetailAnalysis.rdlc" />
+    <EmbeddedResource Include="Reports\Sales\SoldStockDetailAnalysisByStock.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\StockListByType.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\StockList.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\StockPackages.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\StockPrice.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\StockPriceHistory.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\StockPriceHistoryByStock.rdlc" />
+    <EmbeddedResource Include="Reports\Purchase\StockPurchasedDetail.rdlc" />
+    <EmbeddedResource Include="Reports\Purchase\StockPurchasedDetailByStock.rdlc" />
+    <EmbeddedResource Include="Reports\Purchase\StockPurchasedSummary.rdlc" />
+    <EmbeddedResource Include="Reports\Stock\StocksInStore.rdlc" />
+    <EmbeddedResource Include="Reports\Payment\SupplierCreditorsList.rdlc" />
+    <EmbeddedResource Include="Reports\Payment\SupplierDebtorsList.rdlc" />
+    <EmbeddedResource Include="Reports\Miscellaneous\YearlyStockSummary.rdlc" />
+    <EmbeddedResource Include="Reports\Miscellaneous\YearlyStockSummaryByStock.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Pokno.Model.Model.PaymentHistory.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.PaymentStatus.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StockReviewDetail.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreCustomerStatistics.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreExpenses.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreProfitableStock.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreReturnStock.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreSalesFrequency.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreStockPurchased.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

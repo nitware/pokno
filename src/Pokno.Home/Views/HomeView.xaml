@@ -1,0 +1,177 @@
+﻿<UserControl x:Class="Pokno.Home.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" FontSize="15" >
+
+
+    <Grid x:Name="LayoutRoot" Background="White" >
+        <Grid Margin="10,40,0,3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Margin="0,10,0,10" Grid.Row="0" Grid.ColumnSpan="4" BorderThickness="0,0,0,2" BorderBrush="Silver"  >
+                <!--<TextBlock TextWrapping="Wrap">Application brief description goes here...</TextBlock>-->
+
+                <WrapPanel Margin="0,0,0,30" >
+                    
+                    <Image Margin="2" Source="{Binding Image1}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image2}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image3}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image4}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image5}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image6}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image7}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image8}" Height="80" />
+
+                    <Image Margin="2" Source="{Binding Image9}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image10}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image11}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image12}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image13}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image14}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image15}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image16}" Height="80" />
+
+                    <Image Margin="2" Source="{Binding Image17}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image18}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image19}" Height="80" />
+                    <Image Margin="2" Source="{Binding Image20}" Height="80" />
+
+                </WrapPanel>
+            </Border>
+
+            <Grid Margin="10,3,10,3" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--<Border Margin="0,5,10,0" Grid.Row="0" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="1" >
+                        <HyperlinkButton commands:Click.Command="{Binding StockCommand}" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="60" Width="68" Content="Stock" FontWeight="Bold" FontSize="12" Foreground="Black">
+                            <HyperlinkButton.Background>
+                                <ImageBrush ImageSource="/Smith.Home;component/Images/message.jpg" />
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton>
+                    </Border>-->
+                    
+                    <StackPanel Margin="5,5,30,0" Grid.Row="0" Grid.Column="1" >
+                        <TextBlock TextWrapping="Wrap">Stock module is rich with functionalities that enables authorised users to manage the entire store with ease. Users are allowed to perform the following functions:</TextBlock>
+                        <TextBlock Margin="20,5,0,0" TextWrapping="Wrap">1. Basic stock setup.</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">2. Register purchased stock.</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">3. Arranging stocks on shelve.</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">4. Sell stock, and much more...</TextBlock>
+
+                    </StackPanel>
+
+                    <!--<Border Margin="0,20,10,0" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="1" Grid.Row="1" >
+                        <HyperlinkButton commands:Click.Command="{Binding PaymentCommand}" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="60" Width="67" Content="Payment" FontSize="12" Foreground="Black" FontWeight="Bold" >
+                            <HyperlinkButton.Background>
+                                <ImageBrush ImageSource="/Smith.Home;component/Images/subscribe_logo_faint1.png" />
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton>
+                    </Border>-->
+
+                    <StackPanel Margin="5,20,30,20" Grid.Row="1" Grid.Column="1" >
+                        <TextBlock TextWrapping="Wrap">This takes care of all payment related functionalities like:</TextBlock>
+                        <TextBlock Margin="20,5,0,0" TextWrapping="Wrap">1. Payment type setup</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">2. Payment details update</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">3. Bank setup, and much more...</TextBlock>
+                        <TextBlock Margin="0,5,0,0" TextWrapping="Wrap">All these above services is only available to athorised users.</TextBlock>
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--<Border Margin="0,5,10,0" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="1" Grid.Row="0" Grid.Column="0">
+                        <HyperlinkButton commands:Click.Command="{Binding PeopleCommand}" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="60" Width="67" Content="People" Foreground="Black" FontSize="12" FontWeight="Bold">
+                            <HyperlinkButton.Background>
+                                <ImageBrush ImageSource="/Smith.Home;component/Images/user_group_icon.png" />
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton>
+                    </Border>-->
+
+                    <StackPanel  Margin="5,5,0,0" Grid.Row="0" Grid.Column="1" >
+                        <TextBlock TextWrapping="Wrap">This module enable administrators to create and manage user profiles. Below shows available functions:</TextBlock>
+                        <TextBlock Margin="20,5,0,0" TextWrapping="Wrap">1. Manage user</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">2. Manage role</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">3. Assign Right(s) to Role</TextBlock>
+                        <TextBlock Margin="20,0,0,0" TextWrapping="Wrap">4. Assign Role to User.</TextBlock>
+                    </StackPanel>
+
+                    <!--<Border Margin="0,20,10,10" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="1" Grid.Row="1" Grid.Column="0">
+                        <HyperlinkButton commands:Click.Command="{Binding ReportCommand}" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="60" Width="67" Foreground="Black" Content="Report" FontSize="12" FontWeight="Bold">
+                            <HyperlinkButton.Background>
+                                <ImageBrush ImageSource="/Smith.Home;component/Images/Reports_logo.jpg" />
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton>
+                    </Border>-->
+                    <TextBlock Margin="5,20,0,2" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap">All reports can be viewed/printed by an authorised user from this module.</TextBlock>
+
+                    <!--<Border Margin="0,20,10,20" VerticalAlignment="Top" BorderBrush="Silver" BorderThickness="1" Grid.Row="2" Grid.Column="0" >
+                        <HyperlinkButton commands:Click.Command="{Binding AccountCommand}" Margin="2" Content="Accounts" Height="60" Width="68" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="11">
+                        </HyperlinkButton>
+                    </Border>-->
+
+                    <StackPanel Margin="5,20,30,20" Grid.Row="2" Grid.Column="1" >
+                        <TextBlock TextWrapping="Wrap">This is basically used to manage account related activities. And is only available to autorized users.</TextBlock>
+                    </StackPanel>
+                </Grid>
+
+
+
+            </Grid>
+
+
+           
+
+
+            <!--<DockPanel>
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="_File">
+                        <MenuItem Header="_Exit" />
+                    </MenuItem>
+                    <MenuItem Header="_Tools">
+                        <MenuItem Header="_Manage users">
+                            <MenuItem.Icon>
+                                <Image Source="/WpfTutorialSamples;component/Images/user.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Show groups" IsCheckable="True" IsChecked="True" />
+                    </MenuItem>
+                </Menu>
+                <TextBox AcceptsReturn="True" />
+            </DockPanel>-->
+
+            <!--<Menu HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" >
+                <TextBlock>Year</TextBlock>
+            </Menu>-->
+        </Grid>
+    </Grid>
+
+
+</UserControl>

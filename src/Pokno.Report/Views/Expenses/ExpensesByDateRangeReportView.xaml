@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Pokno.Report.Views.Expenses.ExpensesByDateRangeReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="750">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="Gray" Padding="5" Grid.Row="0">
+            <Border Margin="10" BorderBrush="Silver" BorderThickness="1" VerticalAlignment="Top" Background="Silver" >
+                <Border.Effect>
+                    <DropShadowEffect Color="DimGray"></DropShadowEffect>
+                </Border.Effect>
+               
+                <WrapPanel Margin="10,7" Orientation="Horizontal">
+
+                    <TextBlock Margin="10,0,5,0" FontWeight="Bold" VerticalAlignment="Center" >Type:</TextBlock>
+                    <ComboBox ItemsSource="{Binding Types, Mode=TwoWay}" SelectedItem="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="24" VerticalAlignment="Center" Width="150" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="12" Foreground="#FF413E3E" Text="{Binding Name}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10,0,5,0" VerticalAlignment="Center" FontWeight="Bold" >From:</TextBlock>
+                        <DatePicker SelectedDate="{Binding FromDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="8" Width="150" HorizontalAlignment="Left" Margin="0,0,10,0" />
+
+                        <TextBlock Margin="0,0,5,0" VerticalAlignment="Center" FontWeight="Bold" >To:</TextBlock>
+                        <DatePicker SelectedDate="{Binding ToDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="8" Width="150" HorizontalAlignment="Left" Margin="0,0,5,0" />
+
+                        <Button Command="{Binding DisplayCommand}" Grid.Column="2" Height="24" FontSize="11" Content="Display" HorizontalAlignment="Left"  />
+                    </StackPanel>
+                </WrapPanel>
+
+            
+            </Border>
+        </Border>
+
+        <Grid Margin="0,5,0,0" Grid.Row="1">
+            <mui:ModernProgressRing IsActive="{Binding IsBusy}" Width="80" Height="80" Style="{Binding SelectedItem.Tag, ElementName=CmbRingStyle}" />
+            <TextBlock Text="{Binding ErrorMessage}" FontFamily="Century Gothic" FontSize="20" Foreground="Red" />
+            <ContentPresenter Name="cp" Grid.Row="1" Content="{Binding ReportHost}" />
+        </Grid>
+
+    </Grid>
+</UserControl>

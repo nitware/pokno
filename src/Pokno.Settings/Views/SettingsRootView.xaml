@@ -1,0 +1,222 @@
+﻿<Window x:Class="Pokno.Settings.Views.SettingsRootView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:regions="http://www.codeplex.com/prism"
+        xmlns:converter="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:vm="clr-namespace:Pokno.Settings.ViewModels"   
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None"
+         
+        mc:Ignorable="d" 
+        d:DesignHeight="300" 
+        d:DesignWidth="300"
+        
+        BorderThickness="2,30,2,2" 
+        BorderBrush="#FF93AACF"
+       
+        x:Name="childWindow" 
+        MinHeight="620"
+        Width="700" Focusable="False" Topmost="True" IsTabStop="False"
+        
+         >
+    <!--Icon="{Binding ApplicationIcon}"-->
+    <!--Icon="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Shell\storepro-icon.ico"-->
+
+    <Window.DataContext>
+        <vm:SettingsRootViewModel />
+    </Window.DataContext>
+
+
+    <!--<Grid>
+        <i:Interaction.Triggers>
+            <i:EventTrigger>
+                <i:InvokeCommandAction Command="{Binding SetPopUpCommand}" CommandParameter="{Binding ElementName=childWindow, Mode=OneWay}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+
+        <Border Grid.Column="1" >
+            <ContentControl HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" regions:RegionManager.RegionName="SettingsRegion" />
+        </Border>
+    </Grid>-->
+
+
+    <Grid x:Name="LayoutRoot" Margin="5,0,5,5"  >
+        <i:Interaction.Triggers>
+            <i:EventTrigger>
+                <i:InvokeCommandAction Command="{Binding SetPopUpCommand}" CommandParameter="{Binding ElementName=childWindow, Mode=OneWay}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--<Border Margin="0,2,2,10" BorderThickness="0,0,0,1" BorderBrush="#FFa9cde7">
+            <TextBlock Padding="20,7" Foreground="WhiteSmoke" Background="#FFa9cde7" HorizontalAlignment="Left" FontSize="20">SETTINGS</TextBlock>
+        </Border>-->
+
+        <Border Margin="0,5,0,0" >
+            <TextBlock HorizontalAlignment="Left" FontSize="18">SETTINGS</TextBlock>
+        </Border>
+
+        <Border Margin="-2,0,0,0" Grid.Row="1" Padding="0,0,0,2" BorderBrush="#FF6F8CB9" BorderThickness="0,0,0,1"  >
+            <WrapPanel Grid.Row="0" >
+                <Border Height="70" Width="75">
+                    <RadioButton Name="rbBasicSettings" Command="{Binding BasicSettingsCommand}" IsChecked="True" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Basic Setting</TextBlock>
+                            <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Sales detail analysis</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+                <Border Height="70" Width="75">
+                    <RadioButton Name="rbSetDb" Command="{Binding SetDbCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Set DB</TextBlock>
+                            <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Sales detail analysis by stock</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+
+                <Border Height="70" Width="75">
+                    <RadioButton Name="rbSetupShopDetail" Command="{Binding ShopDetailCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Setup Store Detail</TextBlock>
+                            <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Sales detail analysis by stock</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+                <Border Height="70" Width="75">
+                    <RadioButton Name="rbUploadStoreLogo" Command="{Binding StoreLogoCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Upload Store Logo</TextBlock>
+                            <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Sales detail analysis by stock</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+                <Border Height="70" Width="75">
+                    <RadioButton Name="rbSetupCustomerLoyalty" Command="{Binding CustomerLoyaltyCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Customer Loyalty</TextBlock>
+                            <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Yearly summary</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+
+                </Border>
+
+                <Border Height="70" Width="85">
+                    <RadioButton Name="rbMaintainDb" Command="{Binding DbMaintenanceCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >DB Maintenance</TextBlock>
+                            <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Yearly summary by stock</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+            </WrapPanel>
+        </Border>
+
+        <Border Grid.Row="2" Margin="1,3,0,0"  >
+
+            <Grid >
+                
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <!--<Border Grid.Row="0" BorderBrush="#FF6F8CB9" BorderThickness="1">-->
+
+                <Border Grid.Row="0" >
+                    <ContentControl x:Name="ccSettingsRegion" regions:RegionManager.RegionName="SettingsRegion" >
+                    <ContentControl.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFf2fafd" Offset="0.85"/>
+                            <GradientStop Color="#FFe4f6fa" Offset="1"/>
+                            <GradientStop Color="#FFe7f4fc" Offset="0.3"/>
+                            <GradientStop Color="#FFa9cde7" Offset="0"/>
+                        </LinearGradientBrush>
+                    </ContentControl.Background>
+                </ContentControl>
+                </Border>
+
+                <Button Margin="0,3,0,5" Grid.Row="1" Command="{Binding OkCommand}" FontSize="16" HorizontalAlignment="Right">Close</Button>
+            </Grid>
+            
+        </Border>
+
+    </Grid>
+
+</Window>

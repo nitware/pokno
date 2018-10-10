@@ -1,0 +1,219 @@
+﻿<ResourceDictionary 
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+     mc:Ignorable="d">
+
+
+    <Style x:Key="ReportButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Background" Value="#4168A7"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="4,4"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily"  Value="Arial Narrow"/>
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverBackground"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PressedBackground"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <!--<DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>-->
+                                        <!--<DoubleAnimation Duration="0" To=".89" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>-->
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DisabledBackground"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Indeterminate"/>
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CheckedBackground" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="BaseBackground" BorderBrush="White" BorderThickness="0,0,0,0" CornerRadius="0">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF76C0CD" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="MouseOverBackground" CornerRadius="0" Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="1,0">
+                                    <GradientStop Color="#4168A7" Offset="0.3"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="PressedBackground" CornerRadius="0" Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="1,0">
+                                    <GradientStop Color="#4168A7" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="CheckedBackground" BorderBrush="#4168A7" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" Opacity="0">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="1,0">
+                                    <GradientStop Color="#4168A7" Offset="0.301"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <!--<Border x:Name="DisabledBackground" BorderBrush="#FFF0F0F0" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0" Opacity="0">-->
+
+                        <Border x:Name="DisabledBackground" BorderBrush="WhiteSmoke" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0" Opacity="0">
+                            <Border.Background>
+                                <!--<LinearGradientBrush EndPoint="1,1" StartPoint="1,0" >
+                                    <GradientStop Color="WhiteSmoke" Offset="0.01"/>
+                                    <GradientStop Color="#FFF1F5F5" Offset="0.501"/>
+                                    <GradientStop Color="#FFEBF4F5" Offset="0.701"/>
+                                </LinearGradientBrush>-->
+
+
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="2" >
+                                    <!--<GradientStop Color="WhiteSmoke" Offset="0.01"/>-->
+                                    <GradientStop Color="#EFF2F3" Offset="0"/>
+                                    <!--<GradientStop Color="#E9EFF1" Offset="0"/>-->
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+
+                        
+
+                        <Grid Margin="{TemplateBinding BorderThickness}">
+                            <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Center"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF" IsHitTestVisible="false" Opacity="0" RadiusY="3" RadiusX="3" />
+                        <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" Margin="1" Opacity="0" RadiusY="2" RadiusX="2" Stroke="{x:Null}" StrokeThickness="1" />
+                    </Grid>
+
+
+
+
+                    <ControlTemplate.Triggers>
+                        <!--<Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>-->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <!--<Setter Property="Foreground" Value="#FFC3C2C2" />-->
+                            <Setter Property="Foreground" Value="Gainsboro" />
+                            <!--<Setter Property="Foreground" Value="White" />-->
+                        </Trigger>
+
+                        <!--<Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="Red" />
+                            <Setter Property="Cursor" Value="Hand" />
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+
+
+
+
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+    <!--<Style x:Key="ReportButtonStyle" TargetType="Button">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Arial Narrow"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        --><!--<Border x:Name="border" CornerRadius="55" BorderBrush="White" BorderThickness="2">--><!--
+
+                        <Border x:Name="border" Padding="7" BorderThickness="2">
+                            <Border.Background>
+                                <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                            <TranslateTransform X="0.02" Y="0.3"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="1" Color="#4168A7"/>
+                                    --><!--<GradientStop Offset="0.3" Color="#FFFFFFFF"/>-->
+
+                                    <!--<GradientStop Offset="1" Color="#00000000"/>
+                                        <GradientStop Offset="0.3" Color="#FFFFFFFF"/>--><!--
+                                </RadialGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextElement.FontFamily="Arial" TextElement.FontSize="14" TextElement.FontWeight="Bold"></ContentPresenter>
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border">
+                                <Setter.Value>
+                                    <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                        <RadialGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                <TranslateTransform X="0.02" Y="0.3"/>
+                                            </TransformGroup>
+                                        </RadialGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#3D95A6" Offset="1"/>
+                                        --><!--<GradientStop Color="#FF303030" Offset="0.3"/>--><!--
+                                    </RadialGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            --><!--<Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>-->
+                            <!--<Setter Property="BorderBrush" TargetName="border" Value="red"/>--><!--
+                            <Setter Property="Background" TargetName="border" Value="#3D95A6"/>
+
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+</ResourceDictionary>

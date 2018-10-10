@@ -1,0 +1,8 @@
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\bin\Release\Pokno.NumberConverter.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\bin\Release\Pokno.NumberConverter.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\bin\Release\Pokno.NumberConverter.xml
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\obj\Release\Pokno.NumberConverter.Resources.resources
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\obj\Release\Pokno.NumberConverter.vbproj.GenerateResource.Cache
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\obj\Release\Pokno.NumberConverter.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\obj\Release\Pokno.NumberConverter.xml
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.NumberConverter\obj\Release\Pokno.NumberConverter.pdb

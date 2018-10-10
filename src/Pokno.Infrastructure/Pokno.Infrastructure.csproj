@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{594047C0-D6DE-4ED7-A2E6-579DFEFCB446}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokno.Infrastructure</RootNamespace>
+    <AssemblyName>Pokno.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicNP.CryptoLicensing, Version=11.0.0.0, Culture=neutral, PublicKeyToken=4a3c0a4c668b48b4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\LogicNP.CryptoLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism, Version=6.1.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=6.1.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\Prism.Unity.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.1.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assembly\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation\Animation.cs" />
+    <Compile Include="Converters\AboutToExpireStocksLabelColor.cs" />
+    <Compile Include="Converters\AboutToExpireStocksLabelConverter.cs" />
+    <Compile Include="Converters\CheckToolTipConverter.cs" />
+    <Compile Include="Converters\ContentToMarginConverter.cs" />
+    <Compile Include="Converters\ContentToPathConverter.cs" />
+    <Compile Include="Converters\DateConverter.cs" />
+    <Compile Include="Converters\DateSelectConverter.cs" />
+    <Compile Include="Converters\DateTimeConverter.cs" />
+    <Compile Include="Converters\DateToSelectConverter.cs" />
+    <Compile Include="Converters\EnabilityConverter.cs" />
+    <Compile Include="Converters\FinancialStatusConverter.cs" />
+    <Compile Include="Converters\IfZeroReturnEmptyConverter.cs" />
+    <Compile Include="Converters\IntegerConverter.cs" />
+    <Compile Include="Converters\IsExistConverter.cs" />
+    <Compile Include="Converters\MakeComboBoxItemBoldConverter.cs" />
+    <Compile Include="Converters\MoneyConverter.cs" />
+    <Compile Include="Converters\MonthConverter.cs" />
+    <Compile Include="Converters\ReorderLevelConverter.cs" />
+    <Compile Include="Converters\ReorderLevelFontWeightConverter.cs" />
+    <Compile Include="Converters\TabZIndexConverter.cs" />
+    <Compile Include="Converters\VisibilityConverter.cs" />
+    <Compile Include="Events\CompanySetupEvent.cs" />
+    <Compile Include="Events\LicenseEvent.cs" />
+    <Compile Include="Events\LicStateEvent.cs" />
+    <Compile Include="Events\PaymentSetupEvent.cs" />
+    <Compile Include="Events\PersonBasicSetupEvent.cs" />
+    <Compile Include="Events\ReportEvent.cs" />
+    <Compile Include="Events\ReturnEvent.cs" />
+    <Compile Include="Events\RootWebAddressEvent.cs" />
+    <Compile Include="Events\PersonAccessControlEvent.cs" />
+    <Compile Include="Events\SalesEvent.cs" />
+    <Compile Include="Events\SettingsEvent.cs" />
+    <Compile Include="Events\StockPurchasedInitialiseEvent.cs" />
+    <Compile Include="Events\StockSetupEvent.cs" />
+    <Compile Include="Events\StoreLogoEvent.cs" />
+    <Compile Include="Events\StoreNameEvent.cs" />
+    <Compile Include="Events\UserEvent.cs" />
+    <Compile Include="Interfaces\ICollectibleService.cs" />
+    <Compile Include="Interfaces\IPaymentService.cs" />
+    <Compile Include="Interfaces\ISetupService.cs" />
+    <Compile Include="Interfaces\IStockPurchaseBatchService.cs" />
+    <Compile Include="Interfaces\ITakeStockService.cs" />
+    <Compile Include="Models\CollectibleViewModelBase.cs" />
+    <Compile Include="Models\Edit.cs" />
+    <Compile Include="Models\EsnecilStatus.cs" />
+    <Compile Include="Models\HierarchicalStockPurchased.cs" />
+    <Compile Include="Models\LicState.cs" />
+    <Compile Include="Models\Navigation.cs" />
+    <Compile Include="Models\ObservableCollectionManager.cs" />
+    <Compile Include="Models\ObservableCollectionManagerBase.cs" />
+    <Compile Include="Models\PoknoPaymentType.cs" />
+    <Compile Include="Models\PoknoPersonType.cs" />
+    <Compile Include="Models\ReportType.cs" />
+    <Compile Include="Models\TreeViewOperation.cs" />
+    <Compile Include="Models\UI.cs" />
+    <Compile Include="Models\Utility.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionContainer.cs" />
+    <Compile Include="Services\ApplicationModeService.cs" />
+    <Compile Include="Services\BankService.cs" />
+    <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\LocationService.cs" />
+    <Compile Include="Services\PackageService.cs" />
+    <Compile Include="Services\PaymentService.cs" />
+    <Compile Include="Services\PaymentTypeService.cs" />
+    <Compile Include="Services\PersonService.cs" />
+    <Compile Include="Services\StockPurchaseBatchService.cs" />
+    <Compile Include="Services\StockService.cs" />
+    <Compile Include="ViewModel\BaseApplicationViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\ImageViewModel.cs" />
+    <Compile Include="ViewModel\PaymentDetailViewModelBase.cs" />
+    <Compile Include="ViewModel\Popups\BankAccountDetailPopUpViewModel.cs" />
+    <Compile Include="ViewModel\Popups\StockPricePopUpViewModel.cs" />
+    <Compile Include="ViewModel\SetupViewModelBase.cs" />
+    <Compile Include="View\Popups\BankAccountDetailPopUpView.xaml.cs">
+      <DependentUpon>BankAccountDetailPopUpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popups\StockPricePopUpView.xaml.cs">
+      <DependentUpon>StockPricePopUpView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assembly\EntityFramework.dll" />
+    <Content Include="Assembly\EntityFramework.SqlServer.dll" />
+    <Content Include="Assembly\FirstFloor.ModernUI.dll" />
+    <Content Include="Assembly\Microsoft.Practices.Prism.dll" />
+    <Content Include="Assembly\Microsoft.Practices.Prism.Mvvm.Desktop.dll" />
+    <Content Include="Assembly\Microsoft.Practices.Prism.Mvvm.dll" />
+    <Content Include="Assembly\Microsoft.Practices.Prism.SharedInterfaces.dll" />
+    <Content Include="Assembly\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Assembly\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="Assembly\Microsoft.Practices.Unity.dll" />
+    <Content Include="Assembly\Microsoft.Practices.Unity.RegistrationByConvention.dll" />
+    <Content Include="Assembly\Prism.dll" />
+    <Content Include="Assembly\Prism.Unity.Wpf.dll" />
+    <Content Include="Assembly\Prism.Wpf.dll" />
+    <Content Include="Assembly\System.Data.SQLite.dll" />
+    <Content Include="Assembly\System.Data.SQLite.EF6.dll" />
+    <Content Include="Assembly\System.Data.SQLite.Linq.dll" />
+    <Content Include="Assembly\System.Windows.Interactivity.dll" />
+    <Content Include="Assembly\x64\SQLite.Interop.dll" />
+    <Content Include="Assembly\x86\SQLite.Interop.dll" />
+    <Content Include="Assembly\Xceed.Wpf.Toolkit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\Popups\BankAccountDetailPopUpView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popups\StockPricePopUpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pokno.Model\Pokno.Model.csproj">
+      <Project>{158e6d3c-49c2-4294-8e1a-234d1ff09034}</Project>
+      <Name>Pokno.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Service\Pokno.Service.csproj">
+      <Project>{829e02f7-6c09-4f46-bd8d-df68987661aa}</Project>
+      <Name>Pokno.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

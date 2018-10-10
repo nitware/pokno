@@ -1,0 +1,266 @@
+﻿<UserControl x:Class="Pokno.Store.Views.ArrangeStockOnShelfView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    xmlns:converter="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit" 
+    xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+    mc:Ignorable="d"
+    d:DesignHeight="700" 
+    d:DesignWidth="900" >
+
+
+    <UserControl.Resources>
+        <converter:DateConverter x:Key='DateConverter' />
+        <converter:IntegerConverter x:Key="IntegerConverter"/>
+
+        <DataTemplate x:Key="PurchasedStockAtHandTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="0,0,5,0" Text="{Binding Quantity}" FontWeight="Normal" FontSize="10" VerticalAlignment="Center" />
+                <TextBlock Margin="0,0,5,0" Text="{Binding StockPackage.Package.Name}" Foreground="DimGray" FontSize="11" VerticalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+
+        <HierarchicalDataTemplate x:Key="StockPurchasedTreeViewItemTemplate"
+                                      ItemTemplate="{StaticResource PurchasedStockAtHandTemplate}" 
+                                      ItemsSource="{Binding StockPurchases}">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Margin="0,0,5,0" FontWeight="Bold" Text="{Binding Stock.Name}"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+
+
+        <DataTemplate x:Key="AutoCompleteBoxItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5,2" Content="{Binding Name}" MinWidth="100"  FontWeight="Bold" Foreground="Gray" />
+                <!--<Label Content="{Binding Birthday}" FontStyle="Italic" Foreground="DarkGray" />-->
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Margin="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" CornerRadius="5" Grid.Column="1" Margin="5,5,10,5" Background="White" BorderBrush="Gray" BorderThickness="1" >
+                <Border.Effect>
+                    <DropShadowEffect Color="DimGray"/>
+                </Border.Effect>
+
+                <StackPanel >
+                    <Grid Margin="10,3" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Border  Margin="5,10,5,0" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0" Background="WhiteSmoke" HorizontalAlignment="Stretch" >
+                            <TextBlock Margin="10" VerticalAlignment="Bottom" FontFamily="century Gothic" >SELECTED STORE STOCK</TextBlock>
+                            <!--<TextBlock Margin="10" VerticalAlignment="Bottom" FontFamily="century Gothic" >SELECTED PURCHASED STOCK</TextBlock>-->
+                        </Border>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="5,5,0,0">Stock:</TextBlock>
+                        <TextBox Text="{Binding SelectedStock.Name}" FontWeight="Bold" IsEnabled="False" Grid.Row="1" Grid.Column="1" Margin="0,5,0,0" Height="25" />
+                        <Button  Margin="2,5,0,0"  Grid.Column="2" Grid.Row="1" Command="{Binding ChangePriceCommand}" FontSize="9" Padding="0" HorizontalAlignment="Left" Width="25" ToolTip="Change Stock Price" Content="..." />
+
+                        <!--<TextBox Text="{Binding StockPurchased.Stock.Name}" FontWeight="Bold" IsEnabled="False" Grid.Row="1" Grid.Column="1" Margin="0,5,0,0" Height="25" />-->
+
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="5,3,0,0">Package:</TextBlock>
+
+                        <TextBlock Grid.Row="3" Margin="5,3,0,0" Height="22" VerticalAlignment="Top">Quantity:</TextBlock>
+                        <xctk:IntegerUpDown Value="{Binding Shelf.Quantity, Mode=TwoWay,  Converter={StaticResource IntegerConverter}}" Margin="0,3,0,0" Height="22" Grid.Column="1" Grid.Row="3" Minimum="0" Maximum="1000000000" />
+
+                        <TextBlock Grid.Row="4" Margin="5,3,0,0" Height="22" VerticalAlignment="Top">Expiry Date:</TextBlock>
+                        <DatePicker SelectedDate="{Binding Shelf.ExpiryDate, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" Height="23" Margin="0,3,0,0" VerticalAlignment="Top"  />
+
+                        <ComboBox ItemsSource="{Binding StockPackages, Mode=TwoWay}" SelectedItem="{Binding StockPackage}" IsSynchronizedWithCurrentItem="True" Grid.Column="1" Grid.Row="2"  Margin="0,3,0,0" Height="23" >
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Foreground="#FF413E3E" Text="{Binding Package.Name}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <StackPanel Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="0,3,0,10" Orientation="Horizontal">
+                            <Button Command="{Binding AddToShelfCommand}" Content="Add To Shelf"  />
+                        </StackPanel>
+
+                        <mui:ModernProgressRing Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" Margin="5,0,0,0" IsActive="{Binding IsBusy}" Width="80" Height="80" Style="{Binding SelectedItem.Tag, ElementName=CmbRingStyle}" />
+
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Grid Grid.Row="1" Grid.Column="1" Margin="5,10,10,8" HorizontalAlignment="Stretch">
+                <Border Background="#9FC0DB" CornerRadius="10" BorderThickness="0,0,0,0" >
+                    <StackPanel>
+                        <Border Margin="10,10,7,5" HorizontalAlignment="Stretch">
+                            <TextBlock FontWeight="Bold" Foreground="WhiteSmoke" FontFamily="century Gothic" >STOCKS ON SHELF</TextBlock>
+                        </Border>
+                        <DataGrid ItemsSource="{Binding RemainingStocksOnShelf}" 
+							
+							AreRowDetailsFrozen="True" 
+							AutoGenerateColumns="False" 
+							Background="White"
+							GridLinesVisibility="None" 
+							HeadersVisibility="None" 
+							Height="290" >
+                            <DataGrid.Columns>
+
+                                <DataGridTemplateColumn Header="Quantity">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Margin="3,0,3,0" FontSize="12" Text="{Binding Quantity}" Foreground="Black" HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="Package">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Margin="3,0,3,0" FontSize="12" Text="{Binding PackageName}" Foreground="Black" TextWrapping="Wrap" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="Stock">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Margin="3,0,3,0" FontSize="12" Text="{Binding StockName}" Foreground="Black" TextWrapping="Wrap" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </StackPanel>
+
+                </Border>
+            </Grid>
+
+
+
+            <Border Margin="7,5,10,10"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" BorderBrush="DimGray" BorderThickness="1,1,2,2" CornerRadius="5" Background="White" >
+                <Border.Effect>
+                    <DropShadowEffect Color="DimGray" />
+                </Border.Effect>
+
+                <StackPanel>
+                    <Border Grid.Column="0" Margin="10,10,10,3" Padding="2" CornerRadius="2" Background="WhiteSmoke" BorderThickness="1" BorderBrush="Gainsboro" >
+                        <Grid Margin="0,0,0,0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Margin="1" Height="25" Width="25" Stretch="UniformToFill" Source="{Binding SearchIcon}"  />
+                            <Controls:AutoCompleteBox Grid.Column="1" ItemsSource="{Binding Stocks}" 
+                                                        BorderBrush="silver" 
+                                                        BorderThickness="1" 
+                                                        SelectedItem="{Binding Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                        ValueMemberPath="Name" 
+                                                        ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}" 
+                                                        IsTextCompletionEnabled="True"  >
+
+                            </Controls:AutoCompleteBox>
+                            <Button Margin="1,0,0,0" Grid.Column="1" Command="{Binding ReloadCommand}" FontSize="9" Content="..." ToolTip="Re-load stocks at hand" HorizontalAlignment="Right"  />
+
+                        </Grid>
+                    </Border>
+
+
+                    <!--<Grid Margin="10,10,10,5" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Controls:AutoCompleteBox Grid.Column="0" ItemsSource="{Binding Stocks}" 
+                                                      BorderBrush="Gray" 
+                                                      BorderThickness="1" 
+                                                      SelectedItem="{Binding Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                      ValueMemberPath="Name" 
+                                                      ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}" 
+                                                      IsTextCompletionEnabled="True"  >
+                               
+                            </Controls:AutoCompleteBox>
+                            <Button Margin="1,0,0,0" Grid.Column="1" Command="{Binding ReloadCommand}" FontSize="9" Content="..." ToolTip="Re-load stocks at hand" HorizontalAlignment="Right"  />
+                        </Grid>-->
+                           
+                    
+                        <!--</StackPanel>-->
+                  
+
+
+
+                    <!--<Border Margin="10,10,10,5" Padding="5" CornerRadius="5" Background="Gainsboro">
+                        <StackPanel Margin="10,7" Orientation="Vertical" VerticalAlignment="Center"  >
+                            <TextBlock Margin="0,0,0,0" FontFamily="century Gothic" FontSize="14" >Enter stock name to search</TextBlock>
+                            <Controls:AutoCompleteBox ItemsSource="{Binding Stocks}" 
+                                                      SelectedItem="{Binding Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                      ValueMemberPath="Name" 
+                                                      ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}" 
+                                                      IsTextCompletionEnabled="True"  
+                                                      />
+                        </StackPanel>
+                    </Border>-->
+
+                    <Border BorderBrush="Gray" Background="Gray" Margin="10,0,10,0" BorderThickness="0,0,0,0" HorizontalAlignment="Stretch">
+                        <TextBlock Margin="10,7,0,7" FontSize="13" Foreground="WhiteSmoke" FontWeight="Bold">STOCKS IN STORE</TextBlock>
+                        <!--<TextBlock Margin="10,7,0,7" FontSize="13" Foreground="WhiteSmoke" FontWeight="Bold">PURCHASED STOCK AT HAND</TextBlock>-->
+                    </Border>
+                    <TreeView x:Name="treeView"
+						Margin="10,0,10,5"
+						BorderBrush="DimGray"
+						BorderThickness="0"
+						Height="460"
+						ScrollViewer.VerticalScrollBarVisibility="Auto"
+						ItemTemplate="{StaticResource StockPurchasedTreeViewItemTemplate}" 
+						ItemsSource="{Binding StockPurchasesAtHand}" 
+                        MouseLeftButtonUp="treeView_MouseLeftButtonUp">
+
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectedItemChanged">
+                                <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}" CommandParameter="{Binding SelectedItem, ElementName=treeView, Mode=OneWay}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+
+
+                    </TreeView>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+
+    </Grid>
+</UserControl>

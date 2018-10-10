@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Pokno.Account.Views.AccountHomeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" 
+    d:DesignWidth="400">
+
+    <Grid Margin="10,40,0,3" x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Margin="0,10,0,10" Grid.Row="0"  BorderThickness="0,0,0,2" BorderBrush="Silver"  >
+            <WrapPanel Margin="0,0,0,30" >
+                <Image Margin="2" Source="{Binding Image1}" Height="80" />
+                <Image Margin="2" Source="{Binding Image2}" Height="80" />
+                <Image Margin="2" Source="{Binding Image3}" Height="80" />
+                <Image Margin="2" Source="{Binding Image4}" Height="80" />
+                <Image Margin="2" Source="{Binding Image5}" Height="80" />
+                <Image Margin="2" Source="{Binding Image6}" Height="80" />
+                <Image Margin="2" Source="{Binding Image7}" Height="80" />
+                <Image Margin="2" Source="{Binding Image8}" Height="80" />
+                <Image Margin="2" Source="{Binding Image9}" Height="80" />
+                <Image Margin="2" Source="{Binding Image10}" Height="80" />
+                <Image Margin="2" Source="{Binding Image11}" Height="80" />
+                <Image Margin="2" Source="{Binding Image12}" Height="80" />
+                <Image Margin="2" Source="{Binding Image13}" Height="80" />
+                <Image Margin="2" Source="{Binding Image14}" Height="80" />
+                <Image Margin="2" Source="{Binding Image15}" Height="80" />
+                <Image Margin="2" Source="{Binding Image16}" Height="80" />
+                <Image Margin="2" Source="{Binding Image17}" Height="80" />
+                <Image Margin="2" Source="{Binding Image18}" Height="80" />
+                <Image Margin="2" Source="{Binding Image19}" Height="80" />
+                <Image Margin="2" Source="{Binding Image20}" Height="80" />
+            </WrapPanel>
+        </Border>
+
+        <Border Margin="5,3,10,3" CornerRadius="13" Grid.Row="1" >
+            <!--<Border.Effect>
+                <DropShadowEffect Color="DimGray"></DropShadowEffect>
+            </Border.Effect>-->
+
+            <StackPanel Margin="0,0,5,10" >
+                <TextBlock FontSize="15" FontWeight="Bold" FontFamily="Verdana">Welcome to Account Module</TextBlock>
+                <TextBlock  TextWrapping="Wrap">With the Account feature, you can record and track your daily expenses.</TextBlock>
+            </StackPanel>
+        </Border>
+    </Grid>
+
+
+
+    
+</UserControl>

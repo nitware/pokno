@@ -1,0 +1,13 @@
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.Business.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.Business.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\EntityFramework.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.Entity.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.Model.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.NumberConverter.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.Entity.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.Model.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.NumberConverter.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\bin\Release\Pokno.NumberConverter.xml
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\obj\Release\Pokno.Business.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\obj\Release\Pokno.Business.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Business\obj\Release\Pokno.Business.pdb

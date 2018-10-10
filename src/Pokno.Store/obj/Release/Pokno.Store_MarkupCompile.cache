@@ -1,0 +1,20 @@
+﻿Pokno.Store
+
+
+library
+C#
+.cs
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Store\obj\Release\
+Pokno.Store
+none
+false
+TRACE
+
+34-468610116
+2966212666
+99-124755586
+79-307638513
+Views\ArrangeStockOnShelfView.xaml;Views\Sales\DailySalesView.xaml;Views\DeleteSalesTransactionView.xaml;Views\EnteredShelfStockView.xaml;Views\ExpiryDateAlertView.xaml;Views\Returns\PurchasedStockReturnView.xaml;Views\Sales\SalesView.xaml;Views\Returns\ManageReplacedStockView.xaml;Views\Sales\EditSoldStockView.xaml;Views\ModifyPurchasedStockView.xaml;Views\ModifyStockPurchasedBatchView.xaml;Views\Sales\SellStockView.xaml;Views\RegisterPurchasedStockView.xaml;Views\RemoveStockFromShelfView.xaml;Views\Returns\ReturnsView.xaml;Views\Setup\ExpensesCategoryView.xaml;Views\Setup\PackageRelationshipView.xaml;Views\Setup\PackageView.xaml;Views\Setup\StockCategoryView.xaml;Views\Setup\StockPackageView.xaml;Views\Setup\StockPriceView.xaml;Views\Setup\StockReturnActionView.xaml;Views\Setup\StockReturnTypeView.xaml;Views\Setup\StockSetupView.xaml;Views\Setup\StockStateView.xaml;Views\Setup\StockTypeView.xaml;Views\Setup\StockView.xaml;Views\StockHomeView.xaml;Views\StockMenuView.xaml;Views\Sales\StockPriceCheckView.xaml;Views\StockPurchaseBatchView.xaml;Views\StockPurchasedView.xaml;Views\Returns\StockReturnView.xaml;Views\TakeStockView.xaml;
+
+False
+

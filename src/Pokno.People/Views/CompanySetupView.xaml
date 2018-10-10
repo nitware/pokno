@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Pokno.People.Views.CompanySetupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:converter="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    mc:Ignorable="d"
+    d:DesignHeight="700" 
+    d:DesignWidth="1000" >
+
+    <UserControl.Resources>
+        <converter:EnabilityConverter x:Key="EnabilityConverter" />
+    </UserControl.Resources>
+
+
+    <Grid x:Name="LayoutRoot" Background="#E7FDFDFD">
+        <TabControl prism:RegionManager.RegionName="CompanySetupTabRegion"
+                    Name="tcCompanyTab"
+                    Grid.Row="1" 
+                    Margin="5,0,0,0"
+                    Width="Auto" 
+                    Height="Auto" 
+                    Style="{StaticResource TabControlStyle}" 
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Left"
+                    SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}" 
+                    TabStripPlacement="Top" 
+                    IsEnabled="{Binding IsEnabled, Converter={StaticResource EnabilityConverter}}"
+                    ItemContainerStyle="{StaticResource TabItemRegionStyle}" 
+                    
+            >
+        </TabControl>
+        
+        
+        <!--<TabControl Name="tcCompanyTab" prism:RegionManager.RegionName="CompanySetupTabRegion" 
+                        SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}" 
+                        SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                        SelectionChanged="{Binding TabItemSelectedCommand}"
+                        AutomationProperties.AutomationId="PersonTabControl"
+                        Grid.Row="1" 
+                        Margin="8,8,0,8"
+                        Width="Auto" 
+                        Height="Auto" 
+                        HorizontalAlignment="Stretch" 
+                        TabStripPlacement="Left">
+            <Style TargetType="TabItem" BasedOn="{StaticResource TabItemStyle}">
+                <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <TextBlock Width="160" Text="{Binding TabCaption}" />
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="IsEnabled" Value="{Binding IsEnabled, Converter={StaticResource EnabilityConverter}}"/>
+                </Style>
+        </TabControl>-->
+        
+        
+        
+        
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{158E6D3C-49C2-4294-8E1A-234D1FF09034}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokno.Model</RootNamespace>
+    <AssemblyName>Pokno.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ApplicationMode.cs" />
+    <Compile Include="Model\Bank.cs" />
+    <Compile Include="Model\BaseModel.cs" />
+    <Compile Include="Model\BaseStockPurchased.cs" />
+    <Compile Include="Model\CalendarMonth.cs" />
+    <Compile Include="Model\Cash.cs" />
+    <Compile Include="Model\Cheque.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\CurrentEsnecil.cs" />
+    <Compile Include="Model\CurrentStockPackage.cs" />
+    <Compile Include="Model\CurrentStockPackageRelationship.cs" />
+    <Compile Include="Model\CurrentStockPrice.cs" />
+    <Compile Include="Model\DeletedShelfStock.cs" />
+    <Compile Include="Model\DeletedSoldStock.cs" />
+    <Compile Include="Model\DeletedSoldStockBatch.cs" />
+    <Compile Include="Model\Esnecil.cs" />
+    <Compile Include="Model\Expenses.cs" />
+    <Compile Include="Model\ExpensesCategory.cs" />
+    <Compile Include="Model\ExpensesDetail.cs" />
+    <Compile Include="Model\PaymentHistory.cs" />
+    <Compile Include="Model\StoreCustomerStatistics.cs" />
+    <Compile Include="Model\StoreExpenses.cs" />
+    <Compile Include="Model\ExpiryDateAlert.cs" />
+    <Compile Include="Model\Fault.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\LoginDetail.cs" />
+    <Compile Include="Model\NumberToWordConverter2.cs" />
+    <Compile Include="Model\ReplacedStockAction.cs" />
+    <Compile Include="Model\ReturnedStock.cs" />
+    <Compile Include="Model\ReturnedStockDetail.cs" />
+    <Compile Include="Model\ReturnedStockReplacement.cs" />
+    <Compile Include="Model\Setting.cs" />
+    <Compile Include="Model\SoldItemReturn.cs" />
+    <Compile Include="Model\SoldStock.cs" />
+    <Compile Include="Model\OutgoingStockRefund.cs" />
+    <Compile Include="Model\Package.cs" />
+    <Compile Include="Model\PackageRelationship.cs" />
+    <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\PaymentDetail.cs" />
+    <Compile Include="Model\PaymentStatus.cs" />
+    <Compile Include="Model\PaymentType.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\PersonCompany.cs" />
+    <Compile Include="Model\PersonLocation.cs" />
+    <Compile Include="Model\PersonRight.cs" />
+    <Compile Include="Model\PersonType.cs" />
+    <Compile Include="Model\Right.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\RoleRight.cs" />
+    <Compile Include="Model\SalesInvoice.cs" />
+    <Compile Include="Model\SetupBase.cs" />
+    <Compile Include="Model\SoldStockView.cs" />
+    <Compile Include="Model\SoldStockBatch.cs" />
+    <Compile Include="Model\SoldStockReturn.cs" />
+    <Compile Include="Model\SoldStockReturnRefund.cs" />
+    <Compile Include="Model\Stock.cs" />
+    <Compile Include="Model\StockAtHand.cs" />
+    <Compile Include="Model\StockCategory.cs" />
+    <Compile Include="Model\StockForSale.cs" />
+    <Compile Include="Model\Shelf.cs" />
+    <Compile Include="Model\StockOnShelfAtHand.cs" />
+    <Compile Include="Model\StockOnShelfReplacement.cs" />
+    <Compile Include="Model\StockPackage.cs" />
+    <Compile Include="Model\StockPackageRelationship.cs" />
+    <Compile Include="Model\StockPrice.cs" />
+    <Compile Include="Model\StockPurchaseBatch.cs" />
+    <Compile Include="Model\StockPurchaseBatchType.cs" />
+    <Compile Include="Model\StockPurchased.cs" />
+    <Compile Include="Model\StockPurchasedAtHand.cs" />
+    <Compile Include="Model\StockPurchasedPool.cs" />
+    <Compile Include="Model\StockPurchasedPoolDetail.cs" />
+    <Compile Include="Model\PurchasedStockReturn.cs" />
+    <Compile Include="Model\StockPurchasedSetUpStatus.cs" />
+    <Compile Include="Model\StockPurchasePayment.cs" />
+    <Compile Include="Model\StockQuantity.cs" />
+    <Compile Include="Model\StockReturnAction.cs" />
+    <Compile Include="Model\StockReturnInformation.cs" />
+    <Compile Include="Model\StockReturnType.cs" />
+    <Compile Include="Model\StockReview.cs" />
+    <Compile Include="Model\StockReviewDetail.cs" />
+    <Compile Include="Model\StocksAndStockTypesUnderCategory.cs" />
+    <Compile Include="Model\StockState.cs" />
+    <Compile Include="Model\StockType.cs" />
+    <Compile Include="Model\StockView.cs" />
+    <Compile Include="Model\Store.cs" />
+    <Compile Include="Model\StorePackage.cs" />
+    <Compile Include="Model\StoreProfitableStock.cs" />
+    <Compile Include="Model\StoreReturnStock.cs" />
+    <Compile Include="Model\StoreSalesFrequency.cs" />
+    <Compile Include="Model\StoreStock.cs" />
+    <Compile Include="Model\StoreStockPrice.cs" />
+    <Compile Include="Model\StoreStockPurchased.cs" />
+    <Compile Include="Model\TransactionType.cs" />
+    <Compile Include="Model\UnsoldStockPackage.cs" />
+    <Compile Include="Model\Value.cs" />
+    <Compile Include="Model\Year.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translator\ApplicationModeTranslator.cs" />
+    <Compile Include="Translator\BankTranslator.cs" />
+    <Compile Include="Translator\ChequeTranslator.cs" />
+    <Compile Include="Translator\CompanyTranslator.cs" />
+    <Compile Include="Translator\CurrentEsnecilTranslator.cs" />
+    <Compile Include="Translator\CurrentStockPackageRelationshipTranslator.cs" />
+    <Compile Include="Translator\CurrentStockPackageTranslator.cs" />
+    <Compile Include="Translator\CurrentStockPriceTranslator.cs" />
+    <Compile Include="Translator\DeletedShelfStockTranslator.cs" />
+    <Compile Include="Translator\DeletedSoldStockBatchTranslator.cs" />
+    <Compile Include="Translator\DeletedSoldStockTranslator.cs" />
+    <Compile Include="Translator\EsnecilTranslator.cs" />
+    <Compile Include="Translator\ExpensesCategoryTranslator.cs" />
+    <Compile Include="Translator\ExpensesDetailTranslator.cs" />
+    <Compile Include="Translator\ExpensesTranslator.cs" />
+    <Compile Include="Translator\LocationTranslator.cs" />
+    <Compile Include="Translator\LoginDetailTranslator.cs" />
+    <Compile Include="Translator\OutgoingStockReturnRefundTranslator.cs" />
+    <Compile Include="Translator\ReplacedStockActionTranslator.cs" />
+    <Compile Include="Translator\ReturnedStockDetailTranslator.cs" />
+    <Compile Include="Translator\ReturnedStockReplacementTranslator.cs" />
+    <Compile Include="Translator\ReturnedStockTranslator.cs" />
+    <Compile Include="Translator\SettingTranslator.cs" />
+    <Compile Include="Translator\SoldStockTranslator.cs" />
+    <Compile Include="Translator\PackageRelationshipTranslator.cs" />
+    <Compile Include="Translator\PackageTranslator.cs" />
+    <Compile Include="Translator\PaymentDetailTranslator.cs" />
+    <Compile Include="Translator\PaymentTranslator.cs" />
+    <Compile Include="Translator\PaymentTypeTranslator.cs" />
+    <Compile Include="Translator\PersonCompanyTranslator.cs" />
+    <Compile Include="Translator\PersonTranslator.cs" />
+    <Compile Include="Translator\PersonTypeTranslator.cs" />
+    <Compile Include="Translator\RightTranslator.cs" />
+    <Compile Include="Translator\RoleRightTranslator.cs" />
+    <Compile Include="Translator\RoleTranslator.cs" />
+    <Compile Include="Translator\SoldStockBatchTranslator.cs" />
+    <Compile Include="Translator\StockCategoryTranslator.cs" />
+    <Compile Include="Translator\ShelfTranslator.cs" />
+    <Compile Include="Translator\StockPackageRelationshipTranslator.cs" />
+    <Compile Include="Translator\StockPackageTranslator.cs" />
+    <Compile Include="Translator\StockPriceTranslator.cs" />
+    <Compile Include="Translator\StockPurchaseBatchTranslator.cs" />
+    <Compile Include="Translator\StockPurchasedPoolDetailTranslator.cs" />
+    <Compile Include="Translator\StockPurchasedPoolTranslator.cs" />
+    <Compile Include="Translator\PurchasedStockReturnTranslator.cs" />
+    <Compile Include="Translator\StockPurchasedTranslator.cs" />
+    <Compile Include="Translator\StockPurchasePaymentTranslator.cs" />
+    <Compile Include="Translator\StockReturnActionTranslator.cs" />
+    <Compile Include="Translator\StockReturnTypeTranslator.cs" />
+    <Compile Include="Translator\StockReviewDetailTranslator.cs" />
+    <Compile Include="Translator\StockReviewTranslator.cs" />
+    <Compile Include="Translator\StockStateTranslator.cs" />
+    <Compile Include="Translator\StockTranslator.cs" />
+    <Compile Include="Translator\StockTypeTranslator.cs" />
+    <Compile Include="Translator\StoreTranslator.cs" />
+    <Compile Include="Translator\TransactionTypeTranslator.cs" />
+    <Compile Include="Translator\TranslatorBase.cs" />
+    <Compile Include="Translator\TranslatorFactory.cs" />
+    <Compile Include="Views\VW_CREDITOR_AND_DEBTOR.cs" />
+    <Compile Include="Views\VW_CURRENT_STOCK_PACKAGE_RELATIONSHIP.cs" />
+    <Compile Include="Views\VW_CURRENT_STOCK_PRICE.cs" />
+    <Compile Include="Views\VW_CUSTOMER_STATISTICS.cs" />
+    <Compile Include="Views\VW_EXPENSES.cs" />
+    <Compile Include="Views\VW_EXPIRY_DATE_ALERT.cs" />
+    <Compile Include="Views\VW_PAYMENT.cs" />
+    <Compile Include="Views\VW_PAYMENT_SUMMARY.cs" />
+    <Compile Include="Views\VW_PAYMENT_TRANSACTION.cs" />
+    <Compile Include="Views\VW_PROFITABLE_STOCK.cs" />
+    <Compile Include="Views\VW_RETURNED_STOCK.cs" />
+    <Compile Include="Views\VW_SALES_INVOICE.cs" />
+    <Compile Include="Views\VW_SOLD_STOCK.cs" />
+    <Compile Include="Views\VW_SOLD_STOCK_DETAIL.cs" />
+    <Compile Include="Views\VW_STOCK.cs" />
+    <Compile Include="Views\VW_STOCK_AT_HAND.cs" />
+    <Compile Include="Views\VW_STOCK_FOR_SALE_SUMMARY.cs" />
+    <Compile Include="Views\VW_STOCK_ON_SHELF.cs" />
+    <Compile Include="Views\VW_STOCK_PRICE.cs" />
+    <Compile Include="Views\VW_STOCK_PURCHASED.cs" />
+    <Compile Include="Views\VW_STOCK_PURCHASED_POOL_SUMMARY.cs" />
+    <Compile Include="Views\VW_STOCK_PURCHASED_SUMMARY.cs" />
+    <Compile Include="Views\VW_STOCK_PURCHASE_PAYMENT.cs" />
+    <Compile Include="Views\VW_STOCK_PURCHASE_PAYMENT_OVERALL.cs" />
+    <Compile Include="Views\VW_STOCK_REVIEW.cs" />
+    <Compile Include="Views\VW_STOCK_SALES_FREQUENCY.cs" />
+    <Compile Include="Views\VW_STOCK_SALES_FREQUENCY_SUMMARY.cs" />
+    <Compile Include="Views\VW_TOP_RETURNED_STOCK.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pokno.Entity\Pokno.Entity.csproj">
+      <Project>{b1268f3d-d595-432f-9665-360be13082e2}</Project>
+      <Name>Pokno.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

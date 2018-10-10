@@ -1,0 +1,267 @@
+﻿<UserControl x:Class="Pokno.Report.Views.Payment.PaymentReportView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:region="clr-namespace:Pokno.Infrastructure;assembly=Pokno.Infrastructure"
+    xmlns:regions="http://www.codeplex.com/prism"
+    mc:Ignorable="d"
+    d:DesignHeight="500" d:DesignWidth="600">
+
+    <Grid x:Name="LayoutRoot" Margin="5,0,0,5"  >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Padding="0,0,0,2" BorderBrush="#FF6F8CB9" BorderThickness="0,0,0,2"  >
+            <WrapPanel Grid.Row="0" >
+
+                <!--<Border Margin="0,0,0,0" Height="80" Width="85">
+                    <Button Command="{Binding CompanyCreditorsListReportCommand}" Style="{StaticResource ReportButtonStyle}" >
+
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            --><!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />--><!--
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Company</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Creditors list</TextBlock>
+                            --><!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>--><!--
+                        </Grid>
+
+                    </Button>
+
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <Button Command="{Binding CompanyDebtorsListReportCommand}" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            --><!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />--><!--
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Company</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Debtors list</TextBlock>
+                            --><!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>--><!--
+                        </Grid>
+
+                    </Button>
+
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <Button Command="{Binding SupplierCreditorsListReportCommand}" Style="{StaticResource ReportButtonStyle}"  >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            --><!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />--><!--
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Supplier</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Creditors list</TextBlock>
+                            --><!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>--><!--
+                        </Grid>
+                    </Button>
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <Button Command="{Binding SupplierDebtorsListReportCommand}" Style="{StaticResource ReportButtonStyle}"  >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            --><!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />--><!--
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Supplier</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Debtors list</TextBlock>
+                            --><!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>--><!--
+                        </Grid>
+                    </Button>
+                </Border>-->
+
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <RadioButton Name="rbPaymentHistoryReport" Command="{Binding PaymentHistoryReportCommand}" IsChecked="True" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >History</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >list</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <RadioButton Name="rbCompanyCreditorsListReport" Command="{Binding CompanyCreditorsListReportCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Company</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Creditors list</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+
+
+                    </RadioButton>
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <RadioButton Name="rbCompanyDebtorsListReport" Command="{Binding CompanyDebtorsListReportCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Company</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Debtors list</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <RadioButton Name="rbSupplierCreditorsListReport" Command="{Binding SupplierCreditorsListReportCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Supplier</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Creditors list</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <RadioButton Name="rbSupplierDebtorsListReport" Command="{Binding SupplierDebtorsListReportCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >Supplier</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >Debtors list</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+                
+
+                <Border Margin="0,0,0,0" Height="80" Width="85">
+                    <RadioButton Name="rbPaymentHistoryByPersonReport" Command="{Binding PaymentHistoryByPersonReportCommand}" GroupName="PaymentReportMenu" Style="{StaticResource ReportButtonStyle}" >
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--<Image Name="imgReport" Grid.Row="0" Source="Images/reports.png" Width="55" />-->
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" >History</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="11" TextWrapping="Wrap" >by person</TextBlock>
+                            <!--<TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="10" TextWrapping="Wrap" >Image</TextBlock>-->
+                        </Grid>
+                    </RadioButton>
+                </Border>
+
+            </WrapPanel>
+        </Border>
+
+        <Border Grid.Row="1" Margin="2,5,0,0" >
+            <ContentControl regions:RegionManager.RegionName="{x:Static region:RegionContainer.PaymentReportRegion}" />
+            <!--<ContentControl regions:RegionManager.RegionName="PaymentReportRegion" />-->
+        </Border>
+
+    </Grid>
+
+   
+</UserControl>

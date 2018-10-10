@@ -1,0 +1,330 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:local="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="Pokno.Store.Views.StockPurchaseBatchView" 
+    mc:Ignorable="d" 
+    d:DesignHeight="800" 
+    d:DesignWidth="1000">
+
+    <UserControl.Resources>
+        <local:DateConverter x:Key='DateConverter' />
+        <local:CheckToolTipConverter x:Key='CheckToolTipConverter' />
+        <local:MoneyConverter x:Key="MoneyConverter" />
+    </UserControl.Resources>
+
+    <ContentControl IsEnabled="{Binding IsLoggedInUserHasRight, Mode=TwoWay}" HorizontalContentAlignment="Stretch">
+        <Grid x:Name="LayoutRoot" Margin="5" Background="#E7FDFDFD">
+
+            <!--<i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding ShowMessageBox}">
+                <prism:PopupChildWindowAction />
+            </prism:InteractionRequestTrigger>
+            <prism:InteractionRequestTrigger SourceObject="{Binding ShowConfirmation}">
+                <prism:PopupChildWindowAction />
+            </prism:InteractionRequestTrigger>
+
+            <prism:InteractionRequestTrigger SourceObject="{Binding ShowCustomDialog}">
+                <prism:PopupChildWindowAction>
+                    <prism:PopupChildWindowAction.ChildWindow>
+                        <views:PaymentDetailPopUpView />
+                    </prism:PopupChildWindowAction.ChildWindow>
+                </prism:PopupChildWindowAction>
+            </prism:InteractionRequestTrigger>
+        </i:Interaction.Triggers>-->
+
+            <Grid Margin="7,2,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Border Margin="0,10,0,0" Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Grid.Row="0" Grid.Column="0" >
+                    <Border.Effect>
+                        <DropShadowEffect Color="DimGray"/>
+                    </Border.Effect>
+
+                    <StackPanel Margin="0,5" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Margin="10,0" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15" ><Run Text="Balance:"/></TextBlock>
+                        <TextBlock Text="{Binding Balance}" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15" Foreground="Red" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="1" Margin="0,10,0,0" Background="White" BorderThickness="1" CornerRadius="9" BorderBrush="DimGray" >
+                    <Border Margin="5" Background="WhiteSmoke" BorderThickness="0" CornerRadius="8" BorderBrush="LightGray">
+                        <StackPanel>
+                            <Border BorderBrush="Gray" CornerRadius="5" BorderThickness="0,0,0,0" Margin="5,5,5,0" Background="Silver" HorizontalAlignment="Stretch">
+                                <TextBlock Margin="15,0" HorizontalAlignment="Center" FontSize="13" FontWeight="Bold"><Run Text="BATCH"/></TextBlock>
+                            </Border>
+                            <Grid Margin="5,5,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="110" />
+                                    <ColumnDefinition Width="150" />
+
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="0"><Run Text="Supplier:"/></TextBlock>
+                                <ComboBox ItemsSource="{Binding Suppliers, Mode=TwoWay}" SelectedItem="{Binding Supplier, Mode=TwoWay}" Grid.Column="1" Grid.Row="0"  Margin="0,3,0,0" Height="23" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontFamily="Verdana" Foreground="#FF413E3E" Text="{Binding FullName}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="1" Margin="0,3,0,0"><Run Text="Buyer:"/></TextBlock>
+
+                                <ComboBox ItemsSource="{Binding Buyers, Mode=TwoWay}" SelectedItem="{Binding Buyer, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="0,3,0,0" Height="23" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontFamily="Verdana" Foreground="#FF413E3E" Text="{Binding FullName}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="2" Margin="0,3,0,0"><Run Text="Date Purchased:"/></TextBlock>
+                                <DatePicker SelectedDate="{Binding StockPurchaseBatch.DatePurchased, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" Height="23" Margin="0,3,0,0"   />
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="3"><Run Text="Amount Payable:"/></TextBlock>
+                                <xctk:DecimalUpDown Value="{Binding Payment.AmountPayable, Mode=TwoWay}" Margin="0,3,0,0" Grid.Column="1" Grid.Row="3" Height="22" VerticalAlignment="Top" Maximum="99999999999999"/>
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="4" Margin="0,3,0,0"><Run Text="Misc. Expenses:"/></TextBlock>
+                                <xctk:DecimalUpDown Value="{Binding StockPurchaseBatch.MiscExpenses, Mode=TwoWay}" Margin="0,3,0,0" Grid.Column="1" Grid.Row="4" Height="22"  VerticalAlignment="Top" Maximum="99999999999999"/>
+
+                                <!--<toolkit:NumericUpDown Value="{Binding StockPurchaseBatch.MiscExpenses, Mode=TwoWay}" Margin="0,3,0,0" Grid.Column="1" Grid.Row="4" Height="22"  VerticalAlignment="Top" Maximum="99999999999999" />-->
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="5" Margin="0,3,0,0"><Run Text="Invoice Number:"/></TextBlock>
+                                <TextBox Text="{Binding StockPurchaseBatch.InvoiceNumber, Mode=TwoWay}" Margin="0,3,0,0" Grid.Column="1" Grid.Row="5"  />
+
+                                
+
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Border>
+
+                <Border Grid.Row="2" Margin="0,10,0,0" Background="White" BorderBrush="DimGray"  BorderThickness="1" CornerRadius="9">
+
+                    <Border Grid.Row="2" Margin="5" Background="WhiteSmoke" BorderThickness="0" CornerRadius="8" BorderBrush="LightGray">
+                        <StackPanel>
+                            <Border BorderBrush="Gray" CornerRadius="5" BorderThickness="0,0,0,0" Margin="5,5,5,0" Background="Silver" HorizontalAlignment="Stretch">
+                                <TextBlock Margin="15,0" HorizontalAlignment="Center" FontSize="13" FontWeight="Bold"><Run Text="PAYMENT DETAILS"/></TextBlock>
+                            </Border>
+                            <Grid Margin="5,10" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="110" />
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<toolkit:NumericUpDown Value="{Binding TargetModel.AmountPaid, Mode=TwoWay}" Margin="0,3,0,0" Grid.Column="1" Grid.Row="1" Height="22" VerticalAlignment="Top" Maximum="99999999999999" />-->
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="1" Margin="0,3,0,0"><Run Text="Amount Paid:"/></TextBlock>
+                                <xctk:DecimalUpDown Value="{Binding TargetModel.AmountPaid, Mode=TwoWay}" Margin="0,3,0,0" Grid.Column="1" Grid.Row="1" Height="22" VerticalAlignment="Top" Maximum="99999999999999" />
+
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="2" Margin="0,3,0,0"><Run Text="Date Paid:"/></TextBlock>
+                                <DatePicker SelectedDate="{Binding TargetModel.PaymentDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" Height="23" Margin="0,3,0,0"  />
+
+                                <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="3" Margin="0,3,0,0"><Run Text="Payment Type:"/></TextBlock>
+                                <ComboBox ItemsSource="{Binding PaymentTypes, Mode=TwoWay}" SelectedItem="{Binding PaymentType, Mode=TwoWay}" FontSize="10" Grid.Column="1" Grid.Row="3" Margin="0,3,0,0" Height="23" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontFamily="Verdana" Foreground="#FF413E3E" Text="{Binding Name}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+
+
+
+                                <StackPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Margin="0,3,0,0" Orientation="Horizontal">
+                                    <Button Command="{Binding AddCommand}" Margin="0,0,2,0" FontSize="9" Content="Add Detail" HorizontalAlignment="Right" />
+                                </StackPanel>
+
+
+                            </Grid>
+
+                            <Grid Margin="0,0,0,0">
+                                <Border BorderBrush="Gray" Background="White" BorderThickness="0,0,0,0" >
+                                    <StackPanel>
+                                        <Border Margin="0,2,0,0" BorderBrush="White" BorderThickness="0,2,0,0"  Background="#EFEFEF" HorizontalAlignment="Stretch">
+                                            <TextBlock Margin="0,0" HorizontalAlignment="Center" ><Run Text="PAYMENT DETAILS TRAY"/></TextBlock>
+                                        </Border>
+                                        <DataGrid ItemsSource="{Binding TargetCollection}" 
+											AreRowDetailsFrozen="True" 
+											AutoGenerateColumns="False" 
+                                                                 
+											GridLinesVisibility="None" 
+											HeadersVisibility="Column" 
+											Margin="0,1,0,4" 
+											MaxHeight="80" >
+                                            <DataGrid.Columns>
+
+                                                <DataGridTemplateColumn Header="Amount Paid">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock FontSize="12" Text="{Binding AmountPaid, Converter={StaticResource MoneyConverter}}" TextWrapping="Wrap">
+																<ToolTipService.ToolTip>
+																	<StackPanel Margin="5,10" Visibility="{Binding Check, Converter={StaticResource CheckToolTipConverter}}" Background="White">
+																		<Grid Margin="5,10">
+																			<Grid.ColumnDefinitions>
+																				<ColumnDefinition />
+																				<ColumnDefinition />
+																			</Grid.ColumnDefinitions>
+																			<Grid.RowDefinitions>
+																				<RowDefinition />
+																				<RowDefinition />
+																				<RowDefinition />
+																				<RowDefinition />
+																			</Grid.RowDefinitions>
+                                                                                            
+																			<Border Margin="0,0,0,5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Black"  BorderThickness="0,0,0,1">
+																				<TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontStretch="Expanded" ><Run Text="CHECK DETAILS"/></TextBlock>
+																			</Border>
+                                                                                            
+																			<TextBlock Margin="0,0,5,0" Grid.Column="0" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Right" Foreground="Gray"><Run Text="Bank:"/></TextBlock> 
+																			<TextBlock Grid.Column="1" FontSize="11" FontStyle="Italic" Grid.Row="1" Foreground="Red" Text="{Binding Check.Bank.Name}"/>
+                                                                                            
+																			<TextBlock Margin="0,0,5,0" Grid.Column="0" Grid.Row="2" FontWeight="Bold" HorizontalAlignment="Right" Foreground="Gray"><Run Text="Check No:"/></TextBlock>
+																			<TextBlock Grid.Column="1" FontSize="11" FontStyle="Italic" Grid.Row="2" Foreground="Red" Text="{Binding Check.CheckNumber}"/>
+                                                                                            
+																			<TextBlock Margin="0,0,5,0" Grid.Column="0" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Right" Foreground="Gray"><Run Text="Account No:"/></TextBlock>
+																			<TextBlock Grid.Column="1" FontSize="11" FontStyle="Italic" Grid.Row="3" Foreground="Red" Text="{Binding Check.AccountNumber}"/>
+																		</Grid>
+                                                                                     
+																	</StackPanel>
+																</ToolTipService.ToolTip>
+															</TextBlock>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn Header="Date Paid">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock FontSize="12" Text="{Binding PaymentDate, Converter={StaticResource DateConverter}}" TextWrapping="Wrap" />
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn Header="Payment Type">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock FontSize="12" Text="{Binding PaymentType.Name}" TextWrapping="Wrap" />
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+
+
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+
+                            <Button Command="{Binding RemoveCommand}" FontSize="9" Margin="0,3,5,7" Content="Delete" Height="20" HorizontalAlignment="Right" />
+                        </StackPanel>
+                    </Border>
+                </Border>
+
+                <Border Margin="15,10,7,0"  Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" BorderThickness="0,0,2,2" CornerRadius="14" Background="Gainsboro" >
+                    <Border.Effect>
+                        <DropShadowEffect Color="DimGray" />
+                    </Border.Effect>
+
+                    <StackPanel>
+                        <Border BorderBrush="Gray" Margin="7,5,7,0" BorderThickness="0,0,0,0" Background="Gainsboro" HorizontalAlignment="Stretch">
+                            <TextBlock Margin="15,0" HorizontalAlignment="Center" FontSize="13" FontWeight="Bold"><Run Text="SUPPLIER PAYMENT HISTORY"/></TextBlock>
+                        </Border>
+                        <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                            <Border BorderBrush="White" >
+
+                                <DataGrid 
+                                                        
+									ItemsSource="{Binding SupplierPaymentHistory}" 
+									AreRowDetailsFrozen="True" 
+									AutoGenerateColumns="False" 
+                                                        
+									RowDetailsVisibilityMode="Collapsed"
+									HeadersVisibility="Column" 
+									Margin="7,0,7,0" 
+									MaxHeight="520" >
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="Amt Payable">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock FontSize="12" Text="{Binding TransactionDate, Converter={StaticResource DateConverter}}" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Amt Paid">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock FontSize="12" Text="{Binding AmountPaid, Converter={StaticResource MoneyConverter}}" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Type">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock FontSize="12" Text="{Binding PaymentType}" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <StackPanel Grid.Row="3" HorizontalAlignment="Right" Margin="0,4,0,0" Orientation="Horizontal">
+                    <Button Command="{Binding ClearCommand}" Content="Clear" Height="28" HorizontalAlignment="Right" Margin="0,0,2,0" VerticalAlignment="Top" Width="68" />
+                    <Button Command="{Binding SaveCommand}" Content="Save" Height="28" HorizontalAlignment="Right" VerticalAlignment="Top" Width="68" />
+                </StackPanel>
+            </Grid>
+
+            
+            
+        </Grid>
+    </ContentControl>
+</UserControl>

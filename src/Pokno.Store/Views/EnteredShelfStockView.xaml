@@ -1,0 +1,195 @@
+﻿<UserControl x:Class="Pokno.Store.Views.EnteredShelfStockView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:local="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="800" >
+
+    <UserControl.Resources>
+        <local:DateConverter x:Key="DateConverter" />
+    </UserControl.Resources>
+
+    <!--<Grid x:Name="LayoutRoot" Margin="5" Background="#E7FBF9F9">-->
+    <Grid x:Name="LayoutRoot" Margin="5" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <!--<RowDefinition Height="*" />-->
+        </Grid.RowDefinitions>
+
+        <Border Margin="7,7,10,5" BorderBrush="Silver" BorderThickness="1" VerticalAlignment="Top" Background="Silver" >
+            <Border.Effect>
+                <DropShadowEffect Color="DimGray"></DropShadowEffect>
+            </Border.Effect>
+
+            <StackPanel Margin="10,7" Orientation="Horizontal">
+                <TextBlock Margin="0,0,5,0" VerticalAlignment="Center" FontWeight="Bold" >From:</TextBlock>
+                <DatePicker SelectedDate="{Binding FromDate, Mode=TwoWay}" Grid.Column="1" Grid.Row="8" Width="150" HorizontalAlignment="Left" Margin="0,0,10,0" />
+
+                <TextBlock Margin="0,0,5,0" VerticalAlignment="Center" FontWeight="Bold" >To:</TextBlock>
+                <DatePicker SelectedDate="{Binding ToDate, Mode=TwoWay}" Grid.Column="1" Grid.Row="8" Width="150" HorizontalAlignment="Left" Margin="0,0,5,0" />
+
+                <Button Command="{Binding SearchCommand}" Content="Search" />
+            </StackPanel>
+        </Border>
+
+        <!--<Border Grid.Row="1" BorderThickness="7,8,10,3" >-->
+        <Border Grid.Row="1" Margin="5,8,6,3" >
+            <StackPanel>
+                <Border Margin="2,0,2,0" Background="Gray">
+                    <TextBlock Margin="5"  Text="{Binding RecordCount, Mode=TwoWay}" HorizontalAlignment="Right" Foreground="WhiteSmoke" FontStyle="Italic" FontSize="12" />
+                </Border>
+
+                <DataGrid ItemsSource="{Binding ShelfStocks, Mode=TwoWay}" 
+                        AreRowDetailsFrozen="True" 
+                        AutoGenerateColumns="False" 
+                        HeadersVisibility="Column" 
+                        BorderThickness="0" 
+                        BorderBrush="White"
+                        
+                        
+                        GridLinesVisibility="Horizontal"
+                        AlternatingRowBackground="White"
+                        MaxHeight="438">
+
+                    <DataGrid.GroupStyle>
+                        <GroupStyle>
+                            <!--<GroupStyle.HeaderTemplate >
+                                <DataTemplate>
+                                    <StackPanel >
+                                        <TextBlock Text="{Binding Path=Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>-->
+                           
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="{x:Type GroupItem}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                <Expander Padding="0,1" Background="WhiteSmoke" BorderBrush="White" BorderThickness="0,1" >
+                                                    <Expander.Header>
+                                                        <Border Margin="0,3"  >
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <TextBlock Text="{Binding Name,StringFormat='{}{0:dd/MM/yyyy}'}" FontWeight="Bold" />
+                                                                <TextBlock Margin="10,0,0,0" Text="(" FontWeight="Bold" />
+                                                                <TextBlock Text="{Binding Path=ItemCount}" FontWeight="Bold" />
+                                                                <TextBlock Margin="5,0,0,0" Text="Items" FontWeight="Bold" />
+                                                                <TextBlock Text=")" FontWeight="Bold" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </Expander.Header>
+                                                    <ItemsPresenter />
+                                                </Expander>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                        </GroupStyle>
+                    </DataGrid.GroupStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Stock" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding StockPackage.Stock.Name}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Package" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding StockPackage.Package.Name}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Quantity" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" HorizontalAlignment="Center" Text="{Binding Quantity}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Expiry Date" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding ExpiryDate, Converter={StaticResource DateConverter}}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!--<DataGridTemplateColumn Header="Date Entered" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding DateEntered, Converter={StaticResource DateConverter}}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+
+
+                <!--<DataGrid ItemsSource="{Binding Shelfs, Mode=TwoWay}" 
+                        AreRowDetailsFrozen="True" 
+                        AutoGenerateColumns="False" 
+                        HeadersVisibility="Column" 
+                        Margin="0,0,0,0" 
+                   
+                        MaxHeight="435">
+                    <DataGrid.Columns>
+
+                        <DataGridTemplateColumn Header="Stock" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding StockPackage.Stock.Name}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Package" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding StockPackage.Package.Name}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Quantity" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" HorizontalAlignment="Center" Text="{Binding Quantity}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Expiry Date" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding ExpiryDate, Converter={StaticResource DateConverter}}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Date Entered" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" Text="{Binding DateEntered, Converter={StaticResource DateConverter}}" FontSize="12" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                      
+                    </DataGrid.Columns>
+                </DataGrid>-->
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

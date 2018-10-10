@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Pokno.People.Views.AssignRightToRoleView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    mc:Ignorable="d"
+    d:DesignHeight="700" 
+    d:DesignWidth="800" >
+
+    <Grid x:Name="LayoutRoot" Margin="5">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Margin="0,0,5,10" BorderBrush="Black" BorderThickness="0,0,1,1" Grid.Row="0" Background="Gainsboro">
+                <Border.Effect>
+                    <DropShadowEffect Color="DimGray"></DropShadowEffect>
+                </Border.Effect>
+                <Grid Margin="5,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="55"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock TextWrapping="Wrap" FontSize="12" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Verdana" >Role:</TextBlock>
+
+                    <Border Background="WhiteSmoke" Grid.Row="0" Grid.Column="1" >
+                        <StackPanel Orientation="Vertical" >
+                            <ComboBox Margin="0,3,0,3" ItemsSource="{Binding Roles, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Role, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Foreground="#FF413E3E" FontSize="13" TextWrapping="Wrap" Width="300" Text="{Binding Name}"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                    </Border>
+
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" Margin="0,5,0,0" >
+                <Border BorderThickness="0,0,0,0" BorderBrush="Silver" >
+                    <StackPanel Orientation="Vertical">
+
+                        <Border Background="Silver" >
+                            <Grid>
+                                <TextBlock Text="{Binding SelectedRoleName, Mode=TwoWay}" Margin="0,2,5,2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Red" FontFamily="Verdana" FontSize="12" FontStyle="Italic" />
+                                <Button Command="{Binding SaveCommand}" Margin="0,3,3,3" Content="Save" HorizontalAlignment="Right" />
+                            </Grid>
+                        </Border>
+                        
+                        <DataGrid Margin="0,1,0,0" 
+                               
+                                HeadersVisibility="Column"
+                                AutoGenerateColumns="False" 
+                                ItemsSource="{Binding Role.PersonRight.View, Mode=TwoWay}"
+                                
+                                AreRowDetailsFrozen="True" 
+                                HorizontalAlignment="Stretch"
+                                
+                                MaxHeight="420">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn  Header="Select" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox Margin="5,1,0,1" FontSize="18" IsChecked="{Binding IsInRole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="Right" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" FontSize="13" Text="{Binding Name}" Margin="5,1,0,1" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

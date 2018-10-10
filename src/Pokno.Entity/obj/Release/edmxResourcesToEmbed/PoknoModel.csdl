@@ -1,0 +1,2336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PoknoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PoknoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APPLICATION_MODE" EntityType="PoknoModel.APPLICATION_MODE" />
+    <EntitySet Name="BANK" EntityType="PoknoModel.BANK" />
+    <EntitySet Name="CASH" EntityType="PoknoModel.CASH" />
+    <EntitySet Name="CHEQUE" EntityType="PoknoModel.CHEQUE" />
+    <EntitySet Name="COMPANY" EntityType="PoknoModel.COMPANY" />
+    <EntitySet Name="CURRENT_ESNECIL" EntityType="PoknoModel.CURRENT_ESNECIL" />
+    <EntitySet Name="CURRENT_STOCK_PACKAGE" EntityType="PoknoModel.CURRENT_STOCK_PACKAGE" />
+    <EntitySet Name="CURRENT_STOCK_PACKAGE_RELATIONSHIP" EntityType="PoknoModel.CURRENT_STOCK_PACKAGE_RELATIONSHIP" />
+    <EntitySet Name="CURRENT_STOCK_PRICE" EntityType="PoknoModel.CURRENT_STOCK_PRICE" />
+    <EntitySet Name="DELETED_SHELF_STOCK" EntityType="PoknoModel.DELETED_SHELF_STOCK" />
+    <EntitySet Name="DELETED_SOLD_STOCK" EntityType="PoknoModel.DELETED_SOLD_STOCK" />
+    <EntitySet Name="DELETED_SOLD_STOCK_BATCH" EntityType="PoknoModel.DELETED_SOLD_STOCK_BATCH" />
+    <EntitySet Name="ESNECIL" EntityType="PoknoModel.ESNECIL" />
+    <EntitySet Name="EXPENSES" EntityType="PoknoModel.EXPENSES" />
+    <EntitySet Name="EXPENSES_CATEGORY" EntityType="PoknoModel.EXPENSES_CATEGORY" />
+    <EntitySet Name="EXPENSES_DETAIL" EntityType="PoknoModel.EXPENSES_DETAIL" />
+    <EntitySet Name="LOCATION" EntityType="PoknoModel.LOCATION" />
+    <EntitySet Name="PACKAGE" EntityType="PoknoModel.PACKAGE" />
+    <EntitySet Name="PACKAGE_RELATIONSHIP" EntityType="PoknoModel.PACKAGE_RELATIONSHIP" />
+    <EntitySet Name="PART" EntityType="PoknoModel.PART" />
+    <EntitySet Name="PAYMENT" EntityType="PoknoModel.PAYMENT" />
+    <EntitySet Name="PAYMENT_DETAIL" EntityType="PoknoModel.PAYMENT_DETAIL" />
+    <EntitySet Name="PAYMENT_TYPE" EntityType="PoknoModel.PAYMENT_TYPE" />
+    <EntitySet Name="PERSON" EntityType="PoknoModel.PERSON" />
+    <EntitySet Name="PERSON_COMPANY" EntityType="PoknoModel.PERSON_COMPANY" />
+    <EntitySet Name="PERSON_LOGIN" EntityType="PoknoModel.PERSON_LOGIN" />
+    <EntitySet Name="PERSON_TYPE" EntityType="PoknoModel.PERSON_TYPE" />
+    <EntitySet Name="REPLACED_STOCK_ACTION" EntityType="PoknoModel.REPLACED_STOCK_ACTION" />
+    <EntitySet Name="RETURNED_STOCK" EntityType="PoknoModel.RETURNED_STOCK" />
+    <EntitySet Name="RETURNED_STOCK_DETAIL" EntityType="PoknoModel.RETURNED_STOCK_DETAIL" />
+    <EntitySet Name="RETURNED_STOCK_REPLACEMENT" EntityType="PoknoModel.RETURNED_STOCK_REPLACEMENT" />
+    <EntitySet Name="RIGHT" EntityType="PoknoModel.RIGHT" />
+    <EntitySet Name="ROLE" EntityType="PoknoModel.ROLE" />
+    <EntitySet Name="ROLE_RIGHT" EntityType="PoknoModel.ROLE_RIGHT" />
+    <EntitySet Name="SETTING" EntityType="PoknoModel.SETTING" />
+    <EntitySet Name="SHELF" EntityType="PoknoModel.SHELF" />
+    <EntitySet Name="SHELF_STOCK_REPLACEMENT" EntityType="PoknoModel.SHELF_STOCK_REPLACEMENT" />
+    <EntitySet Name="SOLD_STOCK" EntityType="PoknoModel.SOLD_STOCK" />
+    <EntitySet Name="SOLD_STOCK_BATCH" EntityType="PoknoModel.SOLD_STOCK_BATCH" />
+    <EntitySet Name="SOLD_STOCK_RETURN" EntityType="PoknoModel.SOLD_STOCK_RETURN" />
+    <EntitySet Name="SOLD_STOCK_RETURN_REFUND" EntityType="PoknoModel.SOLD_STOCK_RETURN_REFUND" />
+    <EntitySet Name="STOCK" EntityType="PoknoModel.STOCK" />
+    <EntitySet Name="STOCK_BARCODE" EntityType="PoknoModel.STOCK_BARCODE" />
+    <EntitySet Name="STOCK_CATEGORY" EntityType="PoknoModel.STOCK_CATEGORY" />
+    <EntitySet Name="STOCK_PACKAGE" EntityType="PoknoModel.STOCK_PACKAGE" />
+    <EntitySet Name="STOCK_PACKAGE_RELATIONSHIP" EntityType="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" />
+    <EntitySet Name="STOCK_PRICE" EntityType="PoknoModel.STOCK_PRICE" />
+    <EntitySet Name="STOCK_PURCHASE_BATCH" EntityType="PoknoModel.STOCK_PURCHASE_BATCH" />
+    <EntitySet Name="STOCK_PURCHASE_BATCH_TYPE" EntityType="PoknoModel.STOCK_PURCHASE_BATCH_TYPE" />
+    <EntitySet Name="STOCK_PURCHASED" EntityType="PoknoModel.STOCK_PURCHASED" />
+    <EntitySet Name="STOCK_PURCHASED_POOL" EntityType="PoknoModel.STOCK_PURCHASED_POOL" />
+    <EntitySet Name="STOCK_PURCHASED_POOL_DETAIL" EntityType="PoknoModel.STOCK_PURCHASED_POOL_DETAIL" />
+    <EntitySet Name="STOCK_PURCHASED_RETURN" EntityType="PoknoModel.STOCK_PURCHASED_RETURN" />
+    <EntitySet Name="STOCK_REPLACEMENT" EntityType="PoknoModel.STOCK_REPLACEMENT" />
+    <EntitySet Name="STOCK_RETURN_ACTION" EntityType="PoknoModel.STOCK_RETURN_ACTION" />
+    <EntitySet Name="STOCK_RETURN_TYPE" EntityType="PoknoModel.STOCK_RETURN_TYPE" />
+    <EntitySet Name="STOCK_REVIEW" EntityType="PoknoModel.STOCK_REVIEW" />
+    <EntitySet Name="STOCK_REVIEW_DETAIL" EntityType="PoknoModel.STOCK_REVIEW_DETAIL" />
+    <EntitySet Name="STOCK_STATE" EntityType="PoknoModel.STOCK_STATE" />
+    <EntitySet Name="STOCK_TYPE" EntityType="PoknoModel.STOCK_TYPE" />
+    <EntitySet Name="STORE" EntityType="PoknoModel.STORE" />
+    <EntitySet Name="TRANSACTION_TYPE" EntityType="PoknoModel.TRANSACTION_TYPE" />
+    <AssociationSet Name="FK_SETTING_0_0" Association="PoknoModel.FK_SETTING_0_0">
+      <End Role="APPLICATION_MODE" EntitySet="APPLICATION_MODE" />
+      <End Role="SETTING" EntitySet="SETTING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHEQUE_0_0" Association="PoknoModel.FK_CHEQUE_0_0">
+      <End Role="BANK" EntitySet="BANK" />
+      <End Role="CHEQUE" EntitySet="CHEQUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CASH_0_0" Association="PoknoModel.FK_CASH_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="CASH" EntitySet="CASH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHEQUE_1_0" Association="PoknoModel.FK_CHEQUE_1_0">
+      <End Role="PAYMENT_DETAIL" EntitySet="PAYMENT_DETAIL" />
+      <End Role="CHEQUE" EntitySet="CHEQUE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_COMPANY_0_0" Association="PoknoModel.FK_PERSON_COMPANY_0_0">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="PERSON_COMPANY" EntitySet="PERSON_COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_ESNECIL_0_0" Association="PoknoModel.FK_CURRENT_ESNECIL_0_0">
+      <End Role="ESNECIL" EntitySet="ESNECIL" />
+      <End Role="CURRENT_ESNECIL" EntitySet="CURRENT_ESNECIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_STOCK_PACKAGE_0_0" Association="PoknoModel.FK_CURRENT_STOCK_PACKAGE_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="CURRENT_STOCK_PACKAGE" EntitySet="CURRENT_STOCK_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0" Association="PoknoModel.FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="CURRENT_STOCK_PACKAGE_RELATIONSHIP" EntitySet="CURRENT_STOCK_PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CURRENT_STOCK_PRICE_0_0" Association="PoknoModel.FK_CURRENT_STOCK_PRICE_0_0">
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+      <End Role="CURRENT_STOCK_PRICE" EntitySet="CURRENT_STOCK_PRICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SHELF_STOCK_0_0" Association="PoknoModel.FK_DELETED_SHELF_STOCK_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SHELF_STOCK" EntitySet="DELETED_SHELF_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SHELF_STOCK_1_0" Association="PoknoModel.FK_DELETED_SHELF_STOCK_1_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="DELETED_SHELF_STOCK" EntitySet="DELETED_SHELF_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SHELF_STOCK_2_0" Association="PoknoModel.FK_DELETED_SHELF_STOCK_2_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="DELETED_SHELF_STOCK" EntitySet="DELETED_SHELF_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_0_0" Association="PoknoModel.FK_DELETED_SOLD_STOCK_0_0">
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+      <End Role="DELETED_SOLD_STOCK" EntitySet="DELETED_SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_1_0" Association="PoknoModel.FK_DELETED_SOLD_STOCK_1_0">
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+      <End Role="DELETED_SOLD_STOCK" EntitySet="DELETED_SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_0_0" Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_1_0" Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_2_0" Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_2_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELETED_SOLD_STOCK_BATCH_3_0" Association="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_3_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="DELETED_SOLD_STOCK_BATCH" EntitySet="DELETED_SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_0_0" Association="PoknoModel.FK_EXPENSES_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="EXPENSES" EntitySet="EXPENSES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_DETAIL_2_0" Association="PoknoModel.FK_EXPENSES_DETAIL_2_0">
+      <End Role="EXPENSES" EntitySet="EXPENSES" />
+      <End Role="EXPENSES_DETAIL" EntitySet="EXPENSES_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_DETAIL_0_0" Association="PoknoModel.FK_EXPENSES_DETAIL_0_0">
+      <End Role="EXPENSES_CATEGORY" EntitySet="EXPENSES_CATEGORY" />
+      <End Role="EXPENSES_DETAIL" EntitySet="EXPENSES_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EXPENSES_DETAIL_1_0" Association="PoknoModel.FK_EXPENSES_DETAIL_1_0">
+      <End Role="PAYMENT_TYPE" EntitySet="PAYMENT_TYPE" />
+      <End Role="EXPENSES_DETAIL" EntitySet="EXPENSES_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_0_0" Association="PoknoModel.FK_PERSON_0_0">
+      <End Role="LOCATION" EntitySet="LOCATION" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_0_0" Association="PoknoModel.FK_SHELF_0_0">
+      <End Role="LOCATION" EntitySet="LOCATION" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_1_0" Association="PoknoModel.FK_STOCK_PACKAGE_1_0">
+      <End Role="PACKAGE" EntitySet="PACKAGE" />
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACKAGE_RELATIONSHIP_0_0" Association="PoknoModel.FK_PACKAGE_RELATIONSHIP_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="PACKAGE_RELATIONSHIP" EntitySet="PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACKAGE_RELATIONSHIP_1_0" Association="PoknoModel.FK_PACKAGE_RELATIONSHIP_1_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="PACKAGE_RELATIONSHIP" EntitySet="PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACKAGE_RELATIONSHIP_2_0" Association="PoknoModel.FK_PACKAGE_RELATIONSHIP_2_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="PACKAGE_RELATIONSHIP" EntitySet="PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PART_0_0" Association="PoknoModel.FK_PART_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="PART" EntitySet="PART" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAYMENT_0_0" Association="PoknoModel.FK_PAYMENT_0_0">
+      <End Role="TRANSACTION_TYPE" EntitySet="TRANSACTION_TYPE" />
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAYMENT_DETAIL_1_0" Association="PoknoModel.FK_PAYMENT_DETAIL_1_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="PAYMENT_DETAIL" EntitySet="PAYMENT_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_0_0" Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_BATCH_0_0" Association="PoknoModel.FK_SOLD_STOCK_BATCH_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_REFUND_0_0" Association="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="SOLD_STOCK_RETURN_REFUND" EntitySet="SOLD_STOCK_RETURN_REFUND" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_0_0" Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_0_0">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAYMENT_DETAIL_0_0" Association="PoknoModel.FK_PAYMENT_DETAIL_0_0">
+      <End Role="PAYMENT_TYPE" EntitySet="PAYMENT_TYPE" />
+      <End Role="PAYMENT_DETAIL" EntitySet="PAYMENT_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_1_0" Association="PoknoModel.FK_PERSON_1_0">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_2_0" Association="PoknoModel.FK_PERSON_2_0">
+      <End Role="PERSON_TYPE" EntitySet="PERSON_TYPE" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_COMPANY_1_0" Association="PoknoModel.FK_PERSON_COMPANY_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="PERSON_COMPANY" EntitySet="PERSON_COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_LOGIN_0_0" Association="PoknoModel.FK_PERSON_LOGIN_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="PERSON_LOGIN" EntitySet="PERSON_LOGIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_0_0" Association="PoknoModel.FK_RETURNED_STOCK_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="RETURNED_STOCK" EntitySet="RETURNED_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_0_0" Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_1_0" Association="PoknoModel.FK_SHELF_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_BATCH_1_0" Association="PoknoModel.FK_SOLD_STOCK_BATCH_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_BATCH_2_0" Association="PoknoModel.FK_SOLD_STOCK_BATCH_2_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_RELATIONSHIP_0_0" Association="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_1_0" Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_1_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_2_0" Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_2_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_0_0" Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_REVIEW_0_0" Association="PoknoModel.FK_STOCK_REVIEW_0_0">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="STOCK_REVIEW" EntitySet="STOCK_REVIEW" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_1_0" Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_1_0">
+      <End Role="REPLACED_STOCK_ACTION" EntitySet="REPLACED_STOCK_ACTION" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_1_0" Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_1_0">
+      <End Role="REPLACED_STOCK_ACTION" EntitySet="REPLACED_STOCK_ACTION" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_3_0" Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_3_0">
+      <End Role="RETURNED_STOCK" EntitySet="RETURNED_STOCK" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_1_0" Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_1_0">
+      <End Role="STOCK_RETURN_ACTION" EntitySet="STOCK_RETURN_ACTION" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_2_0" Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_2_0">
+      <End Role="STOCK_STATE" EntitySet="STOCK_STATE" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_DETAIL_4_0" Association="PoknoModel.FK_RETURNED_STOCK_DETAIL_4_0">
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_3_0" Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_3_0">
+      <End Role="RETURNED_STOCK_DETAIL" EntitySet="RETURNED_STOCK_DETAIL" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETURNED_STOCK_REPLACEMENT_2_0" Association="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_2_0">
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+      <End Role="RETURNED_STOCK_REPLACEMENT" EntitySet="RETURNED_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROLE_RIGHT_0_0" Association="PoknoModel.FK_ROLE_RIGHT_0_0">
+      <End Role="RIGHT" EntitySet="RIGHT" />
+      <End Role="ROLE_RIGHT" EntitySet="ROLE_RIGHT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROLE_RIGHT_1_0" Association="PoknoModel.FK_ROLE_RIGHT_1_0">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="ROLE_RIGHT" EntitySet="ROLE_RIGHT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_2_0" Association="PoknoModel.FK_SHELF_2_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_3_0" Association="PoknoModel.FK_SHELF_3_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="SHELF" EntitySet="SHELF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_2_0" Association="PoknoModel.FK_SOLD_STOCK_2_0">
+      <End Role="SHELF" EntitySet="SHELF" />
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SHELF_STOCK_REPLACEMENT_0_0" Association="PoknoModel.FK_SHELF_STOCK_REPLACEMENT_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="SHELF_STOCK_REPLACEMENT" EntitySet="SHELF_STOCK_REPLACEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_0_0" Association="PoknoModel.FK_SOLD_STOCK_0_0">
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_1_0" Association="PoknoModel.FK_SOLD_STOCK_1_0">
+      <End Role="SOLD_STOCK_BATCH" EntitySet="SOLD_STOCK_BATCH" />
+      <End Role="SOLD_STOCK" EntitySet="SOLD_STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_0_0" Association="PoknoModel.FK_SOLD_STOCK_RETURN_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="SOLD_STOCK_RETURN" EntitySet="SOLD_STOCK_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_1_0" Association="PoknoModel.FK_SOLD_STOCK_RETURN_1_0">
+      <End Role="STOCK_STATE" EntitySet="STOCK_STATE" />
+      <End Role="SOLD_STOCK_RETURN" EntitySet="SOLD_STOCK_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLD_STOCK_RETURN_REFUND_1_0" Association="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_1_0">
+      <End Role="SOLD_STOCK_RETURN" EntitySet="SOLD_STOCK_RETURN" />
+      <End Role="SOLD_STOCK_RETURN_REFUND" EntitySet="SOLD_STOCK_RETURN_REFUND" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_0_0" Association="PoknoModel.FK_STOCK_0_0">
+      <End Role="STOCK_TYPE" EntitySet="STOCK_TYPE" />
+      <End Role="STOCK" EntitySet="STOCK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_0_0" Association="PoknoModel.FK_STOCK_PACKAGE_0_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PACKAGE_RELATIONSHIP_1_0" Association="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_1_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_2_0" Association="PoknoModel.FK_STOCK_PURCHASED_2_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_2_0" Association="PoknoModel.FK_STOCK_PURCHASED_POOL_2_0">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_TYPE_0_0" Association="PoknoModel.FK_STOCK_TYPE_0_0">
+      <End Role="STOCK_CATEGORY" EntitySet="STOCK_CATEGORY" />
+      <End Role="STOCK_TYPE" EntitySet="STOCK_TYPE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PRICE_0_0" Association="PoknoModel.FK_STOCK_PRICE_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PRICE" EntitySet="STOCK_PRICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_1_0" Association="PoknoModel.FK_STOCK_PURCHASED_1_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_0_0" Association="PoknoModel.FK_STOCK_PURCHASED_POOL_0_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_3_0" Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_3_0">
+      <End Role="STOCK_PACKAGE" EntitySet="STOCK_PACKAGE" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_0_0" Association="PoknoModel.FK_STOCK_PURCHASED_0_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_1_0" Association="PoknoModel.FK_STOCK_PURCHASED_POOL_1_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_4_0" Association="PoknoModel.FK_STOCK_PURCHASED_POOL_4_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_4_0" Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_4_0">
+      <End Role="STOCK_PACKAGE_RELATIONSHIP" EntitySet="STOCK_PACKAGE_RELATIONSHIP" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASE_BATCH_3_0" Association="PoknoModel.FK_STOCK_PURCHASE_BATCH_3_0">
+      <End Role="STOCK_PURCHASE_BATCH_TYPE" EntitySet="STOCK_PURCHASE_BATCH_TYPE" />
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_3_0" Association="PoknoModel.FK_STOCK_PURCHASED_3_0">
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_3_0" Association="PoknoModel.FK_STOCK_PURCHASED_POOL_3_0">
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_5_0" Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_5_0">
+      <End Role="STOCK_PURCHASE_BATCH" EntitySet="STOCK_PURCHASE_BATCH" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_DETAIL_1_0" Association="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_1_0">
+      <End Role="STOCK_PURCHASED" EntitySet="STOCK_PURCHASED" />
+      <End Role="STOCK_PURCHASED_POOL_DETAIL" EntitySet="STOCK_PURCHASED_POOL_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_POOL_DETAIL_0_0" Association="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_0_0">
+      <End Role="STOCK_PURCHASED_POOL" EntitySet="STOCK_PURCHASED_POOL" />
+      <End Role="STOCK_PURCHASED_POOL_DETAIL" EntitySet="STOCK_PURCHASED_POOL_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_PURCHASED_RETURN_2_0" Association="PoknoModel.FK_STOCK_PURCHASED_RETURN_2_0">
+      <End Role="STOCK_STATE" EntitySet="STOCK_STATE" />
+      <End Role="STOCK_PURCHASED_RETURN" EntitySet="STOCK_PURCHASED_RETURN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK_REVIEW_DETAIL_0_0" Association="PoknoModel.FK_STOCK_REVIEW_DETAIL_0_0">
+      <End Role="STOCK_REVIEW" EntitySet="STOCK_REVIEW" />
+      <End Role="STOCK_REVIEW_DETAIL" EntitySet="STOCK_REVIEW_DETAIL" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="APPLICATION_MODE">
+    <Key>
+      <PropertyRef Name="Application_Mode_Id" />
+    </Key>
+    <Property Name="Application_Mode_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Application_Mode_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Application_Mode_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SETTING" Relationship="PoknoModel.FK_SETTING_0_0" FromRole="APPLICATION_MODE" ToRole="SETTING" />
+  </EntityType>
+  <EntityType Name="BANK">
+    <Key>
+      <PropertyRef Name="Bank_Id" />
+    </Key>
+    <Property Name="Bank_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bank_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bank_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CHEQUE" Relationship="PoknoModel.FK_CHEQUE_0_0" FromRole="BANK" ToRole="CHEQUE" />
+  </EntityType>
+  <EntityType Name="CASH">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_CASH_0_0" FromRole="CASH" ToRole="PAYMENT" />
+  </EntityType>
+  <EntityType Name="CHEQUE">
+    <Key>
+      <PropertyRef Name="Payment_Detail_Id" />
+    </Key>
+    <Property Name="Payment_Detail_Id" Type="Int64" Nullable="false" />
+    <Property Name="Bank_Id" Type="Int64" Nullable="false" />
+    <Property Name="Cheque_Number" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Account_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BANK" Relationship="PoknoModel.FK_CHEQUE_0_0" FromRole="CHEQUE" ToRole="BANK" />
+    <NavigationProperty Name="PAYMENT_DETAIL" Relationship="PoknoModel.FK_CHEQUE_1_0" FromRole="CHEQUE" ToRole="PAYMENT_DETAIL" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="Company_Id" />
+    </Key>
+    <Property Name="Company_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Disclaimer" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSON_COMPANY" Relationship="PoknoModel.FK_PERSON_COMPANY_0_0" FromRole="COMPANY" ToRole="PERSON_COMPANY" />
+  </EntityType>
+  <EntityType Name="CURRENT_ESNECIL">
+    <Key>
+      <PropertyRef Name="Esnecil_Id" />
+    </Key>
+    <Property Name="Esnecil_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="ESNECIL" Relationship="PoknoModel.FK_CURRENT_ESNECIL_0_0" FromRole="CURRENT_ESNECIL" ToRole="ESNECIL" />
+  </EntityType>
+  <EntityType Name="CURRENT_STOCK_PACKAGE">
+    <Key>
+      <PropertyRef Name="Stock_Package_Id" />
+    </Key>
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_CURRENT_STOCK_PACKAGE_0_0" FromRole="CURRENT_STOCK_PACKAGE" ToRole="STOCK_PACKAGE" />
+  </EntityType>
+  <EntityType Name="CURRENT_STOCK_PACKAGE_RELATIONSHIP">
+    <Key>
+      <PropertyRef Name="Stock_Package_Relationship_Id" />
+    </Key>
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0" FromRole="CURRENT_STOCK_PACKAGE_RELATIONSHIP" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+  </EntityType>
+  <EntityType Name="CURRENT_STOCK_PRICE">
+    <Key>
+      <PropertyRef Name="Stock_Price_Id" />
+    </Key>
+    <Property Name="Stock_Price_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="STOCK_PRICE" Relationship="PoknoModel.FK_CURRENT_STOCK_PRICE_0_0" FromRole="CURRENT_STOCK_PRICE" ToRole="STOCK_PRICE" />
+  </EntityType>
+  <EntityType Name="DELETED_SHELF_STOCK">
+    <Key>
+      <PropertyRef Name="Shelf_Id" />
+    </Key>
+    <Property Name="Shelf_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <Property Name="Deleted_By" Type="Int64" Nullable="false" />
+    <Property Name="Date_Deleted" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_DELETED_SHELF_STOCK_0_0" FromRole="DELETED_SHELF_STOCK" ToRole="PERSON" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_DELETED_SHELF_STOCK_1_0" FromRole="DELETED_SHELF_STOCK" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_DELETED_SHELF_STOCK_2_0" FromRole="DELETED_SHELF_STOCK" ToRole="STOCK_PACKAGE" />
+  </EntityType>
+  <EntityType Name="DELETED_SOLD_STOCK">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Shelf_Id" Type="Int64" Nullable="false" />
+    <Property Name="Sold_Stock_Batch_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Price_Id" Type="Int64" Nullable="false" />
+    <Property Name="Returned" Type="Boolean" Nullable="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="STOCK_PRICE" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_0_0" FromRole="DELETED_SOLD_STOCK" ToRole="STOCK_PRICE" />
+    <NavigationProperty Name="DELETED_SOLD_STOCK_BATCH" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_1_0" FromRole="DELETED_SOLD_STOCK" ToRole="DELETED_SOLD_STOCK_BATCH" />
+  </EntityType>
+  <EntityType Name="DELETED_SOLD_STOCK_BATCH">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Batch_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Batch_Id" Type="Int64" Nullable="false" />
+    <Property Name="Customer_Id" Type="Int64" Nullable="false" />
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" />
+    <Property Name="Seller_Id" Type="Int64" Nullable="false" />
+    <Property Name="Total_Discount" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Date_Sold" Type="DateTime" Nullable="false" />
+    <Property Name="Date_Deleted" Type="DateTime" Nullable="false" />
+    <Property Name="Deleted_Reason" Type="String" Nullable="false" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="Deleted_By_Person_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="DELETED_SOLD_STOCK" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_1_0" FromRole="DELETED_SOLD_STOCK_BATCH" ToRole="DELETED_SOLD_STOCK" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_0_0" FromRole="DELETED_SOLD_STOCK_BATCH" ToRole="PERSON" />
+    <NavigationProperty Name="PERSON1" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_1_0" FromRole="DELETED_SOLD_STOCK_BATCH" ToRole="PERSON" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_2_0" FromRole="DELETED_SOLD_STOCK_BATCH" ToRole="PAYMENT" />
+    <NavigationProperty Name="PERSON2" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_3_0" FromRole="DELETED_SOLD_STOCK_BATCH" ToRole="PERSON" />
+  </EntityType>
+  <EntityType Name="ESNECIL">
+    <Key>
+      <PropertyRef Name="Esnecil_Id" />
+    </Key>
+    <Property Name="Esnecil_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Validation_Key" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="Machine_Code" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="false" />
+    <Property Name="Esnecil_Code" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="false" />
+    <Property Name="Serial_Code" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="false" />
+    <Property Name="Activation_Date" Type="DateTime" />
+    <Property Name="Is_Evaluation" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CURRENT_ESNECIL" Relationship="PoknoModel.FK_CURRENT_ESNECIL_0_0" FromRole="ESNECIL" ToRole="CURRENT_ESNECIL" />
+  </EntityType>
+  <EntityType Name="EXPENSES">
+    <Key>
+      <PropertyRef Name="Expenses_Id" />
+    </Key>
+    <Property Name="Expenses_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Opening_Balance" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Additional_Cash" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Cash_At_Hand" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Closing_Balance" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Expenses_Date" Type="DateTime" Nullable="false" />
+    <Property Name="Created_By_Person_Id" Type="Int64" Nullable="false" />
+    <Property Name="Date_Created" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_EXPENSES_0_0" FromRole="EXPENSES" ToRole="PERSON" />
+    <NavigationProperty Name="EXPENSES_DETAIL" Relationship="PoknoModel.FK_EXPENSES_DETAIL_2_0" FromRole="EXPENSES" ToRole="EXPENSES_DETAIL" />
+  </EntityType>
+  <EntityType Name="EXPENSES_CATEGORY">
+    <Key>
+      <PropertyRef Name="Expenses_Category_Id" />
+    </Key>
+    <Property Name="Expenses_Category_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Expenses_Category_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expenses_Category_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EXPENSES_DETAIL" Relationship="PoknoModel.FK_EXPENSES_DETAIL_0_0" FromRole="EXPENSES_CATEGORY" ToRole="EXPENSES_DETAIL" />
+  </EntityType>
+  <EntityType Name="EXPENSES_DETAIL">
+    <Key>
+      <PropertyRef Name="Expenses_Detail_Id" />
+    </Key>
+    <Property Name="Expenses_Detail_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Expenses_Id" Type="Int64" Nullable="false" />
+    <Property Name="Expenses_Category_Id" Type="Int64" Nullable="false" />
+    <Property Name="Collected_By" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Payment_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Purpose" Type="String" MaxLength="850" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EXPENSES" Relationship="PoknoModel.FK_EXPENSES_DETAIL_2_0" FromRole="EXPENSES_DETAIL" ToRole="EXPENSES" />
+    <NavigationProperty Name="EXPENSES_CATEGORY" Relationship="PoknoModel.FK_EXPENSES_DETAIL_0_0" FromRole="EXPENSES_DETAIL" ToRole="EXPENSES_CATEGORY" />
+    <NavigationProperty Name="PAYMENT_TYPE" Relationship="PoknoModel.FK_EXPENSES_DETAIL_1_0" FromRole="EXPENSES_DETAIL" ToRole="PAYMENT_TYPE" />
+  </EntityType>
+  <EntityType Name="LOCATION">
+    <Key>
+      <PropertyRef Name="Location_Id" />
+    </Key>
+    <Property Name="Location_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location_Address" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_PERSON_0_0" FromRole="LOCATION" ToRole="PERSON" />
+    <NavigationProperty Name="SHELF" Relationship="PoknoModel.FK_SHELF_0_0" FromRole="LOCATION" ToRole="SHELF" />
+  </EntityType>
+  <EntityType Name="PACKAGE">
+    <Key>
+      <PropertyRef Name="Package_Id" />
+    </Key>
+    <Property Name="Package_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Package_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Package_Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_STOCK_PACKAGE_1_0" FromRole="PACKAGE" ToRole="STOCK_PACKAGE" />
+  </EntityType>
+  <EntityType Name="PACKAGE_RELATIONSHIP">
+    <Key>
+      <PropertyRef Name="Package_Relationship_Id" />
+    </Key>
+    <Property Name="Package_Relationship_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Sub_Stock_Package_Id" Type="Int64" />
+    <Property Name="Quantity_In_Package" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Rank" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_PACKAGE_RELATIONSHIP_0_0" FromRole="PACKAGE_RELATIONSHIP" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="STOCK_PACKAGE1" Relationship="PoknoModel.FK_PACKAGE_RELATIONSHIP_1_0" FromRole="PACKAGE_RELATIONSHIP" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_PACKAGE_RELATIONSHIP_2_0" FromRole="PACKAGE_RELATIONSHIP" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+  </EntityType>
+  <EntityType Name="PART">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_PART_0_0" FromRole="PART" ToRole="PAYMENT" />
+  </EntityType>
+  <EntityType Name="PAYMENT">
+    <Key>
+      <PropertyRef Name="Payment_Id" />
+    </Key>
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Transaction_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Amount_Payable" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Serial_Number" Type="Int64" />
+    <Property Name="Invoice_Number" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Paid" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="CASH" Relationship="PoknoModel.FK_CASH_0_0" FromRole="PAYMENT" ToRole="CASH" />
+    <NavigationProperty Name="DELETED_SOLD_STOCK_BATCH" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_2_0" FromRole="PAYMENT" ToRole="DELETED_SOLD_STOCK_BATCH" />
+    <NavigationProperty Name="PART" Relationship="PoknoModel.FK_PART_0_0" FromRole="PAYMENT" ToRole="PART" />
+    <NavigationProperty Name="TRANSACTION_TYPE" Relationship="PoknoModel.FK_PAYMENT_0_0" FromRole="PAYMENT" ToRole="TRANSACTION_TYPE" />
+    <NavigationProperty Name="PAYMENT_DETAIL" Relationship="PoknoModel.FK_PAYMENT_DETAIL_1_0" FromRole="PAYMENT" ToRole="PAYMENT_DETAIL" />
+    <NavigationProperty Name="RETURNED_STOCK_DETAIL" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_0_0" FromRole="PAYMENT" ToRole="RETURNED_STOCK_DETAIL" />
+    <NavigationProperty Name="SOLD_STOCK_BATCH" Relationship="PoknoModel.FK_SOLD_STOCK_BATCH_0_0" FromRole="PAYMENT" ToRole="SOLD_STOCK_BATCH" />
+    <NavigationProperty Name="SOLD_STOCK_RETURN_REFUND" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_0_0" FromRole="PAYMENT" ToRole="SOLD_STOCK_RETURN_REFUND" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_0_0" FromRole="PAYMENT" ToRole="STOCK_PURCHASE_BATCH" />
+  </EntityType>
+  <EntityType Name="PAYMENT_DETAIL">
+    <Key>
+      <PropertyRef Name="Payment_Detail_Id" />
+    </Key>
+    <Property Name="Payment_Detail_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" />
+    <Property Name="Payment_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Payment_Date" Type="DateTime" Nullable="false" />
+    <Property Name="Amount_Paid" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <NavigationProperty Name="CHEQUE" Relationship="PoknoModel.FK_CHEQUE_1_0" FromRole="PAYMENT_DETAIL" ToRole="CHEQUE" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_PAYMENT_DETAIL_1_0" FromRole="PAYMENT_DETAIL" ToRole="PAYMENT" />
+    <NavigationProperty Name="PAYMENT_TYPE" Relationship="PoknoModel.FK_PAYMENT_DETAIL_0_0" FromRole="PAYMENT_DETAIL" ToRole="PAYMENT_TYPE" />
+  </EntityType>
+  <EntityType Name="PAYMENT_TYPE">
+    <Key>
+      <PropertyRef Name="Payment_Type_Id" />
+    </Key>
+    <Property Name="Payment_Type_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payment_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EXPENSES_DETAIL" Relationship="PoknoModel.FK_EXPENSES_DETAIL_1_0" FromRole="PAYMENT_TYPE" ToRole="EXPENSES_DETAIL" />
+    <NavigationProperty Name="PAYMENT_DETAIL" Relationship="PoknoModel.FK_PAYMENT_DETAIL_0_0" FromRole="PAYMENT_TYPE" ToRole="PAYMENT_DETAIL" />
+  </EntityType>
+  <EntityType Name="PERSON">
+    <Key>
+      <PropertyRef Name="Person_Id" />
+    </Key>
+    <Property Name="Person_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Person_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Other_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile_Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contact_Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Role_Id" Type="Int64" Nullable="false" />
+    <Property Name="Location_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="DELETED_SHELF_STOCK" Relationship="PoknoModel.FK_DELETED_SHELF_STOCK_0_0" FromRole="PERSON" ToRole="DELETED_SHELF_STOCK" />
+    <NavigationProperty Name="DELETED_SOLD_STOCK_BATCH" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_0_0" FromRole="PERSON" ToRole="DELETED_SOLD_STOCK_BATCH" />
+    <NavigationProperty Name="DELETED_SOLD_STOCK_BATCH1" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_1_0" FromRole="PERSON" ToRole="DELETED_SOLD_STOCK_BATCH" />
+    <NavigationProperty Name="DELETED_SOLD_STOCK_BATCH2" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_BATCH_3_0" FromRole="PERSON" ToRole="DELETED_SOLD_STOCK_BATCH" />
+    <NavigationProperty Name="EXPENSES" Relationship="PoknoModel.FK_EXPENSES_0_0" FromRole="PERSON" ToRole="EXPENSES" />
+    <NavigationProperty Name="LOCATION" Relationship="PoknoModel.FK_PERSON_0_0" FromRole="PERSON" ToRole="LOCATION" />
+    <NavigationProperty Name="ROLE" Relationship="PoknoModel.FK_PERSON_1_0" FromRole="PERSON" ToRole="ROLE" />
+    <NavigationProperty Name="PERSON_TYPE" Relationship="PoknoModel.FK_PERSON_2_0" FromRole="PERSON" ToRole="PERSON_TYPE" />
+    <NavigationProperty Name="PERSON_COMPANY" Relationship="PoknoModel.FK_PERSON_COMPANY_1_0" FromRole="PERSON" ToRole="PERSON_COMPANY" />
+    <NavigationProperty Name="PERSON_LOGIN" Relationship="PoknoModel.FK_PERSON_LOGIN_0_0" FromRole="PERSON" ToRole="PERSON_LOGIN" />
+    <NavigationProperty Name="RETURNED_STOCK" Relationship="PoknoModel.FK_RETURNED_STOCK_0_0" FromRole="PERSON" ToRole="RETURNED_STOCK" />
+    <NavigationProperty Name="RETURNED_STOCK_REPLACEMENT" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_0_0" FromRole="PERSON" ToRole="RETURNED_STOCK_REPLACEMENT" />
+    <NavigationProperty Name="SHELF" Relationship="PoknoModel.FK_SHELF_1_0" FromRole="PERSON" ToRole="SHELF" />
+    <NavigationProperty Name="SOLD_STOCK_BATCH" Relationship="PoknoModel.FK_SOLD_STOCK_BATCH_1_0" FromRole="PERSON" ToRole="SOLD_STOCK_BATCH" />
+    <NavigationProperty Name="SOLD_STOCK_BATCH1" Relationship="PoknoModel.FK_SOLD_STOCK_BATCH_2_0" FromRole="PERSON" ToRole="SOLD_STOCK_BATCH" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_0_0" FromRole="PERSON" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_1_0" FromRole="PERSON" ToRole="STOCK_PURCHASE_BATCH" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH1" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_2_0" FromRole="PERSON" ToRole="STOCK_PURCHASE_BATCH" />
+    <NavigationProperty Name="STOCK_PURCHASED_RETURN" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_0_0" FromRole="PERSON" ToRole="STOCK_PURCHASED_RETURN" />
+    <NavigationProperty Name="STOCK_REVIEW" Relationship="PoknoModel.FK_STOCK_REVIEW_0_0" FromRole="PERSON" ToRole="STOCK_REVIEW" />
+  </EntityType>
+  <EntityType Name="PERSON_COMPANY">
+    <Key>
+      <PropertyRef Name="Person_Company_Id" />
+    </Key>
+    <Property Name="Person_Company_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Person_Id" Type="Int64" Nullable="false" />
+    <Property Name="Company_Id" Type="Int64" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="COMPANY" Relationship="PoknoModel.FK_PERSON_COMPANY_0_0" FromRole="PERSON_COMPANY" ToRole="COMPANY" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_PERSON_COMPANY_1_0" FromRole="PERSON_COMPANY" ToRole="PERSON" />
+  </EntityType>
+  <EntityType Name="PERSON_LOGIN">
+    <Key>
+      <PropertyRef Name="Person_Id" />
+    </Key>
+    <Property Name="Person_Id" Type="Int64" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="Binary" Nullable="false" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="Is_Locked" Type="Boolean" Nullable="false" />
+    <Property Name="Is_Activated" Type="Boolean" Nullable="false" />
+    <Property Name="Is_First_Logon" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_PERSON_LOGIN_0_0" FromRole="PERSON_LOGIN" ToRole="PERSON" />
+  </EntityType>
+  <EntityType Name="PERSON_TYPE">
+    <Key>
+      <PropertyRef Name="Person_Type_Id" />
+    </Key>
+    <Property Name="Person_Type_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Person_Type_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Person_Type_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_PERSON_2_0" FromRole="PERSON_TYPE" ToRole="PERSON" />
+  </EntityType>
+  <EntityType Name="REPLACED_STOCK_ACTION">
+    <Key>
+      <PropertyRef Name="Replaced_Stock_Action_Id" />
+    </Key>
+    <Property Name="Replaced_Stock_Action_Id" Type="Int64" Nullable="false" />
+    <Property Name="Replaced_Stock_Action_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Replaced_Stock_Action_Description" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RETURNED_STOCK_REPLACEMENT" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_1_0" FromRole="REPLACED_STOCK_ACTION" ToRole="RETURNED_STOCK_REPLACEMENT" />
+    <NavigationProperty Name="STOCK_PURCHASED_RETURN" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_1_0" FromRole="REPLACED_STOCK_ACTION" ToRole="STOCK_PURCHASED_RETURN" />
+  </EntityType>
+  <EntityType Name="RETURNED_STOCK">
+    <Key>
+      <PropertyRef Name="Returned_Stock_Id" />
+    </Key>
+    <Property Name="Returned_Stock_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Return_Date" Type="DateTime" Nullable="false" />
+    <Property Name="Return_Reason" Type="String" Nullable="false" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="Entered_By" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_RETURNED_STOCK_0_0" FromRole="RETURNED_STOCK" ToRole="PERSON" />
+    <NavigationProperty Name="RETURNED_STOCK_DETAIL" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_3_0" FromRole="RETURNED_STOCK" ToRole="RETURNED_STOCK_DETAIL" />
+  </EntityType>
+  <EntityType Name="RETURNED_STOCK_DETAIL">
+    <Key>
+      <PropertyRef Name="Returned_Stock_Detail_Id" />
+    </Key>
+    <Property Name="Returned_Stock_Detail_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sold_Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Returned_Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Returned_Quantity" Type="Int64" Nullable="false" />
+    <Property Name="Stock_State_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Return_Action_Id" Type="Int64" Nullable="false" />
+    <Property Name="Refunded" Type="Boolean" Nullable="false" />
+    <Property Name="Payment_Id" Type="Int64" />
+    <Property Name="Returned_To_Shelf" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_0_0" FromRole="RETURNED_STOCK_DETAIL" ToRole="PAYMENT" />
+    <NavigationProperty Name="RETURNED_STOCK" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_3_0" FromRole="RETURNED_STOCK_DETAIL" ToRole="RETURNED_STOCK" />
+    <NavigationProperty Name="STOCK_RETURN_ACTION" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_1_0" FromRole="RETURNED_STOCK_DETAIL" ToRole="STOCK_RETURN_ACTION" />
+    <NavigationProperty Name="STOCK_STATE" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_2_0" FromRole="RETURNED_STOCK_DETAIL" ToRole="STOCK_STATE" />
+    <NavigationProperty Name="SOLD_STOCK" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_4_0" FromRole="RETURNED_STOCK_DETAIL" ToRole="SOLD_STOCK" />
+    <NavigationProperty Name="RETURNED_STOCK_REPLACEMENT" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_3_0" FromRole="RETURNED_STOCK_DETAIL" ToRole="RETURNED_STOCK_REPLACEMENT" />
+  </EntityType>
+  <EntityType Name="RETURNED_STOCK_REPLACEMENT">
+    <Key>
+      <PropertyRef Name="Returned_Stock_Replacement_Id" />
+    </Key>
+    <Property Name="Returned_Stock_Replacement_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Returned_Stock_Detail_Id" Type="Int64" Nullable="false" />
+    <Property Name="Sold_Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Replaced_Stock_Action_Id" Type="Int64" />
+    <Property Name="Action_Reason" Type="String" MaxLength="650" FixedLength="false" Unicode="false" />
+    <Property Name="Action_Date" Type="DateTime" />
+    <Property Name="Action_Executor_Id" Type="Int64" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_0_0" FromRole="RETURNED_STOCK_REPLACEMENT" ToRole="PERSON" />
+    <NavigationProperty Name="REPLACED_STOCK_ACTION" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_1_0" FromRole="RETURNED_STOCK_REPLACEMENT" ToRole="REPLACED_STOCK_ACTION" />
+    <NavigationProperty Name="RETURNED_STOCK_DETAIL" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_3_0" FromRole="RETURNED_STOCK_REPLACEMENT" ToRole="RETURNED_STOCK_DETAIL" />
+    <NavigationProperty Name="SOLD_STOCK" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_2_0" FromRole="RETURNED_STOCK_REPLACEMENT" ToRole="SOLD_STOCK" />
+  </EntityType>
+  <EntityType Name="RIGHT">
+    <Key>
+      <PropertyRef Name="Right_Id" />
+    </Key>
+    <Property Name="Right_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Right_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Right_Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ROLE_RIGHT" Relationship="PoknoModel.FK_ROLE_RIGHT_0_0" FromRole="RIGHT" ToRole="ROLE_RIGHT" />
+  </EntityType>
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role_Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_PERSON_1_0" FromRole="ROLE" ToRole="PERSON" />
+    <NavigationProperty Name="ROLE_RIGHT" Relationship="PoknoModel.FK_ROLE_RIGHT_1_0" FromRole="ROLE" ToRole="ROLE_RIGHT" />
+  </EntityType>
+  <EntityType Name="ROLE_RIGHT">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+      <PropertyRef Name="Right_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="Int64" Nullable="false" />
+    <Property Name="Right_Id" Type="Int64" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RIGHT" Relationship="PoknoModel.FK_ROLE_RIGHT_0_0" FromRole="ROLE_RIGHT" ToRole="RIGHT" />
+    <NavigationProperty Name="ROLE" Relationship="PoknoModel.FK_ROLE_RIGHT_1_0" FromRole="ROLE_RIGHT" ToRole="ROLE" />
+  </EntityType>
+  <EntityType Name="SETTING">
+    <Key>
+      <PropertyRef Name="Setting_Id" />
+    </Key>
+    <Property Name="Setting_Id" Type="Int64" Nullable="false" />
+    <Property Name="Application_Date" Type="DateTime" />
+    <Property Name="Application_Mode_Id" Type="Int64" Nullable="false" />
+    <Property Name="Is_Customer_Loyalty_Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Is_Activated" Type="Boolean" Nullable="false" />
+    <Property Name="Show_Package_Relationship_In_Stock_Summary_Review_Report" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="APPLICATION_MODE" Relationship="PoknoModel.FK_SETTING_0_0" FromRole="SETTING" ToRole="APPLICATION_MODE" />
+  </EntityType>
+  <EntityType Name="SHELF">
+    <Key>
+      <PropertyRef Name="Shelf_Id" />
+    </Key>
+    <Property Name="Shelf_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <Property Name="Entered_By" Type="Int64" Nullable="false" />
+    <Property Name="Location_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <Property Name="Total_Unit_Quantity" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Date_Entered" Type="DateTime" Nullable="false" />
+    <Property Name="Expiry_Date" Type="DateTime" />
+    <Property Name="Sold" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LOCATION" Relationship="PoknoModel.FK_SHELF_0_0" FromRole="SHELF" ToRole="LOCATION" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_SHELF_1_0" FromRole="SHELF" ToRole="PERSON" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_SHELF_2_0" FromRole="SHELF" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_SHELF_3_0" FromRole="SHELF" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="SOLD_STOCK" Relationship="PoknoModel.FK_SOLD_STOCK_2_0" FromRole="SHELF" ToRole="SOLD_STOCK" />
+  </EntityType>
+  <EntityType Name="SHELF_STOCK_REPLACEMENT">
+    <Key>
+      <PropertyRef Name="Shelf_Id" />
+    </Key>
+    <Property Name="Shelf_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity_Replaced" Type="Int64" Nullable="false" />
+    <Property Name="Date_Replaced" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_SHELF_STOCK_REPLACEMENT_0_0" FromRole="SHELF_STOCK_REPLACEMENT" ToRole="STOCK_PACKAGE" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Shelf_Id" Type="Int64" Nullable="false" />
+    <Property Name="Sold_Stock_Batch_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Price_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <Property Name="Discount" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Returned" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="RETURNED_STOCK_DETAIL" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_4_0" FromRole="SOLD_STOCK" ToRole="RETURNED_STOCK_DETAIL" />
+    <NavigationProperty Name="RETURNED_STOCK_REPLACEMENT" Relationship="PoknoModel.FK_RETURNED_STOCK_REPLACEMENT_2_0" FromRole="SOLD_STOCK" ToRole="RETURNED_STOCK_REPLACEMENT" />
+    <NavigationProperty Name="SHELF" Relationship="PoknoModel.FK_SOLD_STOCK_2_0" FromRole="SOLD_STOCK" ToRole="SHELF" />
+    <NavigationProperty Name="STOCK_PRICE" Relationship="PoknoModel.FK_SOLD_STOCK_0_0" FromRole="SOLD_STOCK" ToRole="STOCK_PRICE" />
+    <NavigationProperty Name="SOLD_STOCK_BATCH" Relationship="PoknoModel.FK_SOLD_STOCK_1_0" FromRole="SOLD_STOCK" ToRole="SOLD_STOCK_BATCH" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK_BATCH">
+    <Key>
+      <PropertyRef Name="Sold_Stock_Batch_Id" />
+    </Key>
+    <Property Name="Sold_Stock_Batch_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Seller_Id" Type="Int64" Nullable="false" />
+    <Property Name="Customer_Id" Type="Int64" />
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" />
+    <Property Name="Date_Sold" Type="DateTime" Nullable="false" />
+    <Property Name="Total_Discount" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_SOLD_STOCK_BATCH_0_0" FromRole="SOLD_STOCK_BATCH" ToRole="PAYMENT" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_SOLD_STOCK_BATCH_1_0" FromRole="SOLD_STOCK_BATCH" ToRole="PERSON" />
+    <NavigationProperty Name="PERSON1" Relationship="PoknoModel.FK_SOLD_STOCK_BATCH_2_0" FromRole="SOLD_STOCK_BATCH" ToRole="PERSON" />
+    <NavigationProperty Name="SOLD_STOCK" Relationship="PoknoModel.FK_SOLD_STOCK_1_0" FromRole="SOLD_STOCK_BATCH" ToRole="SOLD_STOCK" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK_RETURN">
+    <Key>
+      <PropertyRef Name="Stock_On_Shelf_Id" />
+    </Key>
+    <Property Name="Stock_On_Shelf_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_State_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity_Returned" Type="Int64" Nullable="false" />
+    <Property Name="Date_Returned" Type="DateTime" Nullable="false" />
+    <Property Name="Return_Reason" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Replaced" Type="Boolean" Nullable="false" />
+    <Property Name="Refunded" Type="Boolean" Nullable="false" />
+    <Property Name="Back_To_Stock_Purchased" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_0_0" FromRole="SOLD_STOCK_RETURN" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="STOCK_STATE" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_1_0" FromRole="SOLD_STOCK_RETURN" ToRole="STOCK_STATE" />
+    <NavigationProperty Name="SOLD_STOCK_RETURN_REFUND" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_1_0" FromRole="SOLD_STOCK_RETURN" ToRole="SOLD_STOCK_RETURN_REFUND" />
+  </EntityType>
+  <EntityType Name="SOLD_STOCK_RETURN_REFUND">
+    <Key>
+      <PropertyRef Name="Stock_On_Shelf_Id" />
+    </Key>
+    <Property Name="Stock_On_Shelf_Id" Type="Int64" Nullable="false" />
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_0_0" FromRole="SOLD_STOCK_RETURN_REFUND" ToRole="PAYMENT" />
+    <NavigationProperty Name="SOLD_STOCK_RETURN" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_REFUND_1_0" FromRole="SOLD_STOCK_RETURN_REFUND" ToRole="SOLD_STOCK_RETURN" />
+  </EntityType>
+  <EntityType Name="STOCK">
+    <Key>
+      <PropertyRef Name="Stock_Id" />
+    </Key>
+    <Property Name="Stock_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Descrption" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Image_Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="STOCK_TYPE" Relationship="PoknoModel.FK_STOCK_0_0" FromRole="STOCK" ToRole="STOCK_TYPE" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_STOCK_PACKAGE_0_0" FromRole="STOCK" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_1_0" FromRole="STOCK" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PURCHASED" Relationship="PoknoModel.FK_STOCK_PURCHASED_2_0" FromRole="STOCK" ToRole="STOCK_PURCHASED" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_2_0" FromRole="STOCK" ToRole="STOCK_PURCHASED_POOL" />
+  </EntityType>
+  <EntityType Name="STOCK_BARCODE">
+    <Key>
+      <PropertyRef Name="Stock_Barcode_Id" />
+    </Key>
+    <Property Name="Stock_Barcode_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Barcode1" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="STOCK_CATEGORY">
+    <Key>
+      <PropertyRef Name="Stock_Category_Id" />
+    </Key>
+    <Property Name="Stock_Category_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Category_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_Category_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="STOCK_TYPE" Relationship="PoknoModel.FK_STOCK_TYPE_0_0" FromRole="STOCK_CATEGORY" ToRole="STOCK_TYPE" />
+  </EntityType>
+  <EntityType Name="STOCK_PACKAGE">
+    <Key>
+      <PropertyRef Name="Stock_Package_Id" />
+    </Key>
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Re_Order_Level" Type="Int64" Nullable="false" />
+    <Property Name="Expiry_Date_No_Of_Days_Alert" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="CURRENT_STOCK_PACKAGE" Relationship="PoknoModel.FK_CURRENT_STOCK_PACKAGE_0_0" FromRole="STOCK_PACKAGE" ToRole="CURRENT_STOCK_PACKAGE" />
+    <NavigationProperty Name="DELETED_SHELF_STOCK" Relationship="PoknoModel.FK_DELETED_SHELF_STOCK_2_0" FromRole="STOCK_PACKAGE" ToRole="DELETED_SHELF_STOCK" />
+    <NavigationProperty Name="PACKAGE" Relationship="PoknoModel.FK_STOCK_PACKAGE_1_0" FromRole="STOCK_PACKAGE" ToRole="PACKAGE" />
+    <NavigationProperty Name="PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_PACKAGE_RELATIONSHIP_0_0" FromRole="STOCK_PACKAGE" ToRole="PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="PACKAGE_RELATIONSHIP1" Relationship="PoknoModel.FK_PACKAGE_RELATIONSHIP_1_0" FromRole="STOCK_PACKAGE" ToRole="PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="SHELF" Relationship="PoknoModel.FK_SHELF_3_0" FromRole="STOCK_PACKAGE" ToRole="SHELF" />
+    <NavigationProperty Name="SHELF_STOCK_REPLACEMENT" Relationship="PoknoModel.FK_SHELF_STOCK_REPLACEMENT_0_0" FromRole="STOCK_PACKAGE" ToRole="SHELF_STOCK_REPLACEMENT" />
+    <NavigationProperty Name="SOLD_STOCK_RETURN" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_0_0" FromRole="STOCK_PACKAGE" ToRole="SOLD_STOCK_RETURN" />
+    <NavigationProperty Name="STOCK" Relationship="PoknoModel.FK_STOCK_PACKAGE_0_0" FromRole="STOCK_PACKAGE" ToRole="STOCK" />
+    <NavigationProperty Name="STOCK_PRICE" Relationship="PoknoModel.FK_STOCK_PRICE_0_0" FromRole="STOCK_PACKAGE" ToRole="STOCK_PRICE" />
+    <NavigationProperty Name="STOCK_PURCHASED" Relationship="PoknoModel.FK_STOCK_PURCHASED_1_0" FromRole="STOCK_PACKAGE" ToRole="STOCK_PURCHASED" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_0_0" FromRole="STOCK_PACKAGE" ToRole="STOCK_PURCHASED_POOL" />
+    <NavigationProperty Name="STOCK_PURCHASED_RETURN" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_3_0" FromRole="STOCK_PACKAGE" ToRole="STOCK_PURCHASED_RETURN" />
+  </EntityType>
+  <EntityType Name="STOCK_PACKAGE_RELATIONSHIP">
+    <Key>
+      <PropertyRef Name="Stock_Package_Relationship_Id" />
+    </Key>
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Date_Set" Type="DateTime" Nullable="false" />
+    <Property Name="Set_By_Person_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="CURRENT_STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="CURRENT_STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="DELETED_SHELF_STOCK" Relationship="PoknoModel.FK_DELETED_SHELF_STOCK_1_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="DELETED_SHELF_STOCK" />
+    <NavigationProperty Name="PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_PACKAGE_RELATIONSHIP_2_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_0_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="PERSON" />
+    <NavigationProperty Name="SHELF" Relationship="PoknoModel.FK_SHELF_2_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="SHELF" />
+    <NavigationProperty Name="STOCK" Relationship="PoknoModel.FK_STOCK_PACKAGE_RELATIONSHIP_1_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="STOCK" />
+    <NavigationProperty Name="STOCK_PURCHASED" Relationship="PoknoModel.FK_STOCK_PURCHASED_0_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="STOCK_PURCHASED" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_1_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="STOCK_PURCHASED_POOL" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL1" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_4_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="STOCK_PURCHASED_POOL" />
+    <NavigationProperty Name="STOCK_PURCHASED_RETURN" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_4_0" FromRole="STOCK_PACKAGE_RELATIONSHIP" ToRole="STOCK_PURCHASED_RETURN" />
+  </EntityType>
+  <EntityType Name="STOCK_PRICE">
+    <Key>
+      <PropertyRef Name="Stock_Price_Id" />
+    </Key>
+    <Property Name="Stock_Price_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Cost_Price" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Selling_Price" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Date_Entered" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="CURRENT_STOCK_PRICE" Relationship="PoknoModel.FK_CURRENT_STOCK_PRICE_0_0" FromRole="STOCK_PRICE" ToRole="CURRENT_STOCK_PRICE" />
+    <NavigationProperty Name="DELETED_SOLD_STOCK" Relationship="PoknoModel.FK_DELETED_SOLD_STOCK_0_0" FromRole="STOCK_PRICE" ToRole="DELETED_SOLD_STOCK" />
+    <NavigationProperty Name="SOLD_STOCK" Relationship="PoknoModel.FK_SOLD_STOCK_0_0" FromRole="STOCK_PRICE" ToRole="SOLD_STOCK" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_STOCK_PRICE_0_0" FromRole="STOCK_PRICE" ToRole="STOCK_PACKAGE" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASE_BATCH">
+    <Key>
+      <PropertyRef Name="Stock_Purchase_Batch_Id" />
+    </Key>
+    <Property Name="Stock_Purchase_Batch_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Purchase_Batch_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Supplier_Id" Type="Int64" Nullable="false" />
+    <Property Name="Buyer_Id" Type="Int64" Nullable="false" />
+    <Property Name="Payment_Id" Type="Int64" Nullable="false" />
+    <Property Name="Date_Puchased" Type="DateTime" Nullable="false" />
+    <Property Name="Supplier_Expenses" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Invoice_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_0_0" FromRole="STOCK_PURCHASE_BATCH" ToRole="PAYMENT" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_1_0" FromRole="STOCK_PURCHASE_BATCH" ToRole="PERSON" />
+    <NavigationProperty Name="PERSON1" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_2_0" FromRole="STOCK_PURCHASE_BATCH" ToRole="PERSON" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH_TYPE" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_3_0" FromRole="STOCK_PURCHASE_BATCH" ToRole="STOCK_PURCHASE_BATCH_TYPE" />
+    <NavigationProperty Name="STOCK_PURCHASED" Relationship="PoknoModel.FK_STOCK_PURCHASED_3_0" FromRole="STOCK_PURCHASE_BATCH" ToRole="STOCK_PURCHASED" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_3_0" FromRole="STOCK_PURCHASE_BATCH" ToRole="STOCK_PURCHASED_POOL" />
+    <NavigationProperty Name="STOCK_PURCHASED_RETURN" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_5_0" FromRole="STOCK_PURCHASE_BATCH" ToRole="STOCK_PURCHASED_RETURN" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASE_BATCH_TYPE">
+    <Key>
+      <PropertyRef Name="Stock_Purchase_Batch_Type_Id" />
+    </Key>
+    <Property Name="Stock_Purchase_Batch_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Purchase_Batch_Type_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH" Relationship="PoknoModel.FK_STOCK_PURCHASE_BATCH_3_0" FromRole="STOCK_PURCHASE_BATCH_TYPE" ToRole="STOCK_PURCHASE_BATCH" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Purchase_Batch_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <Property Name="Unit_Cost" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Cost" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Expiry_Date" Type="DateTime" />
+    <NavigationProperty Name="STOCK" Relationship="PoknoModel.FK_STOCK_PURCHASED_2_0" FromRole="STOCK_PURCHASED" ToRole="STOCK" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_STOCK_PURCHASED_1_0" FromRole="STOCK_PURCHASED" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_STOCK_PURCHASED_0_0" FromRole="STOCK_PURCHASED" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH" Relationship="PoknoModel.FK_STOCK_PURCHASED_3_0" FromRole="STOCK_PURCHASED" ToRole="STOCK_PURCHASE_BATCH" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL_DETAIL" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_1_0" FromRole="STOCK_PURCHASED" ToRole="STOCK_PURCHASED_POOL_DETAIL" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED_POOL">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Pool_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Pool_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Purchase_Batch_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <Property Name="Unit_Item_Package_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="STOCK" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_2_0" FromRole="STOCK_PURCHASED_POOL" ToRole="STOCK" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_0_0" FromRole="STOCK_PURCHASED_POOL" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_1_0" FromRole="STOCK_PURCHASED_POOL" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP1" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_4_0" FromRole="STOCK_PURCHASED_POOL" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_3_0" FromRole="STOCK_PURCHASED_POOL" ToRole="STOCK_PURCHASE_BATCH" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL_DETAIL" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_0_0" FromRole="STOCK_PURCHASED_POOL" ToRole="STOCK_PURCHASED_POOL_DETAIL" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED_POOL_DETAIL">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Purchased_Pool_Id" Type="Int64" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="STOCK_PURCHASED" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_1_0" FromRole="STOCK_PURCHASED_POOL_DETAIL" ToRole="STOCK_PURCHASED" />
+    <NavigationProperty Name="STOCK_PURCHASED_POOL" Relationship="PoknoModel.FK_STOCK_PURCHASED_POOL_DETAIL_0_0" FromRole="STOCK_PURCHASED_POOL_DETAIL" ToRole="STOCK_PURCHASED_POOL" />
+  </EntityType>
+  <EntityType Name="STOCK_PURCHASED_RETURN">
+    <Key>
+      <PropertyRef Name="Stock_Purchased_Return_Id" />
+    </Key>
+    <Property Name="Stock_Purchased_Return_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Purchase_Batch_Id" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Int64" Nullable="false" />
+    <Property Name="Unit_Cost" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Cost" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Package_Id" Type="Int64" />
+    <Property Name="Stock_State_Id" Type="Int64" Nullable="false" />
+    <Property Name="Replaced_Stock_Action_Id" Type="Int64" />
+    <Property Name="Return_Reason" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Returned" Type="DateTime" Nullable="false" />
+    <Property Name="Returned_By_Person_Id" Type="Int64" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_0_0" FromRole="STOCK_PURCHASED_RETURN" ToRole="PERSON" />
+    <NavigationProperty Name="REPLACED_STOCK_ACTION" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_1_0" FromRole="STOCK_PURCHASED_RETURN" ToRole="REPLACED_STOCK_ACTION" />
+    <NavigationProperty Name="STOCK_PACKAGE" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_3_0" FromRole="STOCK_PURCHASED_RETURN" ToRole="STOCK_PACKAGE" />
+    <NavigationProperty Name="STOCK_PACKAGE_RELATIONSHIP" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_4_0" FromRole="STOCK_PURCHASED_RETURN" ToRole="STOCK_PACKAGE_RELATIONSHIP" />
+    <NavigationProperty Name="STOCK_PURCHASE_BATCH" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_5_0" FromRole="STOCK_PURCHASED_RETURN" ToRole="STOCK_PURCHASE_BATCH" />
+    <NavigationProperty Name="STOCK_STATE" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_2_0" FromRole="STOCK_PURCHASED_RETURN" ToRole="STOCK_STATE" />
+  </EntityType>
+  <EntityType Name="STOCK_REPLACEMENT">
+    <Key>
+      <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      <PropertyRef Name="Stock_Id" />
+      <PropertyRef Name="Stock_Quantity_Id" />
+    </Key>
+    <Property Name="Stock_Purchase_Batch_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Quantity_Id" Type="Int64" Nullable="false" />
+    <Property Name="Replaced_Quantity" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Date_Replaced" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK_RETURN_ACTION">
+    <Key>
+      <PropertyRef Name="Stock_Return_Action_Id" />
+    </Key>
+    <Property Name="Stock_Return_Action_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Return_Action_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_Return_Action_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RETURNED_STOCK_DETAIL" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_1_0" FromRole="STOCK_RETURN_ACTION" ToRole="RETURNED_STOCK_DETAIL" />
+  </EntityType>
+  <EntityType Name="STOCK_RETURN_TYPE">
+    <Key>
+      <PropertyRef Name="Stock_Return_Type_Id" />
+    </Key>
+    <Property Name="Stock_Return_Type_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Return_Type_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="STOCK_REVIEW">
+    <Key>
+      <PropertyRef Name="Stock_Review_Summary_Id" />
+    </Key>
+    <Property Name="Stock_Review_Summary_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reviewed_By_Person_Id" Type="Int64" Nullable="false" />
+    <Property Name="Review_Year" Type="Int64" Nullable="false" />
+    <Property Name="Review_Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="PERSON" Relationship="PoknoModel.FK_STOCK_REVIEW_0_0" FromRole="STOCK_REVIEW" ToRole="PERSON" />
+    <NavigationProperty Name="STOCK_REVIEW_DETAIL" Relationship="PoknoModel.FK_STOCK_REVIEW_DETAIL_0_0" FromRole="STOCK_REVIEW" ToRole="STOCK_REVIEW_DETAIL" />
+  </EntityType>
+  <EntityType Name="STOCK_REVIEW_DETAIL">
+    <Key>
+      <PropertyRef Name="Stock_Review_Detail_Id" />
+    </Key>
+    <Property Name="Stock_Review_Detail_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Review_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_Package_Relationship_Id" Type="Int64" Nullable="false" />
+    <Property Name="Initial_Stock_Balance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Initial_Stock_Balance_Value" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Stock_Balance" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_Balance_Value" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Stock_Balance_Unit_Item" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Quantity_Purchased" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Cost" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Quantity_Sold" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Cost_Price" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Selling_Price" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Discount" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Profit" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Profit2" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Package_Relationship" Type="String" MaxLength="750" FixedLength="false" Unicode="false" />
+    <Property Name="Transaction_Month" Type="Int64" />
+    <Property Name="Transaction_Year" Type="Int64" />
+    <Property Name="Monthly_Total_Expenses" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="Monthly_Transaction_Discount" Type="Decimal" Precision="53" Scale="0" />
+    <NavigationProperty Name="STOCK_REVIEW" Relationship="PoknoModel.FK_STOCK_REVIEW_DETAIL_0_0" FromRole="STOCK_REVIEW_DETAIL" ToRole="STOCK_REVIEW" />
+  </EntityType>
+  <EntityType Name="STOCK_STATE">
+    <Key>
+      <PropertyRef Name="Stock_State_Id" />
+    </Key>
+    <Property Name="Stock_State_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_State_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_State_Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RETURNED_STOCK_DETAIL" Relationship="PoknoModel.FK_RETURNED_STOCK_DETAIL_2_0" FromRole="STOCK_STATE" ToRole="RETURNED_STOCK_DETAIL" />
+    <NavigationProperty Name="SOLD_STOCK_RETURN" Relationship="PoknoModel.FK_SOLD_STOCK_RETURN_1_0" FromRole="STOCK_STATE" ToRole="SOLD_STOCK_RETURN" />
+    <NavigationProperty Name="STOCK_PURCHASED_RETURN" Relationship="PoknoModel.FK_STOCK_PURCHASED_RETURN_2_0" FromRole="STOCK_STATE" ToRole="STOCK_PURCHASED_RETURN" />
+  </EntityType>
+  <EntityType Name="STOCK_TYPE">
+    <Key>
+      <PropertyRef Name="Stock_Type_Id" />
+    </Key>
+    <Property Name="Stock_Type_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_Category_Id" Type="Int64" Nullable="false" />
+    <Property Name="Stock_Type_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stock_Type_Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="STOCK" Relationship="PoknoModel.FK_STOCK_0_0" FromRole="STOCK_TYPE" ToRole="STOCK" />
+    <NavigationProperty Name="STOCK_CATEGORY" Relationship="PoknoModel.FK_STOCK_TYPE_0_0" FromRole="STOCK_TYPE" ToRole="STOCK_CATEGORY" />
+  </EntityType>
+  <EntityType Name="STORE">
+    <Key>
+      <PropertyRef Name="Store_Id" />
+    </Key>
+    <Property Name="Store_Id" Type="Int64" Nullable="false" />
+    <Property Name="Store_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Logo_File_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Disclaimer" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TRANSACTION_TYPE">
+    <Key>
+      <PropertyRef Name="Transaction_Type_Id" />
+    </Key>
+    <Property Name="Transaction_Type_Id" Type="Int64" Nullable="false" />
+    <Property Name="Transaction_Type_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Transaction_Type_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PAYMENT" Relationship="PoknoModel.FK_PAYMENT_0_0" FromRole="TRANSACTION_TYPE" ToRole="PAYMENT" />
+  </EntityType>
+  <Association Name="FK_SETTING_0_0">
+    <End Type="PoknoModel.APPLICATION_MODE" Role="APPLICATION_MODE" Multiplicity="1" />
+    <End Type="PoknoModel.SETTING" Role="SETTING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPLICATION_MODE">
+        <PropertyRef Name="Application_Mode_Id" />
+      </Principal>
+      <Dependent Role="SETTING">
+        <PropertyRef Name="Application_Mode_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHEQUE_0_0">
+    <End Type="PoknoModel.BANK" Role="BANK" Multiplicity="1" />
+    <End Type="PoknoModel.CHEQUE" Role="CHEQUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANK">
+        <PropertyRef Name="Bank_Id" />
+      </Principal>
+      <Dependent Role="CHEQUE">
+        <PropertyRef Name="Bank_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CASH_0_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="PoknoModel.CASH" Role="CASH" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="CASH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHEQUE_1_0">
+    <End Type="PoknoModel.PAYMENT_DETAIL" Role="PAYMENT_DETAIL" Multiplicity="1" />
+    <End Type="PoknoModel.CHEQUE" Role="CHEQUE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT_DETAIL">
+        <PropertyRef Name="Payment_Detail_Id" />
+      </Principal>
+      <Dependent Role="CHEQUE">
+        <PropertyRef Name="Payment_Detail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_COMPANY_0_0">
+    <End Type="PoknoModel.COMPANY" Role="COMPANY" Multiplicity="1" />
+    <End Type="PoknoModel.PERSON_COMPANY" Role="PERSON_COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="Company_Id" />
+      </Principal>
+      <Dependent Role="PERSON_COMPANY">
+        <PropertyRef Name="Company_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_ESNECIL_0_0">
+    <End Type="PoknoModel.ESNECIL" Role="ESNECIL" Multiplicity="1" />
+    <End Type="PoknoModel.CURRENT_ESNECIL" Role="CURRENT_ESNECIL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ESNECIL">
+        <PropertyRef Name="Esnecil_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_ESNECIL">
+        <PropertyRef Name="Esnecil_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_STOCK_PACKAGE_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.CURRENT_STOCK_PACKAGE" Role="CURRENT_STOCK_PACKAGE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_STOCK_PACKAGE_RELATIONSHIP_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.CURRENT_STOCK_PACKAGE_RELATIONSHIP" Role="CURRENT_STOCK_PACKAGE_RELATIONSHIP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CURRENT_STOCK_PRICE_0_0">
+    <End Type="PoknoModel.STOCK_PRICE" Role="STOCK_PRICE" Multiplicity="1" />
+    <End Type="PoknoModel.CURRENT_STOCK_PRICE" Role="CURRENT_STOCK_PRICE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Principal>
+      <Dependent Role="CURRENT_STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SHELF_STOCK_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SHELF_STOCK" Role="DELETED_SHELF_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SHELF_STOCK">
+        <PropertyRef Name="Deleted_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SHELF_STOCK_1_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SHELF_STOCK" Role="DELETED_SHELF_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SHELF_STOCK">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SHELF_STOCK_2_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SHELF_STOCK" Role="DELETED_SHELF_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SHELF_STOCK">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_0_0">
+    <End Type="PoknoModel.STOCK_PRICE" Role="STOCK_PRICE" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SOLD_STOCK" Role="DELETED_SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_1_0">
+    <End Type="PoknoModel.DELETED_SOLD_STOCK_BATCH" Role="DELETED_SOLD_STOCK_BATCH" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SOLD_STOCK" Role="DELETED_SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SOLD_STOCK_BATCH" Role="DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Deleted_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_1_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SOLD_STOCK_BATCH" Role="DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Seller_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_2_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SOLD_STOCK_BATCH" Role="DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELETED_SOLD_STOCK_BATCH_3_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.DELETED_SOLD_STOCK_BATCH" Role="DELETED_SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="DELETED_SOLD_STOCK_BATCH">
+        <PropertyRef Name="Customer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.EXPENSES" Role="EXPENSES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES">
+        <PropertyRef Name="Created_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_DETAIL_2_0">
+    <End Type="PoknoModel.EXPENSES" Role="EXPENSES" Multiplicity="1" />
+    <End Type="PoknoModel.EXPENSES_DETAIL" Role="EXPENSES_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EXPENSES">
+        <PropertyRef Name="Expenses_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES_DETAIL">
+        <PropertyRef Name="Expenses_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_DETAIL_0_0">
+    <End Type="PoknoModel.EXPENSES_CATEGORY" Role="EXPENSES_CATEGORY" Multiplicity="1" />
+    <End Type="PoknoModel.EXPENSES_DETAIL" Role="EXPENSES_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EXPENSES_CATEGORY">
+        <PropertyRef Name="Expenses_Category_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES_DETAIL">
+        <PropertyRef Name="Expenses_Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EXPENSES_DETAIL_1_0">
+    <End Type="PoknoModel.PAYMENT_TYPE" Role="PAYMENT_TYPE" Multiplicity="1" />
+    <End Type="PoknoModel.EXPENSES_DETAIL" Role="EXPENSES_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT_TYPE">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Principal>
+      <Dependent Role="EXPENSES_DETAIL">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_0_0">
+    <End Type="PoknoModel.LOCATION" Role="LOCATION" Multiplicity="1" />
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCATION">
+        <PropertyRef Name="Location_Id" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="Location_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_0_0">
+    <End Type="PoknoModel.LOCATION" Role="LOCATION" Multiplicity="1" />
+    <End Type="PoknoModel.SHELF" Role="SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCATION">
+        <PropertyRef Name="Location_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Location_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_1_0">
+    <End Type="PoknoModel.PACKAGE" Role="PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACKAGE">
+        <PropertyRef Name="Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE">
+        <PropertyRef Name="Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACKAGE_RELATIONSHIP_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="0..1" />
+    <End Type="PoknoModel.PACKAGE_RELATIONSHIP" Role="PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Sub_Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACKAGE_RELATIONSHIP_1_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.PACKAGE_RELATIONSHIP" Role="PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACKAGE_RELATIONSHIP_2_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.PACKAGE_RELATIONSHIP" Role="PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PART_0_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="PoknoModel.PART" Role="PART" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="PART">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAYMENT_0_0">
+    <End Type="PoknoModel.TRANSACTION_TYPE" Role="TRANSACTION_TYPE" Multiplicity="1" />
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANSACTION_TYPE">
+        <PropertyRef Name="Transaction_Type_Id" />
+      </Principal>
+      <Dependent Role="PAYMENT">
+        <PropertyRef Name="Transaction_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAYMENT_DETAIL_1_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="PoknoModel.PAYMENT_DETAIL" Role="PAYMENT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="PAYMENT_DETAIL">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_0_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="0..1" />
+    <End Type="PoknoModel.RETURNED_STOCK_DETAIL" Role="RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_BATCH_0_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK_BATCH" Role="SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_REFUND_0_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK_RETURN_REFUND" Role="SOLD_STOCK_RETURN_REFUND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN_REFUND">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_0_0">
+    <End Type="PoknoModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH" Role="STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="Payment_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Payment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAYMENT_DETAIL_0_0">
+    <End Type="PoknoModel.PAYMENT_TYPE" Role="PAYMENT_TYPE" Multiplicity="1" />
+    <End Type="PoknoModel.PAYMENT_DETAIL" Role="PAYMENT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT_TYPE">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Principal>
+      <Dependent Role="PAYMENT_DETAIL">
+        <PropertyRef Name="Payment_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_1_0">
+    <End Type="PoknoModel.ROLE" Role="ROLE" Multiplicity="1" />
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_2_0">
+    <End Type="PoknoModel.PERSON_TYPE" Role="PERSON_TYPE" Multiplicity="1" />
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON_TYPE">
+        <PropertyRef Name="Person_Type_Id" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="Person_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_COMPANY_1_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.PERSON_COMPANY" Role="PERSON_COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="PERSON_COMPANY">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_LOGIN_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.PERSON_LOGIN" Role="PERSON_LOGIN" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="PERSON_LOGIN">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.RETURNED_STOCK" Role="RETURNED_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK">
+        <PropertyRef Name="Entered_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="0..1" />
+    <End Type="PoknoModel.RETURNED_STOCK_REPLACEMENT" Role="RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Action_Executor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_1_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.SHELF" Role="SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Entered_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_BATCH_1_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="0..1" />
+    <End Type="PoknoModel.SOLD_STOCK_BATCH" Role="SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Customer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_BATCH_2_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK_BATCH" Role="SOLD_STOCK_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Seller_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_RELATIONSHIP_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Set_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_1_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH" Role="STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Buyer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_2_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH" Role="STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Supplier_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="0..1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_RETURN" Role="STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Returned_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_REVIEW_0_0">
+    <End Type="PoknoModel.PERSON" Role="PERSON" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_REVIEW" Role="STOCK_REVIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="Person_Id" />
+      </Principal>
+      <Dependent Role="STOCK_REVIEW">
+        <PropertyRef Name="Reviewed_By_Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_1_0">
+    <End Type="PoknoModel.REPLACED_STOCK_ACTION" Role="REPLACED_STOCK_ACTION" Multiplicity="0..1" />
+    <End Type="PoknoModel.RETURNED_STOCK_REPLACEMENT" Role="RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REPLACED_STOCK_ACTION">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_1_0">
+    <End Type="PoknoModel.REPLACED_STOCK_ACTION" Role="REPLACED_STOCK_ACTION" Multiplicity="0..1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_RETURN" Role="STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REPLACED_STOCK_ACTION">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Replaced_Stock_Action_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_3_0">
+    <End Type="PoknoModel.RETURNED_STOCK" Role="RETURNED_STOCK" Multiplicity="1" />
+    <End Type="PoknoModel.RETURNED_STOCK_DETAIL" Role="RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RETURNED_STOCK">
+        <PropertyRef Name="Returned_Stock_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Returned_Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_1_0">
+    <End Type="PoknoModel.STOCK_RETURN_ACTION" Role="STOCK_RETURN_ACTION" Multiplicity="1" />
+    <End Type="PoknoModel.RETURNED_STOCK_DETAIL" Role="RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_RETURN_ACTION">
+        <PropertyRef Name="Stock_Return_Action_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Stock_Return_Action_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_2_0">
+    <End Type="PoknoModel.STOCK_STATE" Role="STOCK_STATE" Multiplicity="1" />
+    <End Type="PoknoModel.RETURNED_STOCK_DETAIL" Role="RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_STATE">
+        <PropertyRef Name="Stock_State_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Stock_State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_DETAIL_4_0">
+    <End Type="PoknoModel.SOLD_STOCK" Role="SOLD_STOCK" Multiplicity="1" />
+    <End Type="PoknoModel.RETURNED_STOCK_DETAIL" Role="RETURNED_STOCK_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_3_0">
+    <End Type="PoknoModel.RETURNED_STOCK_DETAIL" Role="RETURNED_STOCK_DETAIL" Multiplicity="1" />
+    <End Type="PoknoModel.RETURNED_STOCK_REPLACEMENT" Role="RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RETURNED_STOCK_DETAIL">
+        <PropertyRef Name="Returned_Stock_Detail_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Returned_Stock_Detail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETURNED_STOCK_REPLACEMENT_2_0">
+    <End Type="PoknoModel.SOLD_STOCK" Role="SOLD_STOCK" Multiplicity="1" />
+    <End Type="PoknoModel.RETURNED_STOCK_REPLACEMENT" Role="RETURNED_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Principal>
+      <Dependent Role="RETURNED_STOCK_REPLACEMENT">
+        <PropertyRef Name="Sold_Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROLE_RIGHT_0_0">
+    <End Type="PoknoModel.RIGHT" Role="RIGHT" Multiplicity="1" />
+    <End Type="PoknoModel.ROLE_RIGHT" Role="ROLE_RIGHT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RIGHT">
+        <PropertyRef Name="Right_Id" />
+      </Principal>
+      <Dependent Role="ROLE_RIGHT">
+        <PropertyRef Name="Right_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROLE_RIGHT_1_0">
+    <End Type="PoknoModel.ROLE" Role="ROLE" Multiplicity="1" />
+    <End Type="PoknoModel.ROLE_RIGHT" Role="ROLE_RIGHT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="ROLE_RIGHT">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_2_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.SHELF" Role="SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_3_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.SHELF" Role="SHELF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="SHELF">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_2_0">
+    <End Type="PoknoModel.SHELF" Role="SHELF" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK" Role="SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHELF">
+        <PropertyRef Name="Shelf_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK">
+        <PropertyRef Name="Shelf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SHELF_STOCK_REPLACEMENT_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.SHELF_STOCK_REPLACEMENT" Role="SHELF_STOCK_REPLACEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="SHELF_STOCK_REPLACEMENT">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_0_0">
+    <End Type="PoknoModel.STOCK_PRICE" Role="STOCK_PRICE" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK" Role="SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK">
+        <PropertyRef Name="Stock_Price_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_1_0">
+    <End Type="PoknoModel.SOLD_STOCK_BATCH" Role="SOLD_STOCK_BATCH" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK" Role="SOLD_STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK_BATCH">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK">
+        <PropertyRef Name="Sold_Stock_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK_RETURN" Role="SOLD_STOCK_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_1_0">
+    <End Type="PoknoModel.STOCK_STATE" Role="STOCK_STATE" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK_RETURN" Role="SOLD_STOCK_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_STATE">
+        <PropertyRef Name="Stock_State_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN">
+        <PropertyRef Name="Stock_State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLD_STOCK_RETURN_REFUND_1_0">
+    <End Type="PoknoModel.SOLD_STOCK_RETURN" Role="SOLD_STOCK_RETURN" Multiplicity="1" />
+    <End Type="PoknoModel.SOLD_STOCK_RETURN_REFUND" Role="SOLD_STOCK_RETURN_REFUND" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SOLD_STOCK_RETURN">
+        <PropertyRef Name="Stock_On_Shelf_Id" />
+      </Principal>
+      <Dependent Role="SOLD_STOCK_RETURN_REFUND">
+        <PropertyRef Name="Stock_On_Shelf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_0_0">
+    <End Type="PoknoModel.STOCK_TYPE" Role="STOCK_TYPE" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK" Role="STOCK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_TYPE">
+        <PropertyRef Name="Stock_Type_Id" />
+      </Principal>
+      <Dependent Role="STOCK">
+        <PropertyRef Name="Stock_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_0_0">
+    <End Type="PoknoModel.STOCK" Role="STOCK" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PACKAGE_RELATIONSHIP_1_0">
+    <End Type="PoknoModel.STOCK" Role="STOCK" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_2_0">
+    <End Type="PoknoModel.STOCK" Role="STOCK" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED" Role="STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_2_0">
+    <End Type="PoknoModel.STOCK" Role="STOCK" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL" Role="STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_TYPE_0_0">
+    <End Type="PoknoModel.STOCK_CATEGORY" Role="STOCK_CATEGORY" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_TYPE" Role="STOCK_TYPE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_CATEGORY">
+        <PropertyRef Name="Stock_Category_Id" />
+      </Principal>
+      <Dependent Role="STOCK_TYPE">
+        <PropertyRef Name="Stock_Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PRICE_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PRICE" Role="STOCK_PRICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PRICE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_1_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED" Role="STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL" Role="STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Unit_Item_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_3_0">
+    <End Type="PoknoModel.STOCK_PACKAGE" Role="STOCK_PACKAGE" Multiplicity="0..1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_RETURN" Role="STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_Package_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_0_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED" Role="STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_1_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL" Role="STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_4_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL" Role="STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_4_0">
+    <End Type="PoknoModel.STOCK_PACKAGE_RELATIONSHIP" Role="STOCK_PACKAGE_RELATIONSHIP" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_RETURN" Role="STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PACKAGE_RELATIONSHIP">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_Package_Relationship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASE_BATCH_3_0">
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH_TYPE" Role="STOCK_PURCHASE_BATCH_TYPE" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH" Role="STOCK_PURCHASE_BATCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH_TYPE">
+        <PropertyRef Name="Stock_Purchase_Batch_Type_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_3_0">
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH" Role="STOCK_PURCHASE_BATCH" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED" Role="STOCK_PURCHASED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_3_0">
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH" Role="STOCK_PURCHASE_BATCH" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL" Role="STOCK_PURCHASED_POOL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_5_0">
+    <End Type="PoknoModel.STOCK_PURCHASE_BATCH" Role="STOCK_PURCHASE_BATCH" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_RETURN" Role="STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASE_BATCH">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_Purchase_Batch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_DETAIL_1_0">
+    <End Type="PoknoModel.STOCK_PURCHASED" Role="STOCK_PURCHASED" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL_DETAIL" Role="STOCK_PURCHASED_POOL_DETAIL" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASED">
+        <PropertyRef Name="Stock_Purchased_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL_DETAIL">
+        <PropertyRef Name="Stock_Purchased_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_POOL_DETAIL_0_0">
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL" Role="STOCK_PURCHASED_POOL" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_POOL_DETAIL" Role="STOCK_PURCHASED_POOL_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_PURCHASED_POOL">
+        <PropertyRef Name="Stock_Purchased_Pool_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_POOL_DETAIL">
+        <PropertyRef Name="Stock_Purchased_Pool_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_PURCHASED_RETURN_2_0">
+    <End Type="PoknoModel.STOCK_STATE" Role="STOCK_STATE" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_PURCHASED_RETURN" Role="STOCK_PURCHASED_RETURN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_STATE">
+        <PropertyRef Name="Stock_State_Id" />
+      </Principal>
+      <Dependent Role="STOCK_PURCHASED_RETURN">
+        <PropertyRef Name="Stock_State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK_REVIEW_DETAIL_0_0">
+    <End Type="PoknoModel.STOCK_REVIEW" Role="STOCK_REVIEW" Multiplicity="1" />
+    <End Type="PoknoModel.STOCK_REVIEW_DETAIL" Role="STOCK_REVIEW_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK_REVIEW">
+        <PropertyRef Name="Stock_Review_Summary_Id" />
+      </Principal>
+      <Dependent Role="STOCK_REVIEW_DETAIL">
+        <PropertyRef Name="Stock_Review_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

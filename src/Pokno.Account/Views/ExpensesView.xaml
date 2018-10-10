@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Pokno.Account.Views.ExpensesView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converter="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+   xmlns:prism="http://www.codeplex.com/prism"
+    mc:Ignorable="d"
+    d:DesignHeight="900" 
+             d:DesignWidth="900" 
+    >
+
+    <UserControl.Resources>
+        <converter:EnabilityConverter x:Key='EnabilityConverter' />
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="#E7FDFDFD">
+
+        <TabControl prism:RegionManager.RegionName="ExpensisTabRegion"
+                    Name="tcExpensesTab"
+                   
+                    Margin="5,0,0,0"
+                    Width="Auto" 
+                    Height="Auto" 
+                    Style="{StaticResource TabControlStyle}" 
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Left"
+                    SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}" 
+                    
+                    IsEnabled="{Binding IsEnabled, Converter={StaticResource EnabilityConverter}}"
+                    ItemContainerStyle="{StaticResource TabItemRegionStyle}" >
+        </TabControl>
+
+
+      
+
+    </Grid>
+</UserControl>

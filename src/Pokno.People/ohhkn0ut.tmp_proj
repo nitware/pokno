@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{533CBC8A-D0EF-4B3E-9B95-3B34DAF4ED1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokno.People</RootNamespace>
+    <AssemblyName>Pokno.People</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IAssignRightToRoleService.cs" />
+    <Compile Include="Interfaces\ILoginDetailService.cs" />
+    <Compile Include="Interfaces\ILoginService.cs" />
+    <Compile Include="PeopleModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AssignRightToRoleService.cs" />
+    <Compile Include="Services\CompanyRepService.cs" />
+    <Compile Include="Services\LoginDetailService.cs" />
+    <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\PersonTypeService.cs" />
+    <Compile Include="Services\RightService.cs" />
+    <Compile Include="Services\RoleService.cs" />
+    <Compile Include="ViewModel\AccessControlSetupViewModel.cs" />
+    <Compile Include="ViewModel\AssignRightToRoleViewModel.cs" />
+    <Compile Include="ViewModel\AssignRoleToPersonViewModel.cs" />
+    <Compile Include="ViewModel\ChangePasswordPopUpViewModel.cs" />
+    <Compile Include="ViewModel\CompanyRepViewModel.cs" />
+    <Compile Include="ViewModel\CompanySetupViewModel.cs" />
+    <Compile Include="ViewModel\CompanyViewModel.cs" />
+    <Compile Include="ViewModel\LocationViewModel.cs" />
+    <Compile Include="ViewModel\LoginDetailsViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\RightViewModel.cs" />
+    <Compile Include="ViewModel\RoleViewModel.cs" />
+    <Compile Include="ViewModel\PersonBasicSetupViewModel.cs" />
+    <Compile Include="ViewModel\PersonHomeViewModel.cs" />
+    <Compile Include="ViewModel\PersonMenuViewModel.cs" />
+    <Compile Include="ViewModel\PersonTypeViewModel.cs" />
+    <Compile Include="ViewModel\PersonViewModel.cs" />
+    <Compile Include="Views\AccessControlSetupView.xaml.cs">
+      <DependentUpon>AccessControlSetupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssignRightToRoleView.xaml.cs">
+      <DependentUpon>AssignRightToRoleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssignRoleToPersonView.xaml.cs">
+      <DependentUpon>AssignRoleToPersonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompanyRepView.xaml.cs">
+      <DependentUpon>CompanyRepView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompanySetupView.xaml.cs">
+      <DependentUpon>CompanySetupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompanyView.xaml.cs">
+      <DependentUpon>CompanyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocationView.xaml.cs">
+      <DependentUpon>LocationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginDetailsView.xaml.cs">
+      <DependentUpon>LoginDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RightView.xaml.cs">
+      <DependentUpon>RightView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoleView.xaml.cs">
+      <DependentUpon>RoleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonBasicSetupView.xaml.cs">
+      <DependentUpon>PersonBasicSetupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonHomeView.xaml.cs">
+      <DependentUpon>PersonHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonMenuView.xaml.cs">
+      <DependentUpon>PersonMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonTypeView.xaml.cs">
+      <DependentUpon>PersonTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonView.xaml.cs">
+      <DependentUpon>PersonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Popups\ChangePasswordPopUpView.xaml.cs">
+      <DependentUpon>ChangePasswordPopUpView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pokno.Infrastructure\Pokno.Infrastructure.csproj">
+      <Project>{594047c0-d6de-4ed7-a2e6-579dfefcb446}</Project>
+      <Name>Pokno.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Model\Pokno.Model.csproj">
+      <Project>{158e6d3c-49c2-4294-8e1a-234d1ff09034}</Project>
+      <Name>Pokno.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Service\Pokno.Service.csproj">
+      <Project>{829e02f7-6c09-4f46-bd8d-df68987661aa}</Project>
+      <Name>Pokno.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\FirstFloor.ModernUI.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\LogicNP.CryptoLicensing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\Microsoft.Practices.ServiceLocation.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\Microsoft.Practices.Unity.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\bin\Debug\Pokno.Infrastructure.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\bin\Debug\Pokno.Model.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Service\bin\Debug\Pokno.Service.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\Prism.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\Prism.Unity.Wpf.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\Prism.Wpf.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Management.dll" />
+    <ReferencePath Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Infrastructure\Assembly\System.Windows.Interactivity.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\WindowsBase.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Collections.Concurrent.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Collections.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ComponentModel.Annotations.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ComponentModel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ComponentModel.EventBasedAsync.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Diagnostics.Contracts.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Diagnostics.Debug.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Diagnostics.Tools.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Diagnostics.Tracing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Dynamic.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Globalization.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.IO.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Linq.Expressions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Linq.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Linq.Queryable.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Net.NetworkInformation.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Net.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Net.Requests.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ObjectModel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Reflection.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Reflection.Emit.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Reflection.Emit.ILGeneration.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Reflection.Emit.Lightweight.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Reflection.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Reflection.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Resources.ResourceManager.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.InteropServices.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.Numerics.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.Serialization.Json.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.Serialization.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Runtime.Serialization.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Security.Principal.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ServiceModel.Duplex.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ServiceModel.Http.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ServiceModel.NetTcp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ServiceModel.Primitives.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.ServiceModel.Security.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Text.Encoding.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Text.Encoding.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Text.RegularExpressions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Threading.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Threading.Tasks.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Threading.Tasks.Parallel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Xml.ReaderWriter.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Xml.XDocument.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Xml.XmlSerializer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\AccessControlSetupView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\AssignRightToRoleView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\AssignRoleToPersonView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\CompanyRepView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\CompanySetupView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\CompanyView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\LocationView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\LoginDetailsView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\LoginView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\RightView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\RoleView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\PersonBasicSetupView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\PersonHomeView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\PersonMenuView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\PersonTypeView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\PersonView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\Views\Popups\ChangePasswordPopUpView.g.cs" />
+    <Compile Include="C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.People\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

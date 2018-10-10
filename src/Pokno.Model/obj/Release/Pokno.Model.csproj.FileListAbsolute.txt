@@ -1,0 +1,9 @@
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\bin\Release\Pokno.Model.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\bin\Release\Pokno.Model.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\bin\Release\Pokno.Entity.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\bin\Release\EntityFramework.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\bin\Release\Pokno.Entity.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\bin\Release\EntityFramework.xml
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\obj\Release\Pokno.Model.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\obj\Release\Pokno.Model.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Model\obj\Release\Pokno.Model.pdb

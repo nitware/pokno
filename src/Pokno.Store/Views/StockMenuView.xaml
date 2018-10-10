@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Pokno.Store.Views.StockMenuView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="50" 
+    d:DesignWidth="850">
+    
+    <Grid >
+        <StackPanel Orientation="Horizontal">
+            
+            <!--<Button Command="{Binding StockHomeCommand}" Content="STOCK HOME" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding StockSetupCommand}" Content="BASIC SETUP" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding StoreCommand}" Content="STORE" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding SalesCommand}" Content="SALES" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding ReturnsCommand}" Content="RETURNS" Style="{StaticResource ButtonStyle}"/>-->
+            <!--<Button Command="{Binding SettingsCommand}" Content="SETTINGS" Style="{StaticResource ButtonStyle}"/>-->
+
+            <RadioButton Command="{Binding StockHomeCommand}" IsChecked="True" GroupName="Navigation" Style="{StaticResource MenuButtonStyle}" >STOCK HOME</RadioButton>
+            <RadioButton Command="{Binding StockSetupCommand}" GroupName="Navigation" Style="{StaticResource MenuButtonStyle}" >BASIC SETUP</RadioButton>
+            <RadioButton Command="{Binding StoreCommand}" GroupName="Navigation" Style="{StaticResource MenuButtonStyle}" >STORE</RadioButton>
+            <RadioButton Command="{Binding SalesCommand}" GroupName="Navigation" Style="{StaticResource MenuButtonStyle}" >SALES</RadioButton>
+            <RadioButton Command="{Binding ReturnsCommand}" GroupName="Navigation" Style="{StaticResource MenuButtonStyle}" >RETURNS</RadioButton>
+
+            <!--<Button Command="{Binding StockHomeCommand}" Foreground="{Binding StockHomeForeground}" Content="STOCK HOME" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding StockSetupCommand}" Foreground="{Binding StockSetupForeground}" Content="BASIC SETUP" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding StoreCommand}" Foreground="{Binding StoreForeground}" Content="STORE" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding SalesCommand}" Foreground="{Binding SalesForeground}" Content="SALES" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding ReturnsCommand}" Foreground="{Binding ReturnsForeground}" Content="RETURNS" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding SettingsCommand}" Foreground="{Binding SettingsForeground}" Content="SETTINGS" Style="{StaticResource ButtonStyle}"/>-->
+
+        </StackPanel>
+    </Grid>
+</UserControl>

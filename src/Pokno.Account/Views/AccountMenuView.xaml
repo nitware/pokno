@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Pokno.Account.Views.AccountMenuView"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="850">
+
+    <Grid x:Name="LayoutRoot" >
+        <StackPanel Orientation="Horizontal">
+            <RadioButton Command="{Binding AccountHomeCommand}" IsChecked="True" GroupName="Navigation" Style="{StaticResource MenuButtonStyle}" >ACCOUNT HOME</RadioButton>
+            <RadioButton Command="{Binding ExpensesCommand}" GroupName="Navigation" Style="{StaticResource MenuButtonStyle}" >EXPENSES</RadioButton>
+
+            <!--<Button Command="{Binding AccountHomeCommand}" Content="ACCOUNT HOME" Style="{StaticResource ButtonStyle}"/>
+            <Button Command="{Binding ExpensesCommand}" Content="EXPENSES" Style="{StaticResource ButtonStyle}"/>-->
+
+        </StackPanel>
+    </Grid>
+</UserControl>

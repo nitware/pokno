@@ -1,0 +1,507 @@
+﻿<UserControl x:Class="Pokno.Store.Views.StockPriceCheckView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converter="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+             xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="700">
+
+    <UserControl.Resources>
+        <converter:DateConverter x:Key='DateConverter' />
+        <converter:CheckToolTipConverter x:Key='CheckToolTipConverter' />
+        <converter:DateToSelectConverter x:Key='DateToSelectConverter' />
+        <converter:MoneyConverter x:Key="MoneyConverter" />
+        <converter:EnabilityConverter x:Key="EnabilityConverter"/>
+
+        <DataTemplate x:Key="AutoCompleteBoxItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5,2" Content="{Binding Name}" MinWidth="100"  FontWeight="Bold" Foreground="Gray" />
+                <!--<Label Content="{Binding Birthday}" FontStyle="Italic" Foreground="DarkGray" />-->
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <ContentControl IsEnabled="{Binding PurchasedStockCanBeEdited, Mode=TwoWay}" HorizontalContentAlignment="Stretch">
+        <Grid x:Name="LayoutRoot" Margin="5" Background="#E7FFFFFF">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>-->
+
+            <Border Margin="10,10,15,10" Grid.Column="1" CornerRadius="0,20,0,0" Background="White" BorderBrush="Gray" BorderThickness="1">
+                <Border.Effect>
+                    <DropShadowEffect Color="DimGray"/>
+                </Border.Effect>
+                
+                <Grid Margin="0,5,0,5"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <!--<GroupBox Margin="15,0,15,10" Grid.Row="0" Header="Choose Product">
+                    <StackPanel Margin="0,10,0,0">
+                        <Grid Margin="20,0,20,5" >
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="68" />
+                                <ColumnDefinition Width="180"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="0" Margin="0,3,0,0">Stock:</TextBlock>
+                            <ComboBox ItemsSource="{Binding Stocks, Mode=TwoWay}" SelectedValuePath="Id" SelectedValue="{Binding Id}" Grid.Row="0" Grid.Column="1" Margin="0,3,0,0"  >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontFamily="Verdana" Foreground="#FF413E3E" Text="{Binding Name}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="1" Margin="0,3,0,0">Package:</TextBlock>
+
+                            <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="2" Margin="0,3,0,0">Unit Cost:</TextBlock>
+                            <xctk:DecimalUpDown Value="{Binding TargetModel.UnitCost, Mode=TwoWay}" FormatString="#,0.00" IsEnabled="False"  Margin="0,3,0,0" Height="22" Grid.Column="1" Grid.Row="2" Maximum="99999999999999" Minimum="0" ParsingNumberStyle="AllowThousands" />
+
+                            <TextBlock FontWeight="Bold" Grid.Row="3" Margin="0,3,0,0" Height="22" VerticalAlignment="Top">Quantity:</TextBlock>
+                            <xctk:IntegerUpDown Value="{Binding TargetModel.Quantity, Mode=TwoWay}" FormatString="#,0" Margin="0,3,0,0" Height="22" Grid.Column="1" Grid.Row="3" />
+
+                            <TextBlock FontWeight="Bold" Grid.Column="0" Grid.Row="4" Margin="0,3,0,0">Cost:</TextBlock>
+                            <xctk:DecimalUpDown Value="{Binding TargetModel.Cost, Mode=TwoWay}" FormatString="#,0.00" Margin="0,3,0,0" Height="22" Grid.Column="1" Grid.Row="4" Maximum="99999999999999" />
+
+
+                            <ComboBox ItemsSource="{Binding StockPackages, Mode=TwoWay}" SelectedValuePath="Id" SelectedValue="{Binding Id}" Grid.Column="1" Grid.Row="1" Margin="0,3,0,0" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontFamily="Verdana" Foreground="#FF413E3E" Text="{Binding Package.Name}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <StackPanel Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="0,5,0,0" Orientation="Horizontal">
+                                <Button Command="{Binding AddCommand}" FontSize="9" Content="Add" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>-->
+                
+                
+
+                <Grid Grid.Row="1" Grid.Column="0" Margin="2,5,2,5" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Border Margin="0" Grid.Row="2"  >
+
+                        <StackPanel >
+                                <Border Margin="2,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="2,2,0,0"  >
+                                    <StackPanel Margin="0,0,0,0"   >
+                                        <Border HorizontalAlignment="Stretch">
+                                            <TextBlock FontWeight="Bold" FontSize="15" Foreground="Gray">STOCK PRICE LIST</TextBlock>
+                                        </Border>
+
+                                        <!--<Border BorderBrush="DimGray" BorderThickness="0,0,0,1" Margin="0,2,0,0"  HorizontalAlignment="Stretch">
+                                        <TextBlock >STOCK PRICE LIST</TextBlock>
+                                    </Border>-->
+
+                                    <!--<Grid Margin="0,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Margin="0,0,2,0" FontSize="11"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"  >Total Stocks:</TextBlock>
+                                        <TextBlock Text="{Binding TotalQuantity}" FontWeight="Bold" FontSize="11" Margin="0,0,10,0" Grid.Column="1" Grid.Row="0" />
+
+                                        <TextBlock Margin="0,0,2,0" Grid.Column="2" Grid.Row="0" FontSize="11" VerticalAlignment="Center"   >Total Records:</TextBlock>
+                                        <TextBlock Text="{Binding TotalUnitCost, Converter={StaticResource MoneyConverter}}" FontWeight="Bold" FontSize="11" Margin="0,0,10,0" Grid.Column="3" Grid.Row="0" />
+                                    </Grid>-->
+                                </StackPanel>
+                            </Border>
+
+
+                                <!--BorderThickness="0"
+                                BorderBrush="White"
+							    AreRowDetailsFrozen="True" 
+							    AutoGenerateColumns="False" 
+                                AlternatingRowBackground="White"
+							    HeadersVisibility="Column" 
+							    MaxHeight="466" >-->
+
+
+                                <DataGrid ItemsSource="{Binding StockPrices}"
+                                  AreRowDetailsFrozen="True" 
+                                  AutoGenerateColumns="False" 
+                                  GroupStyleSelector="{x:Null}"
+                                  GridLinesVisibility="Horizontal"
+                                  HeadersVisibility="Column" 
+                                  BorderThickness="0" 
+                                  BorderBrush="White"
+                                 
+                                  AlternatingRowBackground="White"
+                                  MaxHeight="466" >
+
+
+
+                                    <DataGrid.GroupStyle>
+                                        <GroupStyle >
+                                  
+                                            <GroupStyle.ContainerStyle>
+                                                <Style TargetType="{x:Type GroupItem}">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                                <Expander Padding="0,1" Background="WhiteSmoke" BorderBrush="White" BorderThickness="0,1"  >
+                                                                    <Expander.Header>
+                                                                        <Border Margin="0,3"  >
+                                                                            <StackPanel Orientation="Horizontal" >
+                                                                                <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" />
+                                                                                <TextBlock Margin="10,0,0,0" Text="(" FontWeight="Bold" />
+                                                                                <TextBlock Text="{Binding Path=ItemCount}" FontWeight="Bold" />
+                                                                                <TextBlock Margin="5,0,0,0" Text="Items" FontWeight="Bold" />
+                                                                                <TextBlock Text=")" FontWeight="Bold" />
+                                                                            </StackPanel>
+                                                                        </Border>
+                                                                    </Expander.Header>
+                                                                    <ItemsPresenter />
+                                                                </Expander>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+
+
+                                                </Style>
+                                            </GroupStyle.ContainerStyle>
+                                        </GroupStyle>
+                                    </DataGrid.GroupStyle>
+
+
+
+                                    <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Package">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Margin="5,0,3,0" FontSize="11" Text="{Binding PackageName}" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <!--<DataGridTemplateColumn Header="Stock" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                    <TextBlock Margin="3,0,3,0" FontSize="11" Text="{Binding StockName}" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>-->
+
+                                    <DataGridTemplateColumn Header="Cost Price" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                    <TextBlock Margin="5,0,3,0" FontSize="11" Text="{Binding CostPrice, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="Selling Price" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                    <TextBlock Margin="5,0,0,0" FontSize="11" Text="{Binding SellingPrice, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Profit" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="5,0,0,0" FontSize="11" Text="{Binding Profit, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                    </DataGrid.Columns>
+                            </DataGrid>
+
+                            <!--<StackPanel HorizontalAlignment="Left" Margin="3,2,0,3" Orientation="Horizontal">
+                                <Button Command="{Binding ClearPurchasedStocksToReturnCommand}" FontSize="9" Content="Clear" Margin="0,0,1,0" />
+                                <Button Command="{Binding RemoveCommand}" FontSize="9" Content="Remove" />
+                            </StackPanel>-->
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!--<StackPanel Margin="15,0,15,5" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Margin="0,0,1,0" Command="{Binding ClearCommand}" FontSize="15" Content="Clear" />
+                    <Button Command="{Binding SaveCommand}" FontSize="15" Content="Save" />
+                </StackPanel>-->
+            </Grid>
+            </Border>
+
+
+            <StackPanel Grid.Column="0" Margin="10,10,10,15" VerticalAlignment="Top" >
+                <Border Background="White" CornerRadius="20,0,0,0" BorderBrush="Gray" BorderThickness="1,1,1,1" >
+                    <Border.Effect>
+                        <DropShadowEffect Color="DimGray"/>
+                    </Border.Effect>
+
+                    <!--<StackPanel>-->
+
+                        <!--<StackPanel Grid.Row="2" >-->
+                            <StackPanel Orientation="Vertical" Margin="10,10,10,10"  >
+                                <Border BorderThickness="0,0,0,0" CornerRadius="5,5,0,5" >
+
+                                    <StackPanel Margin="0,0,0,0">
+
+
+                                <!--<Border Grid.Column="0" Margin="2,10,2,2" Padding="2" CornerRadius="2" Background="#124EB6" BorderThickness="1" BorderBrush="#124EB6" >
+                                    <Grid Margin="0,0,0,0" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Margin="1" Height="25" Width="25" Stretch="UniformToFill" Source="{Binding SearchIcon}"  />
+                                        <Controls:AutoCompleteBox Grid.Column="1" ItemsSource="{Binding Stocks}" 
+                                                        BorderBrush="silver" 
+                                                        BorderThickness="1" 
+                                                        SelectedItem="{Binding Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                        ValueMemberPath="Name" 
+                                                        ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}" 
+                                                        IsTextCompletionEnabled="True"  >
+
+                                        </Controls:AutoCompleteBox>
+                                        --><!--<Button Margin="1,0,0,0" Grid.Column="2" Command="{Binding ReloadCommand}" FontSize="9" Content="..." ToolTip="Re-load stocks at hand" HorizontalAlignment="Right"  />--><!--
+
+                                    </Grid>
+                                </Border>-->
+
+
+
+
+                                <Border Grid.Column="0" Margin="2,10,2,2" Padding="2" CornerRadius="2" Background="WhiteSmoke" BorderThickness="1" BorderBrush="Gainsboro" >
+                                    <Grid Margin="0,0,0,0" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Margin="1" Height="25" Width="25" Stretch="UniformToFill" Source="{Binding SearchIcon}"  />
+                                        <Controls:AutoCompleteBox Grid.Column="1" ItemsSource="{Binding Stocks}" 
+                                                        BorderBrush="silver" 
+                                                        BorderThickness="1" 
+                                                        SelectedItem="{Binding Stock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                        ValueMemberPath="Name" 
+                                                        ItemTemplate="{StaticResource AutoCompleteBoxItemTemplate}" 
+                                                        IsTextCompletionEnabled="True"  >
+
+                                        </Controls:AutoCompleteBox>
+                                        <!--<Button Margin="1,0,0,0" Grid.Column="2" Command="{Binding ReloadCommand}" FontSize="9" Content="..." ToolTip="Re-load stocks at hand" HorizontalAlignment="Right"  />-->
+                                                                          
+                                </Grid>
+                                </Border>
+
+
+                                <!--<Border Margin="0,5,0,15" Grid.Row="0" CornerRadius="0,20,0,0" BorderBrush="Gray" BorderThickness="1" Background="White" >
+                                    <Grid Margin="12,20,12,20">
+                                        <Grid.ColumnDefinitions >
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Margin="10,0,10,0" FontSize="15" VerticalAlignment="Center" Grid.Row="0"  >Purchased Transaction</TextBlock>
+                                        <ComboBox Margin="10,2,10,0" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding PurchaseStockBatches, Mode=TwoWay}" VerticalAlignment="Center" SelectedItem="{Binding PurchaseStockBatch, Mode=TwoWay}" >
+                                            <ComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Margin="0,0,7,0" FontFamily="Verdana" Foreground="#FF413E3E" Text="{Binding Buyer.Name}"/>
+                                                        <TextBlock FontFamily="Verdana" FontWeight="Bold" Foreground="#FF413E3E" Text="{Binding DatePurchased, Converter={StaticResource DateToSelectConverter}}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ComboBox.ItemTemplate>
+                                        </ComboBox>
+                                    </Grid>
+                                </Border>-->
+
+
+
+
+
+                                <Border Margin="2,0,2,0" Background="#e0eaf6" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" >
+                                            <Grid >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition />
+                                                    <ColumnDefinition />
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                </Grid.RowDefinitions>
+
+                                                
+
+                                                <!--<Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="5,5,0,0" Background="WhiteSmoke" >
+                                                    <StackPanel Margin="10"  >
+                                                        <Border BorderBrush="DimGray" BorderThickness="0,0,0,1" Margin="0,2,0,0"  HorizontalAlignment="Stretch">
+                                                            <TextBlock >STOCK PRICE</TextBlock>
+                                                        </Border>
+
+                                                        <Grid Margin="0,2,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="auto" />
+                                                                <ColumnDefinition Width="auto" />
+                                                                <ColumnDefinition Width="auto" />
+                                                                <ColumnDefinition Width="auto" />
+                                                                <ColumnDefinition Width="auto" />
+                                                                <ColumnDefinition Width="auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+
+                                                            <TextBlock Margin="0,0,2,0" FontSize="11"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"  >Total Quantity:</TextBlock>
+                                                            <TextBlock Text="{Binding PurchasedStockTotalQuantity}" FontWeight="Bold" FontSize="11" Margin="0,0,10,0" Grid.Column="1" Grid.Row="0" />
+
+                                                            <TextBlock Margin="0,0,2,0" Grid.Column="2" FontSize="11"  Grid.Row="0" VerticalAlignment="Center"   >Total Unit Cost:</TextBlock>
+                                                            <TextBlock Text="{Binding PurchasedStockTotalUnitCost, Converter={StaticResource MoneyConverter}}" FontWeight="Bold" FontSize="11" Margin="0,0,10,0" Grid.Column="3" Grid.Row="0" />
+
+                                                            <TextBlock Margin="10,0,2,0" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" FontSize="11"  HorizontalAlignment="Left">Total Cost:</TextBlock>
+                                                            <TextBlock Text="{Binding PurchasedStockTotalCost, Converter={StaticResource MoneyConverter}}" FontWeight="Bold" FontSize="11" Margin="0,0,0,0" Grid.Column="5" Grid.Row="0" />
+                                                        </Grid>
+                                                    </StackPanel>
+                                                </Border>-->
+                                                
+                                                
+                                                
+                                            </Grid>
+                                        </Border>
+
+                                <DataGrid ItemsSource="{Binding SearchedStockPrices}" 
+                                          IsEnabled="False"
+                                          BorderThickness="0"
+                                          BorderBrush="White"
+                                          Background="White"
+							              AreRowDetailsFrozen="True" 
+							              AutoGenerateColumns="False" 
+                                          AlternatingRowBackground="White"
+							              HeadersVisibility="Column" 
+							              MinHeight="200" >
+
+                                            <DataGrid.Columns>
+
+
+                                        <DataGridTemplateColumn Header="Package">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="5,0,3,0" FontSize="12" Text="{Binding PackageName}" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Stock" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="3,0,3,0" FontSize="12" Text="{Binding StockName}" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Cost Price" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="5,0,3,0" FontSize="12" Text="{Binding CostPrice, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Selling Price" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="5,0,0,0" FontSize="12" Text="{Binding SellingPrice, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTemplateColumn Header="Profit" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Margin="5,0,0,0" FontSize="12" Text="{Binding Profit, Converter={StaticResource MoneyConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+
+
+                                    </DataGrid.Columns>
+                                        </DataGrid>
+
+
+                                    </StackPanel>
+
+                                </Border>
+
+                            </StackPanel>
+                        <!--</StackPanel>-->
+
+                    <!--</StackPanel>-->
+                </Border>
+
+
+
+            </StackPanel>
+        </Grid>
+
+    </ContentControl>
+
+
+
+    
+</UserControl>

@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55F5BA88-0968-4078-8CBE-577B7D72E3E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokno.Report</RootNamespace>
+    <AssemblyName>Pokno.Report</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\Pokno.Infrastructure\Assembly\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicNP.CryptoLicensing, Version=11.0.0.0, Culture=neutral, PublicKeyToken=4a3c0a4c668b48b4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\LogicNP.CryptoLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.DataVisualization\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.ProcessingObjectModel\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Types\11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism">
+      <HintPath>..\Pokno.Infrastructure\Assembly\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf">
+      <HintPath>..\Pokno.Infrastructure\Assembly\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\BaseReportFactory.cs" />
+    <Compile Include="Models\Expenses\DailyExpensesReport.cs" />
+    <Compile Include="Models\Expenses\ExpensesByDateRangeReport.cs" />
+    <Compile Include="Models\Expenses\MonthlyExpensesReport.cs" />
+    <Compile Include="Models\Expenses\YearlyExpensesReport.cs" />
+    <Compile Include="Models\Miscellaneous\BaseCustomerStatisticsReport.cs" />
+    <Compile Include="Models\Miscellaneous\CustomerTransactionStatisticsByDateRangeReport.cs" />
+    <Compile Include="Models\Miscellaneous\YearlyCustomerTransactionStatisticsReport.cs" />
+    <Compile Include="Models\Payment\CompanyCreditorsListReport.cs" />
+    <Compile Include="Models\Payment\CompanyDebtorsListReport.cs" />
+    <Compile Include="Models\Miscellaneous\DailyTransactionReport.cs" />
+    <Compile Include="Models\Miscellaneous\MonthlyStockSummaryReport.cs" />
+    <Compile Include="Models\Payment\PaymentHistoryByPersonReport.cs" />
+    <Compile Include="Models\Payment\PaymentHistoryReport.cs" />
+    <Compile Include="Models\Miscellaneous\MonthlyStockStatisticsReport.cs" />
+    <Compile Include="Models\Miscellaneous\StockStatisticsByDateRangeReport.cs" />
+    <Compile Include="Models\Miscellaneous\BaseStockStatisticsReport.cs" />
+    <Compile Include="Models\Miscellaneous\YearlyStockStatisticsReport.cs" />
+    <Compile Include="Models\Returns\BaseStockReturnReport.cs" />
+    <Compile Include="Models\Returns\StockReturnByDateRangeReport.cs" />
+    <Compile Include="Models\Returns\YearlyStockReturnReport.cs" />
+    <Compile Include="Models\Stock\PackageRelationshipReport.cs" />
+    <Compile Include="Models\Stock\RemainingStockOnShelfReport.cs" />
+    <Compile Include="Models\Sales\SoldStockAnalysisReport.cs" />
+    <Compile Include="Models\Sales\SoldStockDetailAnalysisByStockReport.cs" />
+    <Compile Include="Models\Sales\SoldStockDetailAnalysisReport.cs" />
+    <Compile Include="Models\Stock\StockListByTypeReport.cs" />
+    <Compile Include="Models\Stock\StockListReport.cs" />
+    <Compile Include="Models\Stock\StockPackageReport.cs" />
+    <Compile Include="Models\Stock\StockPriceHistoryByStockReport.cs" />
+    <Compile Include="Models\Stock\StockPriceHistoryReport.cs" />
+    <Compile Include="Models\Stock\StockPriceReport.cs" />
+    <Compile Include="Models\Purchase\StockPurchaseDetailByStockReport.cs" />
+    <Compile Include="Models\Purchase\StockPurchaseDetailReport.cs" />
+    <Compile Include="Models\Purchase\StockPurchaseSummaryReport.cs" />
+    <Compile Include="Models\Stock\StocksInStoreReport.cs" />
+    <Compile Include="Models\Payment\SupplierCreditorsListReport.cs" />
+    <Compile Include="Models\Payment\SupplierDebtorsListReport.cs" />
+    <Compile Include="Models\Miscellaneous\YearlyStockSummaryByStockReport.cs" />
+    <Compile Include="Models\Miscellaneous\YearlyStockSummaryReport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportModule.cs" />
+    <Compile Include="ViewModels\BaseReportByDateRangeViewModel.cs" />
+    <Compile Include="ViewModels\BaseReportByDateViewModel.cs" />
+    <Compile Include="ViewModels\BaseReportByProductViewModel.cs" />
+    <Compile Include="ViewModels\BaseReportByYearViewModel.cs" />
+    <Compile Include="ViewModels\BaseReportForMonthlyReportViewModel.cs" />
+    <Compile Include="ViewModels\BaseReportViewModel.cs" />
+    <Compile Include="ViewModels\Expenses\DailyExpensesReportViewModel.cs" />
+    <Compile Include="ViewModels\Expenses\ExpensesByDateRangeReportViewModel.cs" />
+    <Compile Include="ViewModels\Expenses\ExpensesReportViewModel.cs" />
+    <Compile Include="ViewModels\Expenses\MonthlyExpensesReportViewModel.cs" />
+    <Compile Include="ViewModels\Expenses\YearlyExpensesReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\CustomerTransactionStatisticsByDateRangeReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\YearlyCustomerTransactionStatisticsReportViewModel.cs" />
+    <Compile Include="ViewModels\Payment\CompanyCreditorsListViewModel.cs" />
+    <Compile Include="ViewModels\Payment\CompanyDebtorsListReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\DailyTransactionReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\MiscellaneousReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\MonthlyStockSummaryReportViewModel.cs" />
+    <Compile Include="ViewModels\Payment\PaymentHistoryByPersonReportViewModel.cs" />
+    <Compile Include="ViewModels\Payment\PaymentHistoryReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\MonthlyStockStatisticsReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\StockStatisticsByDateRangeReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\YearlyStockStatisticsReportViewModel.cs" />
+    <Compile Include="ViewModels\Returns\ReturnedStockReportViewModel.cs" />
+    <Compile Include="ViewModels\Returns\StockReturnByDateRangeReportViewModel.cs" />
+    <Compile Include="ViewModels\Returns\YearlyStockReturnReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\PackageRelationshipReportViewModel.cs" />
+    <Compile Include="ViewModels\Payment\PaymentReportViewModel.cs" />
+    <Compile Include="ViewModels\Purchase\StockPurchaseReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\RemainingStockOnShelfViewModel.cs" />
+    <Compile Include="ViewModels\ReportHomeViewModel.cs" />
+    <Compile Include="ViewModels\ReportMenuViewModel.cs" />
+    <Compile Include="ViewModels\Sales\SalesReportViewModel.cs" />
+    <Compile Include="ViewModels\Sales\SoldStockAnalysisReportViewModel.cs" />
+    <Compile Include="ViewModels\Sales\SoldStockDetailAnalysisByStockReportViewModel.cs" />
+    <Compile Include="ViewModels\Sales\SoldStockDetailAnalysisReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockListByTypeViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockListViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockPackageReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockPriceHistoryByStockReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockPriceHistoryReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockPriceReportViewModel.cs" />
+    <Compile Include="ViewModels\Purchase\StockPurchasedDetailReportViewModel.cs" />
+    <Compile Include="ViewModels\Purchase\StockPurchaseDetailByStockReportViewModel.cs" />
+    <Compile Include="ViewModels\Purchase\StockPurchaseSummaryReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockReportViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StocksInStoreViewModel.cs" />
+    <Compile Include="ViewModels\Payment\SupplierCreditorsListReportViewModel.cs" />
+    <Compile Include="ViewModels\Payment\SupplierDebtorsListReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\YearlyStockSummaryByStockReportViewModel.cs" />
+    <Compile Include="ViewModels\Miscellaneous\YearlyStockSummaryReportViewModel.cs" />
+    <Compile Include="Views\Expenses\DailyExpensesReportView.xaml.cs">
+      <DependentUpon>DailyExpensesReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\ExpensesByDateRangeReportView.xaml.cs">
+      <DependentUpon>ExpensesByDateRangeReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\ExpensesReportView.xaml.cs">
+      <DependentUpon>ExpensesReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\MonthlyExpensesReportView.xaml.cs">
+      <DependentUpon>MonthlyExpensesReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\YearlyExpensesReportView.xaml.cs">
+      <DependentUpon>YearlyExpensesReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\CustomerTransactionStatisticsByDateRangeReportView.xaml.cs">
+      <DependentUpon>CustomerTransactionStatisticsByDateRangeReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\YearlyCustomerTransactionStatisticsReportView.xaml.cs">
+      <DependentUpon>YearlyCustomerTransactionStatisticsReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\CompanyCreditorsListReportView.xaml.cs">
+      <DependentUpon>CompanyCreditorsListReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\CompanyDebtorsListReportView.xaml.cs">
+      <DependentUpon>CompanyDebtorsListReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\DailyTransactionReportView.xaml.cs">
+      <DependentUpon>DailyTransactionReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\MiscellaneousReportView.xaml.cs">
+      <DependentUpon>MiscellaneousReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\MonthlyStockSummaryReportView.xaml.cs">
+      <DependentUpon>MonthlyStockSummaryReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\PaymentHistoryByPersonReportView.xaml.cs">
+      <DependentUpon>PaymentHistoryByPersonReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\PaymentHistoryReportView.xaml.cs">
+      <DependentUpon>PaymentHistoryReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\MonthlyStockStatisticsReportView.xaml.cs">
+      <DependentUpon>MonthlyStockStatisticsReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\StockStatisticsByDateRangeReportView.xaml.cs">
+      <DependentUpon>StockStatisticsByDateRangeReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\YearlyStockStatisticsReportView.xaml.cs">
+      <DependentUpon>YearlyStockStatisticsReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Returns\ReturnedStockReportView.xaml.cs">
+      <DependentUpon>ReturnedStockReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Returns\StockReturnByDateRangeReportView.xaml.cs">
+      <DependentUpon>StockReturnByDateRangeReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Returns\YearlyStockReturnReportView.xaml.cs">
+      <DependentUpon>YearlyStockReturnReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\PackageRelationshipReportView.xaml.cs">
+      <DependentUpon>PackageRelationshipReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\PaymentReportView.xaml.cs">
+      <DependentUpon>PaymentReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchase\StockPurchaseReportView.xaml.cs">
+      <DependentUpon>StockPurchaseReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\RemainingStockOnShelfReportView.xaml.cs">
+      <DependentUpon>RemainingStockOnShelfReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportHomeView.xaml.cs">
+      <DependentUpon>ReportHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportMenuView.xaml.cs">
+      <DependentUpon>ReportMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SalesReportView.xaml.cs">
+      <DependentUpon>SalesReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SoldStockAnalysisReportView.xaml.cs">
+      <DependentUpon>SoldStockAnalysisReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SoldStockDetailAnalysisByStockReportView.xaml.cs">
+      <DependentUpon>SoldStockDetailAnalysisByStockReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SoldStockDetailAnalysisReportView.xaml.cs">
+      <DependentUpon>SoldStockDetailAnalysisReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StockListByTypeReportView.xaml.cs">
+      <DependentUpon>StockListByTypeReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StockListReportView.xaml.cs">
+      <DependentUpon>StockListReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StockPackageReportView.xaml.cs">
+      <DependentUpon>StockPackageReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StockPriceHistoryByStockReportView.xaml.cs">
+      <DependentUpon>StockPriceHistoryByStockReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StockPriceHistoryReportView.xaml.cs">
+      <DependentUpon>StockPriceHistoryReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StockPriceReportView.xaml.cs">
+      <DependentUpon>StockPriceReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchase\StockPurchasedDetailReportView.xaml.cs">
+      <DependentUpon>StockPurchasedDetailReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchase\StockPurchaseDetailByStockReportView.xaml.cs">
+      <DependentUpon>StockPurchaseDetailByStockReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchase\StockPurchaseSummaryReportView.xaml.cs">
+      <DependentUpon>StockPurchaseSummaryReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StockReportView.xaml.cs">
+      <DependentUpon>StockReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stock\StocksInStoreReportView.xaml.cs">
+      <DependentUpon>StocksInStoreReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\SupplierCreditorsListReportView.xaml.cs">
+      <DependentUpon>SupplierCreditorsListReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\SupplierDebtorsListReportView.xaml.cs">
+      <DependentUpon>SupplierDebtorsListReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\YearlyStockSummaryByStockReportView.xaml.cs">
+      <DependentUpon>YearlyStockSummaryByStockReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Miscellaneous\YearlyStockSummaryReportView.xaml.cs">
+      <DependentUpon>YearlyStockSummaryReportView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Expenses\DailyExpensesReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Expenses\ExpensesByDateRangeReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Expenses\ExpensesReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Expenses\MonthlyExpensesReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Expenses\YearlyExpensesReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\CustomerTransactionStatisticsByDateRangeReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\YearlyCustomerTransactionStatisticsReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Payment\CompanyCreditorsListReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Payment\CompanyDebtorsListReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Miscellaneous\DailyTransactionReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\MiscellaneousReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\MonthlyStockSummaryReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Payment\PaymentHistoryByPersonReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Payment\PaymentHistoryReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\MonthlyStockStatisticsReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\StockStatisticsByDateRangeReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Miscellaneous\YearlyStockStatisticsReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Returns\ReturnedStockReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Returns\StockReturnByDateRangeReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Returns\YearlyStockReturnReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stock\PackageRelationshipReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Payment\PaymentReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Purchase\StockPurchaseReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stock\RemainingStockOnShelfReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportHomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\SalesReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\SoldStockAnalysisReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\SoldStockDetailAnalysisByStockReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\SoldStockDetailAnalysisReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stock\StockListByTypeReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stock\StockListReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stock\StockPackageReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stock\StockPriceHistoryByStockReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stock\StockPriceHistoryReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stock\StockPriceReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Purchase\StockPurchasedDetailReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Purchase\StockPurchaseDetailByStockReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Purchase\StockPurchaseSummaryReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stock\StockReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stock\StocksInStoreReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Payment\SupplierCreditorsListReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Payment\SupplierDebtorsListReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Miscellaneous\YearlyStockSummaryByStockReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Miscellaneous\YearlyStockSummaryReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pokno.Business\Pokno.Business.csproj">
+      <Project>{689e50f4-4fc9-486c-ae8a-fe27c1b5c675}</Project>
+      <Name>Pokno.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Common\Pokno.Common.csproj">
+      <Project>{c545ed01-663b-4e29-b1f2-191d4c29bac1}</Project>
+      <Name>Pokno.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Infrastructure\Pokno.Infrastructure.csproj">
+      <Project>{594047c0-d6de-4ed7-a2e6-579dfefcb446}</Project>
+      <Name>Pokno.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Model\Pokno.Model.csproj">
+      <Project>{158e6d3c-49c2-4294-8e1a-234d1ff09034}</Project>
+      <Name>Pokno.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Service\Pokno.Service.csproj">
+      <Project>{829e02f7-6c09-4f46-bd8d-df68987661aa}</Project>
+      <Name>Pokno.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Pokno.Model.Model.ExpensesView.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.PaymentStatus.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.SalesInvoice.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.SoldStockView.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StockReviewDetail.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StorePackage.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreStock.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreStockPrice.datasource" />
+    <None Include="Properties\DataSources\Pokno.Model.Model.StoreStockPurchased.datasource" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

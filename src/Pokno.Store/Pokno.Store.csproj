@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3770268-6C2C-4D4F-94EF-88A4CB96D19F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokno.Store</RootNamespace>
+    <AssemblyName>Pokno.Store</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\Pokno.Infrastructure\Assembly\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicNP.CryptoLicensing, Version=11.0.0.0, Culture=neutral, PublicKeyToken=4a3c0a4c668b48b4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\LogicNP.CryptoLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism">
+      <HintPath>..\Pokno.Infrastructure\Assembly\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf">
+      <HintPath>..\Pokno.Infrastructure\Assembly\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.102.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\WPF Toolkit\v3.5.50211.1\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pokno.Infrastructure\Assembly\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\Pokno.Infrastructure\Assembly\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IDeletedStockOnShelfService.cs" />
+    <Compile Include="Interfaces\IExpiryDateAlertService.cs" />
+    <Compile Include="Interfaces\IModifyStockPurchasedBatchService.cs" />
+    <Compile Include="Interfaces\ISoldStockService.cs" />
+    <Compile Include="Interfaces\IPosService.cs" />
+    <Compile Include="Interfaces\IRegisterPurchasedStockService.cs" />
+    <Compile Include="Interfaces\ISellStockService.cs" />
+    <Compile Include="Interfaces\IShelfService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DeletedStockOnShelfService.cs" />
+    <Compile Include="Services\ExpensesCategoryService.cs" />
+    <Compile Include="Services\ExpiryDateAlertService.cs" />
+    <Compile Include="Services\ModifyStockPurchasedBatchService.cs" />
+    <Compile Include="Services\SoldStockService.cs" />
+    <Compile Include="Services\PackageRelationshipService.cs" />
+    <Compile Include="Services\PosService.cs" />
+    <Compile Include="Services\RegisterPurchasedStockService.cs" />
+    <Compile Include="Services\SellStockService.cs" />
+    <Compile Include="Services\StockCategoryService.cs" />
+    <Compile Include="Services\ShelfService.cs" />
+    <Compile Include="Services\StockPackageService.cs" />
+    <Compile Include="Services\StockPriceService.cs" />
+    <Compile Include="Services\StockReturnActionService.cs" />
+    <Compile Include="Services\StockReturnTypeService.cs" />
+    <Compile Include="Services\StockStateService.cs" />
+    <Compile Include="Services\StockTypeService.cs" />
+    <Compile Include="Services\TakeStockService.cs" />
+    <Compile Include="StockModule.cs" />
+    <Compile Include="ViewModels\ArrangeStockOnShelfViewModel.cs" />
+    <Compile Include="ViewModels\BasePurchasedStock.cs" />
+    <Compile Include="ViewModels\Sales\BaseSoldStockViewModel.cs" />
+    <Compile Include="ViewModels\Sales\DailySalesViewModel.cs" />
+    <Compile Include="ViewModels\Sales\DeleteSalesTransactionViewModel.cs" />
+    <Compile Include="ViewModels\EnteredShelfStockViewModel.cs" />
+    <Compile Include="ViewModels\Setup\ExpensesCategoryViewModel.cs" />
+    <Compile Include="ViewModels\ExpiryDateAlertViewModel.cs" />
+    <Compile Include="ViewModels\Returns\PurchasedStockReturnViewModel.cs" />
+    <Compile Include="ViewModels\Sales\SalesViewModel.cs" />
+    <Compile Include="ViewModels\Returns\ManageReplacedStockViewModel.cs" />
+    <Compile Include="ViewModels\Sales\EditSoldStockViewModel.cs" />
+    <Compile Include="ViewModels\ModifyPurchasedStockViewModel.cs" />
+    <Compile Include="ViewModels\ModifyStockPurchasedBatchViewModel.cs" />
+    <Compile Include="ViewModels\Setup\PackageRelationshipViewModel.cs" />
+    <Compile Include="ViewModels\Setup\PackageViewModel.cs" />
+    <Compile Include="ViewModels\Sales\SellStockViewModel.cs" />
+    <Compile Include="ViewModels\RegisterPurchasedStockViewModel.cs" />
+    <Compile Include="ViewModels\RemoveStockFromShelfViewModel.cs" />
+    <Compile Include="ViewModels\Returns\ReturnsViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockPriceViewModel.cs" />
+    <Compile Include="ViewModels\StockHomeViewModel.cs" />
+    <Compile Include="ViewModels\StockMenuViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockPackageViewModel.cs" />
+    <Compile Include="ViewModels\Sales\StockPriceCheckViewModel.cs" />
+    <Compile Include="ViewModels\StockPurchaseBatchViewModel.cs" />
+    <Compile Include="ViewModels\StockPurchaseBatchViewModelBase.cs" />
+    <Compile Include="ViewModels\StockPurchasedViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockReturnActionViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockReturnTypeViewModel.cs" />
+    <Compile Include="ViewModels\Returns\StockReturnViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockSetupViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockStateViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockTypeViewModel.cs" />
+    <Compile Include="ViewModels\Setup\StockViewModel.cs" />
+    <Compile Include="ViewModels\TakeStockViewModel.cs" />
+    <Compile Include="Views\ArrangeStockOnShelfView.xaml.cs">
+      <DependentUpon>ArrangeStockOnShelfView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\DailySalesView.xaml.cs">
+      <DependentUpon>DailySalesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteSalesTransactionView.xaml.cs">
+      <DependentUpon>DeleteSalesTransactionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnteredShelfStockView.xaml.cs">
+      <DependentUpon>EnteredShelfStockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExpiryDateAlertView.xaml.cs">
+      <DependentUpon>ExpiryDateAlertView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Returns\PurchasedStockReturnView.xaml.cs">
+      <DependentUpon>PurchasedStockReturnView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SalesView.xaml.cs">
+      <DependentUpon>SalesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Returns\ManageReplacedStockView.xaml.cs">
+      <DependentUpon>ManageReplacedStockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\EditSoldStockView.xaml.cs">
+      <DependentUpon>EditSoldStockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifyPurchasedStockView.xaml.cs">
+      <DependentUpon>ModifyPurchasedStockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifyStockPurchasedBatchView.xaml.cs">
+      <DependentUpon>ModifyStockPurchasedBatchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\SellStockView.xaml.cs">
+      <DependentUpon>SellStockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterPurchasedStockView.xaml.cs">
+      <DependentUpon>RegisterPurchasedStockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RemoveStockFromShelfView.xaml.cs">
+      <DependentUpon>RemoveStockFromShelfView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Returns\ReturnsView.xaml.cs">
+      <DependentUpon>ReturnsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\ExpensesCategoryView.xaml.cs">
+      <DependentUpon>ExpensesCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\PackageRelationshipView.xaml.cs">
+      <DependentUpon>PackageRelationshipView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\PackageView.xaml.cs">
+      <DependentUpon>PackageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockCategoryView.xaml.cs">
+      <DependentUpon>StockCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockPackageView.xaml.cs">
+      <DependentUpon>StockPackageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockPriceView.xaml.cs">
+      <DependentUpon>StockPriceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockReturnActionView.xaml.cs">
+      <DependentUpon>StockReturnActionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockReturnTypeView.xaml.cs">
+      <DependentUpon>StockReturnTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockSetupView.xaml.cs">
+      <DependentUpon>StockSetupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockStateView.xaml.cs">
+      <DependentUpon>StockStateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockTypeView.xaml.cs">
+      <DependentUpon>StockTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Setup\StockView.xaml.cs">
+      <DependentUpon>StockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockHomeView.xaml.cs">
+      <DependentUpon>StockHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockMenuView.xaml.cs">
+      <DependentUpon>StockMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\StockPriceCheckView.xaml.cs">
+      <DependentUpon>StockPriceCheckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockPurchaseBatchView.xaml.cs">
+      <DependentUpon>StockPurchaseBatchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockPurchasedView.xaml.cs">
+      <DependentUpon>StockPurchasedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Returns\StockReturnView.xaml.cs">
+      <DependentUpon>StockReturnView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TakeStockView.xaml.cs">
+      <DependentUpon>TakeStockView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Printer-icon.png" />
+    <Content Include="Images\shopping_cart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\ArrangeStockOnShelfView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\DailySalesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DeleteSalesTransactionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EnteredShelfStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ExpiryDateAlertView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Returns\PurchasedStockReturnView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Sales\SalesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Returns\ManageReplacedStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\EditSoldStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ModifyPurchasedStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ModifyStockPurchasedBatchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\SellStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RegisterPurchasedStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RemoveStockFromShelfView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Returns\ReturnsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\ExpensesCategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Setup\PackageRelationshipView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\PackageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockCategoryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockPackageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockPriceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockReturnActionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockReturnTypeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockSetupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockStateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockTypeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Setup\StockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StockHomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StockMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\StockPriceCheckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StockPurchaseBatchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StockPurchasedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Returns\StockReturnView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TakeStockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pokno.Infrastructure\Pokno.Infrastructure.csproj">
+      <Project>{594047c0-d6de-4ed7-a2e6-579dfefcb446}</Project>
+      <Name>Pokno.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Model\Pokno.Model.csproj">
+      <Project>{158e6d3c-49c2-4294-8e1a-234d1ff09034}</Project>
+      <Name>Pokno.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Service\Pokno.Service.csproj">
+      <Project>{829e02f7-6c09-4f46-bd8d-df68987661aa}</Project>
+      <Name>Pokno.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

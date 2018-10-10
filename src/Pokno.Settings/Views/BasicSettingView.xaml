@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Pokno.Settings.Views.BasicSettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" 
+             d:DesignWidth="600">
+
+    <!--<Grid Background="#E7FDFDFD">-->
+    <!--<Grid Background="#4168A7">-->
+
+    <Grid Background="#FF93AACF">
+    <!--<Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFf2fafd" Offset="0.85"/>
+                <GradientStop Color="#FFe4f6fa" Offset="1"/>
+                <GradientStop Color="#FFe7f4fc" Offset="0.3"/>
+                <GradientStop Color="#FFa9cde7" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>-->
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" >
+             
+                <Border Margin="25,20" >
+               
+                    <StackPanel>
+                        <ContentControl IsEnabled="{Binding CanSetApplicationDate, Mode=TwoWay}" HorizontalContentAlignment="Stretch">
+                            <GroupBox Header="Application Date" Foreground="WhiteSmoke" FontSize="18">
+                                <StackPanel Margin="10,5,10,10" Orientation="Horizontal" >
+                                    <DatePicker Margin="0,3" FontSize="12" Grid.Column="1" Grid.Row="0" SelectedDate="{Binding Setting.ApplicationDate, Mode=TwoWay}" Height="24" />
+                                    <Button Margin="2,0" Command="{Binding ClearDateCommand}" FontSize="10" Content="Clear Date" Height="24" />
+
+                                </StackPanel>
+                            </GroupBox>
+                        </ContentControl>
+
+                        <GroupBox Margin="0,20,0,0" Header="Other Settings" Foreground="WhiteSmoke" FontSize="18">
+                            <Grid Margin="10" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Margin="5,0,5,10" FontSize="14" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" >Application Mode:</TextBlock>
+                                <ComboBox Margin="0,0,5,10" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ApplicationModes, Mode=TwoWay}" SelectedItem="{Binding ApplicationMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False" VerticalAlignment="Top" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontFamily="Verdana" FontSize="12" Foreground="#FF413E3E" Text="{Binding Name}"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
+                                <TextBlock Margin="5,0,5,10" FontSize="14" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" >Customer Loyalty Enabled:</TextBlock>
+                                <CheckBox Margin="0,0,5,10"  FontSize="14" Grid.Column="1" Grid.Row="2" IsChecked="{Binding Setting.IsCustomerLoyaltyEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" />
+
+                                <TextBlock Margin="5,0,5,10" FontSize="14" Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top"  >Show Package Relationship In Stock Summary Report:</TextBlock>
+                                <CheckBox Margin="0,0,5,10" FontSize="14" Grid.Column="1" Grid.Row="3" IsChecked="{Binding Setting.ShowPackageRelationshipInStockSummaryReviewReport, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" />
+
+
+                                <TextBlock Margin="5,0,5,10" FontSize="14" Grid.Column="0" Grid.Row="4" VerticalAlignment="Top" >Is Activated:</TextBlock>
+                                <CheckBox Margin="0,0,5,10" FontSize="14" Grid.Column="1" Grid.Row="4" IsChecked="{Binding Setting.IsActivated, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" />
+
+                            </Grid>
+                        </GroupBox>
+
+                      
+
+                        <Border Margin="0,2,0,0" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch">
+                            <StackPanel Grid.Row="2" Margin="0,2,3,6" Orientation="Horizontal">
+                                <Button Command="{Binding SaveCommand}" Content="Save" FontSize="22" />
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+            </Border>
+
+
+
+
+        </Grid>
+    </Grid>
+</UserControl>

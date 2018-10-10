@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PoknoModelStoreContainer" CdmEntityContainer="PoknoEntities">
+    <EntitySetMapping Name="APPLICATION_MODE">
+      <EntityTypeMapping TypeName="PoknoModel.APPLICATION_MODE">
+        <MappingFragment StoreEntitySet="APPLICATION_MODE">
+          <ScalarProperty Name="Application_Mode_Description" ColumnName="Application_Mode_Description" />
+          <ScalarProperty Name="Application_Mode_Name" ColumnName="Application_Mode_Name" />
+          <ScalarProperty Name="Application_Mode_Id" ColumnName="Application_Mode_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BANK">
+      <EntityTypeMapping TypeName="PoknoModel.BANK">
+        <MappingFragment StoreEntitySet="BANK">
+          <ScalarProperty Name="Bank_Description" ColumnName="Bank_Description" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Bank_Id" ColumnName="Bank_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CASH">
+      <EntityTypeMapping TypeName="PoknoModel.CASH">
+        <MappingFragment StoreEntitySet="CASH">
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHEQUE">
+      <EntityTypeMapping TypeName="PoknoModel.CHEQUE">
+        <MappingFragment StoreEntitySet="CHEQUE">
+          <ScalarProperty Name="Account_Number" ColumnName="Account_Number" />
+          <ScalarProperty Name="Cheque_Number" ColumnName="Cheque_Number" />
+          <ScalarProperty Name="Bank_Id" ColumnName="Bank_Id" />
+          <ScalarProperty Name="Payment_Detail_Id" ColumnName="Payment_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANY">
+      <EntityTypeMapping TypeName="PoknoModel.COMPANY">
+        <MappingFragment StoreEntitySet="COMPANY">
+          <ScalarProperty Name="Disclaimer" ColumnName="Disclaimer" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CURRENT_ESNECIL">
+      <EntityTypeMapping TypeName="PoknoModel.CURRENT_ESNECIL">
+        <MappingFragment StoreEntitySet="CURRENT_ESNECIL">
+          <ScalarProperty Name="Esnecil_Id" ColumnName="Esnecil_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CURRENT_STOCK_PACKAGE">
+      <EntityTypeMapping TypeName="PoknoModel.CURRENT_STOCK_PACKAGE">
+        <MappingFragment StoreEntitySet="CURRENT_STOCK_PACKAGE">
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CURRENT_STOCK_PACKAGE_RELATIONSHIP">
+      <EntityTypeMapping TypeName="PoknoModel.CURRENT_STOCK_PACKAGE_RELATIONSHIP">
+        <MappingFragment StoreEntitySet="CURRENT_STOCK_PACKAGE_RELATIONSHIP">
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CURRENT_STOCK_PRICE">
+      <EntityTypeMapping TypeName="PoknoModel.CURRENT_STOCK_PRICE">
+        <MappingFragment StoreEntitySet="CURRENT_STOCK_PRICE">
+          <ScalarProperty Name="Stock_Price_Id" ColumnName="Stock_Price_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DELETED_SHELF_STOCK">
+      <EntityTypeMapping TypeName="PoknoModel.DELETED_SHELF_STOCK">
+        <MappingFragment StoreEntitySet="DELETED_SHELF_STOCK">
+          <ScalarProperty Name="Date_Deleted" ColumnName="Date_Deleted" />
+          <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Shelf_Id" ColumnName="Shelf_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DELETED_SOLD_STOCK">
+      <EntityTypeMapping TypeName="PoknoModel.DELETED_SOLD_STOCK">
+        <MappingFragment StoreEntitySet="DELETED_SOLD_STOCK">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Returned" ColumnName="Returned" />
+          <ScalarProperty Name="Stock_Price_Id" ColumnName="Stock_Price_Id" />
+          <ScalarProperty Name="Sold_Stock_Batch_Id" ColumnName="Sold_Stock_Batch_Id" />
+          <ScalarProperty Name="Shelf_Id" ColumnName="Shelf_Id" />
+          <ScalarProperty Name="Sold_Stock_Id" ColumnName="Sold_Stock_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DELETED_SOLD_STOCK_BATCH">
+      <EntityTypeMapping TypeName="PoknoModel.DELETED_SOLD_STOCK_BATCH">
+        <MappingFragment StoreEntitySet="DELETED_SOLD_STOCK_BATCH">
+          <ScalarProperty Name="Deleted_By_Person_Id" ColumnName="Deleted_By_Person_Id" />
+          <ScalarProperty Name="Deleted_Reason" ColumnName="Deleted_Reason" />
+          <ScalarProperty Name="Date_Deleted" ColumnName="Date_Deleted" />
+          <ScalarProperty Name="Date_Sold" ColumnName="Date_Sold" />
+          <ScalarProperty Name="Total_Discount" ColumnName="Total_Discount" />
+          <ScalarProperty Name="Seller_Id" ColumnName="Seller_Id" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Sold_Stock_Batch_Id" ColumnName="Sold_Stock_Batch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESNECIL">
+      <EntityTypeMapping TypeName="PoknoModel.ESNECIL">
+        <MappingFragment StoreEntitySet="ESNECIL">
+          <ScalarProperty Name="Is_Evaluation" ColumnName="Is_Evaluation" />
+          <ScalarProperty Name="Activation_Date" ColumnName="Activation_Date" />
+          <ScalarProperty Name="Serial_Code" ColumnName="Serial_Code" />
+          <ScalarProperty Name="Esnecil_Code" ColumnName="Esnecil_Code" />
+          <ScalarProperty Name="Machine_Code" ColumnName="Machine_Code" />
+          <ScalarProperty Name="Validation_Key" ColumnName="Validation_Key" />
+          <ScalarProperty Name="Esnecil_Id" ColumnName="Esnecil_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXPENSES">
+      <EntityTypeMapping TypeName="PoknoModel.EXPENSES">
+        <MappingFragment StoreEntitySet="EXPENSES">
+          <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+          <ScalarProperty Name="Created_By_Person_Id" ColumnName="Created_By_Person_Id" />
+          <ScalarProperty Name="Expenses_Date" ColumnName="Expenses_Date" />
+          <ScalarProperty Name="Closing_Balance" ColumnName="Closing_Balance" />
+          <ScalarProperty Name="Cash_At_Hand" ColumnName="Cash_At_Hand" />
+          <ScalarProperty Name="Additional_Cash" ColumnName="Additional_Cash" />
+          <ScalarProperty Name="Opening_Balance" ColumnName="Opening_Balance" />
+          <ScalarProperty Name="Expenses_Id" ColumnName="Expenses_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXPENSES_CATEGORY">
+      <EntityTypeMapping TypeName="PoknoModel.EXPENSES_CATEGORY">
+        <MappingFragment StoreEntitySet="EXPENSES_CATEGORY">
+          <ScalarProperty Name="Expenses_Category_Description" ColumnName="Expenses_Category_Description" />
+          <ScalarProperty Name="Expenses_Category_Name" ColumnName="Expenses_Category_Name" />
+          <ScalarProperty Name="Expenses_Category_Id" ColumnName="Expenses_Category_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXPENSES_DETAIL">
+      <EntityTypeMapping TypeName="PoknoModel.EXPENSES_DETAIL">
+        <MappingFragment StoreEntitySet="EXPENSES_DETAIL">
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Payment_Type_Id" ColumnName="Payment_Type_Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Collected_By" ColumnName="Collected_By" />
+          <ScalarProperty Name="Expenses_Category_Id" ColumnName="Expenses_Category_Id" />
+          <ScalarProperty Name="Expenses_Id" ColumnName="Expenses_Id" />
+          <ScalarProperty Name="Expenses_Detail_Id" ColumnName="Expenses_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOCATION">
+      <EntityTypeMapping TypeName="PoknoModel.LOCATION">
+        <MappingFragment StoreEntitySet="LOCATION">
+          <ScalarProperty Name="Location_Address" ColumnName="Location_Address" />
+          <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+          <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PACKAGE">
+      <EntityTypeMapping TypeName="PoknoModel.PACKAGE">
+        <MappingFragment StoreEntitySet="PACKAGE">
+          <ScalarProperty Name="Package_Description" ColumnName="Package_Description" />
+          <ScalarProperty Name="Package_Name" ColumnName="Package_Name" />
+          <ScalarProperty Name="Package_Id" ColumnName="Package_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PACKAGE_RELATIONSHIP">
+      <EntityTypeMapping TypeName="PoknoModel.PACKAGE_RELATIONSHIP">
+        <MappingFragment StoreEntitySet="PACKAGE_RELATIONSHIP">
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Quantity_In_Package" ColumnName="Quantity_In_Package" />
+          <ScalarProperty Name="Sub_Stock_Package_Id" ColumnName="Sub_Stock_Package_Id" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+          <ScalarProperty Name="Package_Relationship_Id" ColumnName="Package_Relationship_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PART">
+      <EntityTypeMapping TypeName="PoknoModel.PART">
+        <MappingFragment StoreEntitySet="PART">
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT">
+      <EntityTypeMapping TypeName="PoknoModel.PAYMENT">
+        <MappingFragment StoreEntitySet="PAYMENT">
+          <ScalarProperty Name="Date_Paid" ColumnName="Date_Paid" />
+          <ScalarProperty Name="Invoice_Number" ColumnName="Invoice_Number" />
+          <ScalarProperty Name="Serial_Number" ColumnName="Serial_Number" />
+          <ScalarProperty Name="Amount_Payable" ColumnName="Amount_Payable" />
+          <ScalarProperty Name="Transaction_Type_Id" ColumnName="Transaction_Type_Id" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT_DETAIL">
+      <EntityTypeMapping TypeName="PoknoModel.PAYMENT_DETAIL">
+        <MappingFragment StoreEntitySet="PAYMENT_DETAIL">
+          <ScalarProperty Name="Amount_Paid" ColumnName="Amount_Paid" />
+          <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+          <ScalarProperty Name="Payment_Type_Id" ColumnName="Payment_Type_Id" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Payment_Detail_Id" ColumnName="Payment_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT_TYPE">
+      <EntityTypeMapping TypeName="PoknoModel.PAYMENT_TYPE">
+        <MappingFragment StoreEntitySet="PAYMENT_TYPE">
+          <ScalarProperty Name="Payment_Name" ColumnName="Payment_Name" />
+          <ScalarProperty Name="Payment_Type_Id" ColumnName="Payment_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSON">
+      <EntityTypeMapping TypeName="PoknoModel.PERSON">
+        <MappingFragment StoreEntitySet="PERSON">
+          <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="Contact_Address" ColumnName="Contact_Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile_Phone" ColumnName="Mobile_Phone" />
+          <ScalarProperty Name="Other_Name" ColumnName="Other_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Person_Type_Id" ColumnName="Person_Type_Id" />
+          <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSON_COMPANY">
+      <EntityTypeMapping TypeName="PoknoModel.PERSON_COMPANY">
+        <MappingFragment StoreEntitySet="PERSON_COMPANY">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+          <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+          <ScalarProperty Name="Person_Company_Id" ColumnName="Person_Company_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSON_LOGIN">
+      <EntityTypeMapping TypeName="PoknoModel.PERSON_LOGIN">
+        <MappingFragment StoreEntitySet="PERSON_LOGIN">
+          <ScalarProperty Name="Is_First_Logon" ColumnName="Is_First_Logon" />
+          <ScalarProperty Name="Is_Activated" ColumnName="Is_Activated" />
+          <ScalarProperty Name="Is_Locked" ColumnName="Is_Locked" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSON_TYPE">
+      <EntityTypeMapping TypeName="PoknoModel.PERSON_TYPE">
+        <MappingFragment StoreEntitySet="PERSON_TYPE">
+          <ScalarProperty Name="Person_Type_Description" ColumnName="Person_Type_Description" />
+          <ScalarProperty Name="Person_Type_Name" ColumnName="Person_Type_Name" />
+          <ScalarProperty Name="Person_Type_Id" ColumnName="Person_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REPLACED_STOCK_ACTION">
+      <EntityTypeMapping TypeName="PoknoModel.REPLACED_STOCK_ACTION">
+        <MappingFragment StoreEntitySet="REPLACED_STOCK_ACTION">
+          <ScalarProperty Name="Replaced_Stock_Action_Description" ColumnName="Replaced_Stock_Action_Description" />
+          <ScalarProperty Name="Replaced_Stock_Action_Name" ColumnName="Replaced_Stock_Action_Name" />
+          <ScalarProperty Name="Replaced_Stock_Action_Id" ColumnName="Replaced_Stock_Action_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RETURNED_STOCK">
+      <EntityTypeMapping TypeName="PoknoModel.RETURNED_STOCK">
+        <MappingFragment StoreEntitySet="RETURNED_STOCK">
+          <ScalarProperty Name="Entered_By" ColumnName="Entered_By" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Return_Reason" ColumnName="Return_Reason" />
+          <ScalarProperty Name="Return_Date" ColumnName="Return_Date" />
+          <ScalarProperty Name="Returned_Stock_Id" ColumnName="Returned_Stock_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RETURNED_STOCK_DETAIL">
+      <EntityTypeMapping TypeName="PoknoModel.RETURNED_STOCK_DETAIL">
+        <MappingFragment StoreEntitySet="RETURNED_STOCK_DETAIL">
+          <ScalarProperty Name="Returned_To_Shelf" ColumnName="Returned_To_Shelf" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Refunded" ColumnName="Refunded" />
+          <ScalarProperty Name="Stock_Return_Action_Id" ColumnName="Stock_Return_Action_Id" />
+          <ScalarProperty Name="Stock_State_Id" ColumnName="Stock_State_Id" />
+          <ScalarProperty Name="Returned_Quantity" ColumnName="Returned_Quantity" />
+          <ScalarProperty Name="Returned_Stock_Id" ColumnName="Returned_Stock_Id" />
+          <ScalarProperty Name="Sold_Stock_Id" ColumnName="Sold_Stock_Id" />
+          <ScalarProperty Name="Returned_Stock_Detail_Id" ColumnName="Returned_Stock_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RETURNED_STOCK_REPLACEMENT">
+      <EntityTypeMapping TypeName="PoknoModel.RETURNED_STOCK_REPLACEMENT">
+        <MappingFragment StoreEntitySet="RETURNED_STOCK_REPLACEMENT">
+          <ScalarProperty Name="Action_Executor_Id" ColumnName="Action_Executor_Id" />
+          <ScalarProperty Name="Action_Date" ColumnName="Action_Date" />
+          <ScalarProperty Name="Action_Reason" ColumnName="Action_Reason" />
+          <ScalarProperty Name="Replaced_Stock_Action_Id" ColumnName="Replaced_Stock_Action_Id" />
+          <ScalarProperty Name="Sold_Stock_Id" ColumnName="Sold_Stock_Id" />
+          <ScalarProperty Name="Returned_Stock_Detail_Id" ColumnName="Returned_Stock_Detail_Id" />
+          <ScalarProperty Name="Returned_Stock_Replacement_Id" ColumnName="Returned_Stock_Replacement_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RIGHT">
+      <EntityTypeMapping TypeName="PoknoModel.RIGHT">
+        <MappingFragment StoreEntitySet="RIGHT">
+          <ScalarProperty Name="Right_Description" ColumnName="Right_Description" />
+          <ScalarProperty Name="Right_Name" ColumnName="Right_Name" />
+          <ScalarProperty Name="Right_Id" ColumnName="Right_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLE">
+      <EntityTypeMapping TypeName="PoknoModel.ROLE">
+        <MappingFragment StoreEntitySet="ROLE">
+          <ScalarProperty Name="Role_Description" ColumnName="Role_Description" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLE_RIGHT">
+      <EntityTypeMapping TypeName="PoknoModel.ROLE_RIGHT">
+        <MappingFragment StoreEntitySet="ROLE_RIGHT">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Right_Id" ColumnName="Right_Id" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETTING">
+      <EntityTypeMapping TypeName="PoknoModel.SETTING">
+        <MappingFragment StoreEntitySet="SETTING">
+          <ScalarProperty Name="Show_Package_Relationship_In_Stock_Summary_Review_Report" ColumnName="Show_Package_Relationship_In_Stock_Summary_Review_Report" />
+          <ScalarProperty Name="Is_Activated" ColumnName="Is_Activated" />
+          <ScalarProperty Name="Is_Customer_Loyalty_Enabled" ColumnName="Is_Customer_Loyalty_Enabled" />
+          <ScalarProperty Name="Application_Mode_Id" ColumnName="Application_Mode_Id" />
+          <ScalarProperty Name="Application_Date" ColumnName="Application_Date" />
+          <ScalarProperty Name="Setting_Id" ColumnName="Setting_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHELF">
+      <EntityTypeMapping TypeName="PoknoModel.SHELF">
+        <MappingFragment StoreEntitySet="SHELF">
+          <ScalarProperty Name="Sold" ColumnName="Sold" />
+          <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+          <ScalarProperty Name="Date_Entered" ColumnName="Date_Entered" />
+          <ScalarProperty Name="Total_Unit_Quantity" ColumnName="Total_Unit_Quantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+          <ScalarProperty Name="Entered_By" ColumnName="Entered_By" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Shelf_Id" ColumnName="Shelf_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHELF_STOCK_REPLACEMENT">
+      <EntityTypeMapping TypeName="PoknoModel.SHELF_STOCK_REPLACEMENT">
+        <MappingFragment StoreEntitySet="SHELF_STOCK_REPLACEMENT">
+          <ScalarProperty Name="Date_Replaced" ColumnName="Date_Replaced" />
+          <ScalarProperty Name="Quantity_Replaced" ColumnName="Quantity_Replaced" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Shelf_Id" ColumnName="Shelf_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLD_STOCK">
+      <EntityTypeMapping TypeName="PoknoModel.SOLD_STOCK">
+        <MappingFragment StoreEntitySet="SOLD_STOCK">
+          <ScalarProperty Name="Returned" ColumnName="Returned" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Stock_Price_Id" ColumnName="Stock_Price_Id" />
+          <ScalarProperty Name="Sold_Stock_Batch_Id" ColumnName="Sold_Stock_Batch_Id" />
+          <ScalarProperty Name="Shelf_Id" ColumnName="Shelf_Id" />
+          <ScalarProperty Name="Sold_Stock_Id" ColumnName="Sold_Stock_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLD_STOCK_BATCH">
+      <EntityTypeMapping TypeName="PoknoModel.SOLD_STOCK_BATCH">
+        <MappingFragment StoreEntitySet="SOLD_STOCK_BATCH">
+          <ScalarProperty Name="Total_Discount" ColumnName="Total_Discount" />
+          <ScalarProperty Name="Date_Sold" ColumnName="Date_Sold" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Seller_Id" ColumnName="Seller_Id" />
+          <ScalarProperty Name="Sold_Stock_Batch_Id" ColumnName="Sold_Stock_Batch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLD_STOCK_RETURN">
+      <EntityTypeMapping TypeName="PoknoModel.SOLD_STOCK_RETURN">
+        <MappingFragment StoreEntitySet="SOLD_STOCK_RETURN">
+          <ScalarProperty Name="Back_To_Stock_Purchased" ColumnName="Back_To_Stock_Purchased" />
+          <ScalarProperty Name="Refunded" ColumnName="Refunded" />
+          <ScalarProperty Name="Replaced" ColumnName="Replaced" />
+          <ScalarProperty Name="Return_Reason" ColumnName="Return_Reason" />
+          <ScalarProperty Name="Date_Returned" ColumnName="Date_Returned" />
+          <ScalarProperty Name="Quantity_Returned" ColumnName="Quantity_Returned" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Stock_State_Id" ColumnName="Stock_State_Id" />
+          <ScalarProperty Name="Stock_On_Shelf_Id" ColumnName="Stock_On_Shelf_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLD_STOCK_RETURN_REFUND">
+      <EntityTypeMapping TypeName="PoknoModel.SOLD_STOCK_RETURN_REFUND">
+        <MappingFragment StoreEntitySet="SOLD_STOCK_RETURN_REFUND">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Stock_On_Shelf_Id" ColumnName="Stock_On_Shelf_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK">
+        <MappingFragment StoreEntitySet="STOCK">
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Stock_Descrption" ColumnName="Stock_Descrption" />
+          <ScalarProperty Name="Stock_Type_Id" ColumnName="Stock_Type_Id" />
+          <ScalarProperty Name="Stock_Name" ColumnName="Stock_Name" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_BARCODE">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_BARCODE">
+        <MappingFragment StoreEntitySet="STOCK_BARCODE">
+          <ScalarProperty Name="Stock_Barcode1" ColumnName="Stock_Barcode" />
+          <ScalarProperty Name="Stock_Barcode_Id" ColumnName="Stock_Barcode_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_CATEGORY">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_CATEGORY">
+        <MappingFragment StoreEntitySet="STOCK_CATEGORY">
+          <ScalarProperty Name="Stock_Category_Description" ColumnName="Stock_Category_Description" />
+          <ScalarProperty Name="Stock_Category_Name" ColumnName="Stock_Category_Name" />
+          <ScalarProperty Name="Stock_Category_Id" ColumnName="Stock_Category_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PACKAGE">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PACKAGE">
+        <MappingFragment StoreEntitySet="STOCK_PACKAGE">
+          <ScalarProperty Name="Expiry_Date_No_Of_Days_Alert" ColumnName="Expiry_Date_No_Of_Days_Alert" />
+          <ScalarProperty Name="Re_Order_Level" ColumnName="Re_Order_Level" />
+          <ScalarProperty Name="Stock_Package_Description" ColumnName="Stock_Package_Description" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Package_Id" ColumnName="Package_Id" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PACKAGE_RELATIONSHIP">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PACKAGE_RELATIONSHIP">
+        <MappingFragment StoreEntitySet="STOCK_PACKAGE_RELATIONSHIP">
+          <ScalarProperty Name="Set_By_Person_Id" ColumnName="Set_By_Person_Id" />
+          <ScalarProperty Name="Date_Set" ColumnName="Date_Set" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PRICE">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PRICE">
+        <MappingFragment StoreEntitySet="STOCK_PRICE">
+          <ScalarProperty Name="Date_Entered" ColumnName="Date_Entered" />
+          <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
+          <ScalarProperty Name="Cost_Price" ColumnName="Cost_Price" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Stock_Price_Id" ColumnName="Stock_Price_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PURCHASE_BATCH">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PURCHASE_BATCH">
+        <MappingFragment StoreEntitySet="STOCK_PURCHASE_BATCH">
+          <ScalarProperty Name="Invoice_Number" ColumnName="Invoice_Number" />
+          <ScalarProperty Name="Supplier_Expenses" ColumnName="Supplier_Expenses" />
+          <ScalarProperty Name="Date_Puchased" ColumnName="Date_Puchased" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Buyer_Id" ColumnName="Buyer_Id" />
+          <ScalarProperty Name="Supplier_Id" ColumnName="Supplier_Id" />
+          <ScalarProperty Name="Stock_Purchase_Batch_Type_Id" ColumnName="Stock_Purchase_Batch_Type_Id" />
+          <ScalarProperty Name="Stock_Purchase_Batch_Id" ColumnName="Stock_Purchase_Batch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PURCHASE_BATCH_TYPE">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PURCHASE_BATCH_TYPE">
+        <MappingFragment StoreEntitySet="STOCK_PURCHASE_BATCH_TYPE">
+          <ScalarProperty Name="Stock_Purchase_Batch_Type_Name" ColumnName="Stock_Purchase_Batch_Type_Name" />
+          <ScalarProperty Name="Stock_Purchase_Batch_Type_Id" ColumnName="Stock_Purchase_Batch_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PURCHASED">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PURCHASED">
+        <MappingFragment StoreEntitySet="STOCK_PURCHASED">
+          <ScalarProperty Name="Expiry_Date" ColumnName="Expiry_Date" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Unit_Cost" ColumnName="Unit_Cost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Stock_Purchase_Batch_Id" ColumnName="Stock_Purchase_Batch_Id" />
+          <ScalarProperty Name="Stock_Purchased_Id" ColumnName="Stock_Purchased_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PURCHASED_POOL">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PURCHASED_POOL">
+        <MappingFragment StoreEntitySet="STOCK_PURCHASED_POOL">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit_Item_Package_Id" ColumnName="Unit_Item_Package_Id" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Stock_Purchase_Batch_Id" ColumnName="Stock_Purchase_Batch_Id" />
+          <ScalarProperty Name="Stock_Purchased_Pool_Id" ColumnName="Stock_Purchased_Pool_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PURCHASED_POOL_DETAIL">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PURCHASED_POOL_DETAIL">
+        <MappingFragment StoreEntitySet="STOCK_PURCHASED_POOL_DETAIL">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Stock_Purchased_Pool_Id" ColumnName="Stock_Purchased_Pool_Id" />
+          <ScalarProperty Name="Stock_Purchased_Id" ColumnName="Stock_Purchased_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_PURCHASED_RETURN">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_PURCHASED_RETURN">
+        <MappingFragment StoreEntitySet="STOCK_PURCHASED_RETURN">
+          <ScalarProperty Name="Returned_By_Person_Id" ColumnName="Returned_By_Person_Id" />
+          <ScalarProperty Name="Date_Returned" ColumnName="Date_Returned" />
+          <ScalarProperty Name="Return_Reason" ColumnName="Return_Reason" />
+          <ScalarProperty Name="Replaced_Stock_Action_Id" ColumnName="Replaced_Stock_Action_Id" />
+          <ScalarProperty Name="Stock_State_Id" ColumnName="Stock_State_Id" />
+          <ScalarProperty Name="Stock_Package_Id" ColumnName="Stock_Package_Id" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Unit_Cost" ColumnName="Unit_Cost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Stock_Purchase_Batch_Id" ColumnName="Stock_Purchase_Batch_Id" />
+          <ScalarProperty Name="Stock_Purchased_Return_Id" ColumnName="Stock_Purchased_Return_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_REPLACEMENT">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_REPLACEMENT">
+        <MappingFragment StoreEntitySet="STOCK_REPLACEMENT">
+          <ScalarProperty Name="Date_Replaced" ColumnName="Date_Replaced" />
+          <ScalarProperty Name="Replaced_Quantity" ColumnName="Replaced_Quantity" />
+          <ScalarProperty Name="Stock_Quantity_Id" ColumnName="Stock_Quantity_Id" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Stock_Purchase_Batch_Id" ColumnName="Stock_Purchase_Batch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_RETURN_ACTION">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_RETURN_ACTION">
+        <MappingFragment StoreEntitySet="STOCK_RETURN_ACTION">
+          <ScalarProperty Name="Stock_Return_Action_Description" ColumnName="Stock_Return_Action_Description" />
+          <ScalarProperty Name="Stock_Return_Action_Name" ColumnName="Stock_Return_Action_Name" />
+          <ScalarProperty Name="Stock_Return_Action_Id" ColumnName="Stock_Return_Action_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_RETURN_TYPE">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_RETURN_TYPE">
+        <MappingFragment StoreEntitySet="STOCK_RETURN_TYPE">
+          <ScalarProperty Name="Stock_Return_Type_Name" ColumnName="Stock_Return_Type_Name" />
+          <ScalarProperty Name="Stock_Return_Type_Id" ColumnName="Stock_Return_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_REVIEW">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_REVIEW">
+        <MappingFragment StoreEntitySet="STOCK_REVIEW">
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Review_Year" ColumnName="Review_Year" />
+          <ScalarProperty Name="Reviewed_By_Person_Id" ColumnName="Reviewed_By_Person_Id" />
+          <ScalarProperty Name="Stock_Review_Summary_Id" ColumnName="Stock_Review_Summary_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_REVIEW_DETAIL">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_REVIEW_DETAIL">
+        <MappingFragment StoreEntitySet="STOCK_REVIEW_DETAIL">
+          <ScalarProperty Name="Monthly_Transaction_Discount" ColumnName="Monthly_Transaction_Discount" />
+          <ScalarProperty Name="Monthly_Total_Expenses" ColumnName="Monthly_Total_Expenses" />
+          <ScalarProperty Name="Transaction_Year" ColumnName="Transaction_Year" />
+          <ScalarProperty Name="Transaction_Month" ColumnName="Transaction_Month" />
+          <ScalarProperty Name="Package_Relationship" ColumnName="Package_Relationship" />
+          <ScalarProperty Name="Profit2" ColumnName="Profit2" />
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
+          <ScalarProperty Name="Cost_Price" ColumnName="Cost_Price" />
+          <ScalarProperty Name="Quantity_Sold" ColumnName="Quantity_Sold" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Quantity_Purchased" ColumnName="Quantity_Purchased" />
+          <ScalarProperty Name="Stock_Balance_Unit_Item" ColumnName="Stock_Balance_Unit_Item" />
+          <ScalarProperty Name="Stock_Balance_Value" ColumnName="Stock_Balance_Value" />
+          <ScalarProperty Name="Stock_Balance" ColumnName="Stock_Balance" />
+          <ScalarProperty Name="Initial_Stock_Balance_Value" ColumnName="Initial_Stock_Balance_Value" />
+          <ScalarProperty Name="Initial_Stock_Balance" ColumnName="Initial_Stock_Balance" />
+          <ScalarProperty Name="Stock_Package_Relationship_Id" ColumnName="Stock_Package_Relationship_Id" />
+          <ScalarProperty Name="Stock_Name" ColumnName="Stock_Name" />
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Stock_Review_Id" ColumnName="Stock_Review_Id" />
+          <ScalarProperty Name="Stock_Review_Detail_Id" ColumnName="Stock_Review_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_STATE">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_STATE">
+        <MappingFragment StoreEntitySet="STOCK_STATE">
+          <ScalarProperty Name="Stock_State_Description" ColumnName="Stock_State_Description" />
+          <ScalarProperty Name="Stock_State_Name" ColumnName="Stock_State_Name" />
+          <ScalarProperty Name="Stock_State_Id" ColumnName="Stock_State_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STOCK_TYPE">
+      <EntityTypeMapping TypeName="PoknoModel.STOCK_TYPE">
+        <MappingFragment StoreEntitySet="STOCK_TYPE">
+          <ScalarProperty Name="Stock_Type_Description" ColumnName="Stock_Type_Description" />
+          <ScalarProperty Name="Stock_Type_Name" ColumnName="Stock_Type_Name" />
+          <ScalarProperty Name="Stock_Category_Id" ColumnName="Stock_Category_Id" />
+          <ScalarProperty Name="Stock_Type_Id" ColumnName="Stock_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STORE">
+      <EntityTypeMapping TypeName="PoknoModel.STORE">
+        <MappingFragment StoreEntitySet="STORE">
+          <ScalarProperty Name="Disclaimer" ColumnName="Disclaimer" />
+          <ScalarProperty Name="Logo_File_Name" ColumnName="Logo_File_Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Store_Id" ColumnName="Store_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACTION_TYPE">
+      <EntityTypeMapping TypeName="PoknoModel.TRANSACTION_TYPE">
+        <MappingFragment StoreEntitySet="TRANSACTION_TYPE">
+          <ScalarProperty Name="Transaction_Type_Description" ColumnName="Transaction_Type_Description" />
+          <ScalarProperty Name="Transaction_Type_Name" ColumnName="Transaction_Type_Name" />
+          <ScalarProperty Name="Transaction_Type_Id" ColumnName="Transaction_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

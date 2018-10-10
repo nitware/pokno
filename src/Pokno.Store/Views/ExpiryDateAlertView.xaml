@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Pokno.Store.Views.ExpiryDateAlertView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converter="clr-namespace:Pokno.Infrastructure.Converters;assembly=Pokno.Infrastructure"
+    mc:Ignorable="d"
+    d:DesignHeight="600" 
+    d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <converter:AboutToExpireStocksLabelConverter x:Key="AboutToExpireStocksLabelConverter" />
+        <converter:AboutToExpireStocksLabelColor x:Key="AboutToExpireStocksLabelColor" />
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Margin="10">
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>-->
+
+        <Border BorderBrush="White" CornerRadius="5" Padding="10" Background="White" BorderThickness="0,0,0,0" >
+            <StackPanel>
+                <!--<Border BorderBrush="DimGray" BorderThickness="0,0,0,4" Margin="0,0,0,2" HorizontalAlignment="Stretch">
+                    <TextBlock FontWeight="Bold" FontSize="13" HorizontalAlignment="Left" >About to expire stocks</TextBlock>
+                </Border>-->
+
+                <Grid Margin="2,0,2,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock VerticalAlignment="Bottom" >STOCKS ABOUT TO EXPIRE</TextBlock>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" >Record Count</TextBlock>
+                        <Border Background="Black" MinWidth="20" CornerRadius="15" VerticalAlignment="Center" >
+                            <TextBlock Text="{Binding ItemCount, Mode=TwoWay}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <DataGrid ItemsSource="{Binding AboutToExpiredStocks}" 
+                    AreRowDetailsFrozen="True" 
+                    AutoGenerateColumns="False" 
+                    HeadersVisibility="Column"
+                          Background="White"
+                    Height="460" >
+                    <DataGrid.Columns>
+
+                        <DataGridTemplateColumn Header="Quantity Remaining">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" FontSize="13" Text="{Binding QuantityRemaining}" Foreground="{Binding RemainingAlertDays, Converter={StaticResource AboutToExpireStocksLabelColor}}"  HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Package">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" FontSize="13" Text="{Binding PackageName}" Foreground="{Binding RemainingAlertDays, Converter={StaticResource AboutToExpireStocksLabelColor}}"  TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Stock">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" FontSize="13" Text="{Binding StockName}" Foreground="{Binding RemainingAlertDays, Converter={StaticResource AboutToExpireStocksLabelColor}}"  TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Quantity on Shelf">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="5,0" HorizontalAlignment="Right" FontSize="13" Text="{Binding QuantityOnShelf}" Foreground="{Binding RemainingAlertDays, Converter={StaticResource AboutToExpireStocksLabelColor}}" TextWrapping="Wrap"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Header="Remaining Days">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                        <TextBlock Margin="5,0" FontSize="13" Text="{Binding RemainingAlertDays, Converter={StaticResource AboutToExpireStocksLabelConverter}}" Foreground="{Binding RemainingAlertDays, Converter={StaticResource AboutToExpireStocksLabelColor}}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </StackPanel>
+
+        </Border>
+
+
+    </Grid>
+</UserControl>

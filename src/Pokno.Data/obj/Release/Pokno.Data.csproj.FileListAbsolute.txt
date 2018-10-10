@@ -1,0 +1,16 @@
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Data.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Data.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\EntityFramework.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Business.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Entity.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Model.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.NumberConverter.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Business.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Entity.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.Model.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.NumberConverter.pdb
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\bin\Release\Pokno.NumberConverter.xml
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\obj\Release\Pokno.Data.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\obj\Release\Pokno.Data.dll
+C:\Users\Dan\Documents\Visual Studio 2013\Projects\Pokno\Pokno.Data\obj\Release\Pokno.Data.pdb

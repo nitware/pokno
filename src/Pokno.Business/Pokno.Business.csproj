@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{689E50F4-4FC9-486C-AE8A-FE27C1B5C675}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pokno.Business</RootNamespace>
+    <AssemblyName>Pokno.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Pokno.Infrastructure\Assembly\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationModeLogic.cs" />
+    <Compile Include="BankLogic.cs" />
+    <Compile Include="BusinessLogicBase.cs" />
+    <Compile Include="ChequeLogic.cs" />
+    <Compile Include="CompanyLogic.cs" />
+    <Compile Include="CurrentEsnecilLogic.cs" />
+    <Compile Include="CurrentStockPackageLogic.cs" />
+    <Compile Include="CurrentStockPackageRelationshipLogic.cs" />
+    <Compile Include="CurrentStockPriceLogic.cs" />
+    <Compile Include="DeletedShelfStockLogic.cs" />
+    <Compile Include="DeletedSoldStockBatchLogic.cs" />
+    <Compile Include="DeletedSoldStockLogic.cs" />
+    <Compile Include="EsnecilLogic.cs" />
+    <Compile Include="ExpensesCategoryLogic.cs" />
+    <Compile Include="ExpensesDetailLogic.cs" />
+    <Compile Include="ExpensesLogic.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="Helper\DateRange.cs" />
+    <Compile Include="Helper\Range.cs" />
+    <Compile Include="Helper\Trade.cs" />
+    <Compile Include="Helper\Trader.cs" />
+    <Compile Include="Interfaces\IFileManager.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="LocationLogic.cs" />
+    <Compile Include="LoginDetailLogic.cs" />
+    <Compile Include="ReplacedStockActionLogic.cs" />
+    <Compile Include="ReturnedStockDetailLogic.cs" />
+    <Compile Include="ReturnedStockLogic.cs" />
+    <Compile Include="ReturnedStockReplacementLogic.cs" />
+    <Compile Include="SettingLogic.cs" />
+    <Compile Include="SoldStockLogic.cs" />
+    <Compile Include="OutgoingStockReturnRefundLogic.cs" />
+    <Compile Include="PackageLogic.cs" />
+    <Compile Include="PackageRelationshipLogic.cs" />
+    <Compile Include="PaymentDetailLogic.cs" />
+    <Compile Include="PaymentLogic.cs" />
+    <Compile Include="PaymentTypeLogic.cs" />
+    <Compile Include="PersonCompanyLogic.cs" />
+    <Compile Include="PersonLogic.cs" />
+    <Compile Include="PersonTypeLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RightLogic.cs" />
+    <Compile Include="RoleLogic.cs" />
+    <Compile Include="RoleRightLogic.cs" />
+    <Compile Include="SoldStockBatchLogic.cs" />
+    <Compile Include="StockCategoryLogic.cs" />
+    <Compile Include="StockLogic.cs" />
+    <Compile Include="ShelfLogic.cs" />
+    <Compile Include="StockOnShelfReplacementLogic.cs" />
+    <Compile Include="StockPackageLogic.cs" />
+    <Compile Include="StockPackageRelationshipLogic.cs" />
+    <Compile Include="StockPriceLogic.cs" />
+    <Compile Include="StockPurchaseBatchLogic.cs" />
+    <Compile Include="StockPurchasedLogic.cs" />
+    <Compile Include="StockPurchasedPoolDetailLogic.cs" />
+    <Compile Include="StockPurchasedPoolLogic.cs" />
+    <Compile Include="PurchasedStockReturnLogic.cs" />
+    <Compile Include="StockPurchasePaymentLogic.cs" />
+    <Compile Include="StockReturnActionLogic.cs" />
+    <Compile Include="StockReturnTypeLogic.cs" />
+    <Compile Include="StockReviewDetailLogic.cs" />
+    <Compile Include="StockReviewLogic.cs" />
+    <Compile Include="StockStateLogic.cs" />
+    <Compile Include="StockTypeLogic.cs" />
+    <Compile Include="StoreLogic.cs" />
+    <Compile Include="BusinessLogicUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pokno.Entity\Pokno.Entity.csproj">
+      <Project>{b1268f3d-d595-432f-9665-360be13082e2}</Project>
+      <Name>Pokno.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.Model\Pokno.Model.csproj">
+      <Project>{158e6d3c-49c2-4294-8e1a-234d1ff09034}</Project>
+      <Name>Pokno.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pokno.NumberConverter\Pokno.NumberConverter.vbproj">
+      <Project>{11944e99-d8eb-4003-8f9d-25cebedb694a}</Project>
+      <Name>Pokno.NumberConverter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

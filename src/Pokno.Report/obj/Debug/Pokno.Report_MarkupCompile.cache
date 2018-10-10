@@ -1,0 +1,20 @@
+﻿Pokno.Report
+
+
+library
+C#
+.cs
+C:\Users\LENOVO\Documents\Visual Studio 2015\Projects\Pokno\Pokno.Report\obj\Debug\
+Pokno.Report
+none
+false
+DEBUG;TRACE
+
+45779336557
+
+1381437224337
+82-1412093381
+Views\Expenses\DailyExpensesReportView.xaml;Views\Expenses\ExpensesByDateRangeReportView.xaml;Views\Expenses\ExpensesReportView.xaml;Views\Expenses\MonthlyExpensesReportView.xaml;Views\Expenses\YearlyExpensesReportView.xaml;Views\Miscellaneous\CustomerTransactionStatisticsByDateRangeReportView.xaml;Views\Miscellaneous\YearlyCustomerTransactionStatisticsReportView.xaml;Views\Payment\CompanyCreditorsListReportView.xaml;Views\Payment\CompanyDebtorsListReportView.xaml;Views\Miscellaneous\DailyTransactionReportView.xaml;Views\Miscellaneous\MiscellaneousReportView.xaml;Views\Miscellaneous\MonthlyStockSummaryReportView.xaml;Views\Payment\PaymentHistoryByPersonReportView.xaml;Views\Payment\PaymentHistoryReportView.xaml;Views\Miscellaneous\MonthlyStockStatisticsReportView.xaml;Views\Miscellaneous\StockStatisticsByDateRangeReportView.xaml;Views\Miscellaneous\YearlyStockStatisticsReportView.xaml;Views\Returns\ReturnedStockReportView.xaml;Views\Returns\StockReturnByDateRangeReportView.xaml;Views\Returns\YearlyStockReturnReportView.xaml;Views\Stock\PackageRelationshipReportView.xaml;Views\Payment\PaymentReportView.xaml;Views\Purchase\StockPurchaseReportView.xaml;Views\Stock\RemainingStockOnShelfReportView.xaml;Views\ReportHomeView.xaml;Views\ReportMenuView.xaml;Views\Sales\SalesReportView.xaml;Views\Sales\SoldStockAnalysisReportView.xaml;Views\Sales\SoldStockDetailAnalysisByStockReportView.xaml;Views\Sales\SoldStockDetailAnalysisReportView.xaml;Views\Stock\StockListByTypeReportView.xaml;Views\Stock\StockListReportView.xaml;Views\Stock\StockPackageReportView.xaml;Views\Stock\StockPriceHistoryByStockReportView.xaml;Views\Stock\StockPriceHistoryReportView.xaml;Views\Stock\StockPriceReportView.xaml;Views\Purchase\StockPurchasedDetailReportView.xaml;Views\Purchase\StockPurchaseDetailByStockReportView.xaml;Views\Purchase\StockPurchaseSummaryReportView.xaml;Views\Stock\StockReportView.xaml;Views\Stock\StocksInStoreReportView.xaml;Views\Payment\SupplierCreditorsListReportView.xaml;Views\Payment\SupplierDebtorsListReportView.xaml;Views\Miscellaneous\YearlyStockSummaryByStockReportView.xaml;Views\Miscellaneous\YearlyStockSummaryReportView.xaml;
+
+False
+

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Pokno.Settings.Views.StoreLogoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <!--<Grid Background="#E7FDFDFD">-->
+    <Grid Background="#FF93AACF">
+        <GroupBox Margin="25,3,25,25" Header="Store Logo" Background="White" Foreground="Gainsboro" FontSize="22">
+        <Grid Margin="15">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <!--<ColumnDefinition Width="*" />-->
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+
+            </Grid.RowDefinitions>
+
+                <Border Margin="0,20,0,1" BorderBrush="Gainsboro" CornerRadius="5" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" >
+            <Image Source="{Binding Logo}" MinHeight="70"></Image>
+                </Border>
+            
+                <TextBlock FontWeight="Bold" FontSize="14" Grid.Column="0" Grid.Row="1" Margin="0,3,0,0">Logo</TextBlock>
+            <Grid Margin="0,3,0,0" Grid.Column="1" Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Text="{Binding LogoFilePath, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False" TextWrapping="Wrap" FontWeight="Normal" FontSize="12" ></TextBox>
+                <Button Margin="1,0,0,0" Grid.Column="1" Command="{Binding SelectLogoCommand}" FontWeight="Normal" FontSize="13" >...</Button>
+            </Grid>
+
+            <StackPanel Margin="0,0,0,20" Grid.Row="2" Orientation="Horizontal">
+                <Button Margin="0,2,2,0" Command="{Binding UploadLogoCommand}" FontSize="18" HorizontalAlignment="Left" Content="Upload" />
+                <Button Margin="0,2,0,0" Command="{Binding DeleteLogoCommand}" FontSize="18" HorizontalAlignment="Left" Content="Delete" />
+            </StackPanel>
+        </Grid>
+    </GroupBox>
+    </Grid>
+</UserControl>
